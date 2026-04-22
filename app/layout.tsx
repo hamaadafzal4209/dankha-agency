@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Preloader } from "@/components/Preloader";
 import { Background } from "@/components/Background";
 import { CursorGlow } from "@/components/CursorGlow";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { BackToTop } from "@/components/BackToTop";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingChat } from "@/components/FloatingChat";
+import NextTopLoader from "nextjs-toploader";
+import { Preloader } from "@/components/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,17 +37,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <>
-      <Preloader />
-      <Background />
-      <CursorGlow />
-      <ScrollProgress />
-      <Navbar />
-      <main className="relative pt-24 min-h-screen">
-        {children}
-      </main>
-      <Footer />
-      <FloatingChat />
-    </>
+          <NextTopLoader color="var(--secondary)" />
+          <Preloader />
+          <Background />
+          <CursorGlow />
+          <Navbar />
+          <main className="relative pt-24 min-h-screen">{children}</main>
+          <Footer />
+          <BackToTop />
+        </>
       </body>
     </html>
   );
