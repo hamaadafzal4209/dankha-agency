@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Background } from "@/components/Background";
 import { CursorGlow } from "@/components/CursorGlow";
-import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -37,7 +36,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <>
-          <NextTopLoader color="var(--secondary)" />
+          <NextTopLoader color="var(--secondary)" showSpinner={false} />
           <Preloader />
           <Background />
           <CursorGlow />
