@@ -3,11 +3,7 @@ import {
   ShoppingBag,
   Megaphone,
   Sparkles,
-  Star,
-  Quote,
-  Zap,
-  TrendingUp,
-  Users,
+  Quote
 } from "lucide-react";
 
 export const services = [
@@ -26,13 +22,6 @@ export const services = [
     title: "Digital Marketing",
     desc: "SEO, paid media and content strategy to grow your reach with precision.",
   },
-];
-
-export const stats = [
-  { value: "120+", label: "Projects shipped", icon: Zap },
-  { value: "48", label: "Happy clients", icon: Users },
-  { value: "9.4x", label: "Avg. ROI", icon: TrendingUp },
-  { value: "12", label: "Industry awards", icon: Star },
 ];
 
 export const projects = [

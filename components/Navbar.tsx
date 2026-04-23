@@ -63,7 +63,7 @@ export function Navbar() {
                 {pathname === l.href && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-x-3 -bottom-0.5 h-[2px] gradient-primary rounded-full"
+                    className="absolute inset-x-3 -bottom-0.5 h-0.5 gradient-primary rounded-full"
                   />
                 )}
               </Link>
@@ -77,7 +77,7 @@ export function Navbar() {
             >
               <span className="relative z-10">Get in touch</span>
               <span className="relative z-10 transition-transform group-hover:translate-x-1">→</span>
-              <span className="absolute inset-0 -z-0 opacity-0 group-hover:opacity-100 transition gradient-glow blur-xl" />
+              <span className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition gradient-glow blur-xl" />
             </Link>
           </div>
 

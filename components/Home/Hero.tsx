@@ -6,7 +6,7 @@ import { FloatingHeroVisual } from "./FloatingHeroVisual";
 
 export function Hero() {
   return (
-    <section className="relative pt-10 pb-32 px-6">
+    <section className="relative pt-10 pb-12 px-6">
       <div className="mx-auto max-w-7xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

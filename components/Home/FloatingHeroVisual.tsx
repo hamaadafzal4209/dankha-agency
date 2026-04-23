@@ -28,7 +28,7 @@ export function FloatingHeroVisual() {
 
   return (
     <div ref={containerRef} className="relative mt-8 sm:mt-12 md:mt-16 mx-auto max-w-5xl px-4 sm:px-6">
-      <div className="hidden lg:block relative h-[520px]">
+      <div className="hidden lg:block relative h-130">
         {/* Central Logo Orb */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -43,10 +43,10 @@ export function FloatingHeroVisual() {
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         >
           <div className="relative">
-            <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-primary/30 via-secondary/20 to-primary/30 blur-3xl animate-pulse-slow opacity-70" />
+            <div className="absolute -inset-8 rounded-full bg-linear-to-r from-primary/30 via-secondary/20 to-primary/30 blur-3xl animate-pulse-slow opacity-70" />
             
             <div className="relative h-64 w-64 rounded-full glass-strong border border-white/20 flex items-center justify-center overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/30 animate-gradient-shift" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/30 via-transparent to-secondary/30 animate-linear-shift" />
               
               <motion.div 
                 className="absolute inset-2 rounded-full border border-primary/20"
