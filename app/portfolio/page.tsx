@@ -67,16 +67,16 @@ function PortfolioPage() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 onClick={() => setActive(p)}
-                className="group relative aspect-[4/5] rounded-3xl overflow-hidden glass-strong text-left"
+                className="group relative aspect-4/5 rounded-3xl overflow-hidden glass-strong text-left"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${p.color} opacity-80 transition group-hover:opacity-100`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${p.color} opacity-80 transition group-hover:opacity-100`} />
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 <div className="absolute inset-0 flex items-center justify-center transition duration-500 group-hover:scale-110">
                   <div className="font-display text-7xl font-black text-white/10">
                     {String(p.id).padStart(2, "0")}
                   </div>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
+                <div className="absolute inset-x-0 bottom-0 p-6 bg-linear-to-t from-black/70 to-transparent">
                   <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-white/70">
                     <span>{p.cat}</span>
                     <span className="h-1 w-1 rounded-full bg-white/40" />
@@ -99,7 +99,7 @@ function PortfolioPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+            className="fixed inset-0 z-80 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
             onClick={() => setActive(null)}
           >
             <motion.div
@@ -109,7 +109,7 @@ function PortfolioPage() {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-2xl rounded-3xl glass-strong overflow-hidden shadow-elegant"
             >
-              <div className={`relative h-56 bg-gradient-to-br ${active.color}`}>
+              <div className={`relative h-56 bg-linaer-to-br ${active.color}`}>
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 <button
                   onClick={() => setActive(null)}

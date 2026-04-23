@@ -108,14 +108,14 @@ function ContactPage() {
 
       <section className="mx-auto max-w-6xl mt-16">
         <Reveal>
-          <div className="rounded-3xl glass-strong overflow-hidden h-[360px] relative">
+          <div className="rounded-3xl glass-strong overflow-hidden h-90 relative">
             <iframe
               title="DANKHA office location"
               src="https://www.openstreetmap.org/export/embed.html?bbox=-122.45%2C37.75%2C-122.39%2C37.79&layer=mapnik"
-              className="w-full h-full grayscale-[40%] contrast-110"
+              className="w-full h-full grayscale-40 contrast-110"
               loading="lazy"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-transparent" />
           </div>
         </Reveal>
       </section>
