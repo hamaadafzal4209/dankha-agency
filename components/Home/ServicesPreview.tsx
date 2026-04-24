@@ -1,8 +1,25 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Code2, Megaphone, ShoppingBag } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { services } from "./data";
+
+const services = [
+  {
+    icon: Code2,
+    title: "IT & Engineering",
+    desc: "Web, mobile, SaaS and AI-powered platforms built on a solid foundation.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Ecommerce",
+    desc: "Shopify, WooCommerce and bespoke storefronts that convert and scale.",
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    desc: "SEO, paid media and content strategy to grow your reach with precision.",
+  },
+];
 
 export function ServicesPreview() {
   return (

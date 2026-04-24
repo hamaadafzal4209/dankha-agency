@@ -6,24 +6,6 @@ import {
   Quote
 } from "lucide-react";
 
-export const services = [
-  {
-    icon: Code2,
-    title: "IT & Engineering",
-    desc: "Web, mobile, SaaS and AI-powered platforms built on a solid foundation.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "Ecommerce",
-    desc: "Shopify, WooCommerce and bespoke storefronts that convert and scale.",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital Marketing",
-    desc: "SEO, paid media and content strategy to grow your reach with precision.",
-  },
-];
-
 export const projects = [
   { title: "Lumen Commerce", tag: "Ecommerce", color: "from-[#39587b] to-[#3fa1ad]" },
   { title: "NovaBank SaaS", tag: "IT Platform", color: "from-[#3fa1ad] to-[#39587b]" },
