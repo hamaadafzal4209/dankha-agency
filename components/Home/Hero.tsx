@@ -7,7 +7,7 @@ import { OrbitingCircles } from "../ui/orbiting-circles";
 export function Hero() {
   return (
     <section className="relative pt-16 pb-20 px-6 overflow-hidden">
-      <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,13 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative flex h-100 w-full flex-col items-center justify-center overflow-hidden">
+        <div className="relative flex h-80 w-full aspect-square flex-col items-center justify-center overflow-hidden">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-lg blur-md gradient-primary opacity-60 group-hover:opacity-100 transition" />
+            <div className="relative h-18 w-18 rounded-lg gradient-primary flex items-center justify-center font-display font-black text-white">
+              <Sparkles className="mx-auto text-white" size={28} />
+            </div>
+          </div>
           <OrbitingCircles iconSize={40}>
             <Icons.whatsapp />
             <Icons.notion />

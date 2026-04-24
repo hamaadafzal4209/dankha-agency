@@ -6,7 +6,7 @@ import { services } from "./data";
 
 export function ServicesPreview() {
   return (
-    <section className="px-6 py-32">
+    <section className="px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="What we do"

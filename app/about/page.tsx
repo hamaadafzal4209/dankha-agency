@@ -4,7 +4,6 @@ import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamSection } from "@/components/about/TeamSection";
 import { TimelineSection } from "@/components/about/TimelineSection";
 
-
 function AboutPage() {
   return (
     <div className="px-6 pb-32">

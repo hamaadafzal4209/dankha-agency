@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -38,18 +39,12 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6">
         <div
-          className={`flex w-full items-center justify-between rounded-2xl px-4 md:px-6 py-3 transition-all duration-500 ${
-            scrolled ? "backdrop-blur-3xl shadow-elegant" : "bg-transparent"
+          className={`flex w-full items-center justify-between rounded-2xl transition-all duration-500 ${
+            scrolled ? "backdrop-blur-3xl shadow-elegant px-4 md:px-6 py-3" : "bg-transparent"
           }`}
         >
           <Link href="/" className="group flex items-center gap-2.5">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-lg blur-md gradient-primary opacity-60 group-hover:opacity-100 transition" />
-              <div className="relative h-9 w-9 rounded-lg gradient-primary flex items-center justify-center font-display font-black text-white">
-                D
-              </div>
-            </div>
-            <span className="font-display text-lg font-bold tracking-wider">DANKHA</span>
+            <Image src="/assets/logo.svg" alt="DANKHA Logo" width={120} height={36} />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

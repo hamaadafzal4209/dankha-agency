@@ -34,7 +34,7 @@ export function TimelineSection() {
     <section className="mx-auto mt-32 max-w-4xl">
       <SectionHeading eyebrow="Our journey" title="Six years, one obsession." />
       <div className="relative mt-16">
-        <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-secondary/40 to-transparent md:left-1/2" />
+        <div className="absolute bottom-0 left-4 top-0 w-px bg-linear-to-b from-transparent via-secondary/40 to-transparent md:left-1/2" />
         <div className="space-y-12">
           {timeline.map((item, i) => (
             <Reveal key={item.year} delay={i * 0.1}>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MessageCircle, Send, Mail, Globe, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -20,10 +21,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="h-10 w-10 rounded-lg gradient-primary flex items-center justify-center font-display font-black text-white">
-                D
-              </div>
-              <span className="font-display text-xl font-bold tracking-wider">DANKHA</span>
+                <Image src="/assets/logo.svg" alt="DANKHA Logo" width={120} height={36} />
             </Link>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground leading-relaxed">
               We craft scalable digital experiences across IT, Ecommerce and Marketing —
