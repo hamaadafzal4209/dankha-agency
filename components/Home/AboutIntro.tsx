@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function AboutIntro() {
   return (
-    <section className="px-6 py-20">
+    <section className="px-6 py-20 pt-8">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
         <Reveal>
           <div className="relative aspect-square md:aspect-6/4 w-full overflow-hidden rounded-3xl">

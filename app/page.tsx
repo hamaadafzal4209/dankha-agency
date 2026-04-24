@@ -2,6 +2,7 @@
 
 import { Hero } from "@/components/Home/Hero";
 import { StatsBar } from "@/components/Home/StatsBar";
+import { TrustedPartners } from "@/components/Home/TrustedPartners";
 import { ServicesPreview } from "@/components/Home/ServicesPreview";
 import { AboutIntro } from "@/components/Home/AboutIntro";
 import { Portfolio } from "@/components/Home/Portfolio";
@@ -13,6 +14,7 @@ const page = () => {
     <>
       <Hero />
       <StatsBar />
+      <TrustedPartners />
       <AboutIntro />
       <ServicesPreview />
       <Portfolio />
