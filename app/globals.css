@@ -79,7 +79,7 @@
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, oklch(0.45 0.07 248), oklch(0.68 0.10 200));
   --gradient-glow: linear-gradient(135deg, oklch(0.62 0.10 245), oklch(0.78 0.13 195));
-  --gradient-radial: radial-gradient(circle at 30% 20%, rgba(57, 88, 123, 0.4),, transparent 60%),
+  --gradient-radial: radial-gradient(circle at 30% 20%, rgba(57, 88, 123, 0.4), transparent 60%),
                      radial-gradient(circle at 80% 80%, oklch(0.68 0.10 200 / 0.3), transparent 60%);
   --gradient-text: linear-gradient(135deg, oklch(0.92 0.04 220), oklch(0.78 0.13 195));
 
