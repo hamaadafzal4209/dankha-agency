@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { Preloader } from "@/components/Preloader";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <>
           <NextTopLoader color="var(--secondary)" showSpinner={false} />
+          <Analytics />
           <Preloader />
           <Background />
           <CursorGlow />
