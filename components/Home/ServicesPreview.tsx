@@ -1,5 +1,10 @@
 import React from "react";
-import { Code2, Megaphone, Palette, ShoppingCart } from "lucide-react";
+import {
+  ComputerDesktopIcon,
+  ShoppingBagIcon,
+  PresentationChartBarIcon,
+  PaintBrushIcon,
+} from "@heroicons/react/24/outline";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { SectionHeading } from "../SectionHeading";
 
@@ -19,6 +24,7 @@ export function ServicesPreview() {
             className={item.className}
             icon={item.icon}
             watermarkIcon={item.watermarkIcon}
+            href={item.href}
           />
         ))}
       </BentoGrid>
@@ -32,47 +38,51 @@ const items = [
     description:
       "Reliable infrastructure, scalable web systems, and technical support built for growing businesses.",
     className: "md:col-span-2",
+    href: "/services#it",
     icon: (
-      <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-200">
-        <Code2 className="h-5 w-5" />
+      <div className="inline-flex items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-300">
+        <ComputerDesktopIcon className="h-5 w-5" />
       </div>
     ),
-    watermarkIcon: <Code2 className="h-24 w-24" />,
+    watermarkIcon: <ComputerDesktopIcon className="h-40 w-40" strokeWidth={1} />,
   },
   {
     title: "Ecommerce",
     description:
-      "Conversion-focused storefronts, smooth checkout journeys, and catalog experiences that sell clearly.",
+      "Conversion-focused storefronts, smooth checkout journeys, and catalog experiences that sell.",
     className: "md:col-span-1",
+    href: "/services#ecommerce",
     icon: (
-      <div className="rounded-xl border border-sky-300/20 bg-sky-300/10 p-3 text-sky-100">
-        <ShoppingCart className="h-5 w-5" />
+      <div className="inline-flex items-center justify-center rounded-2xl border border-sky-400/20 bg-sky-400/10 p-3 text-sky-300">
+        <ShoppingBagIcon className="h-5 w-5" />
       </div>
     ),
-    watermarkIcon: <ShoppingCart className="h-24 w-24" />,
+    watermarkIcon: <ShoppingBagIcon className="h-40 w-40" strokeWidth={1} />,
   },
   {
     title: "Marketing",
     description:
-      "Campaign planning, brand messaging, and digital growth tactics designed to attract qualified leads.",
+      "Campaign strategy, brand messaging, and growth tactics designed to attract qualified leads.",
     className: "md:col-span-1",
+    href: "/services#marketing",
     icon: (
-      <div className="rounded-xl border border-blue-300/20 bg-blue-300/10 p-3 text-blue-100">
-        <Megaphone className="h-5 w-5" />
+      <div className="inline-flex items-center justify-center rounded-2xl border border-violet-400/20 bg-violet-400/10 p-3 text-violet-300">
+        <PresentationChartBarIcon className="h-5 w-5" />
       </div>
     ),
-    watermarkIcon: <Megaphone className="h-24 w-24" />,
+    watermarkIcon: <PresentationChartBarIcon className="h-40 w-40" strokeWidth={1} />,
   },
   {
     title: "Designing",
     description:
       "Brand identity, interface design, and polished visuals that make every interaction feel intentional.",
     className: "md:col-span-2",
+    href: "/services#design",
     icon: (
-      <div className="rounded-xl border border-teal-300/20 bg-teal-300/10 p-3 text-teal-100">
-        <Palette className="h-5 w-5" />
+      <div className="inline-flex items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-300">
+        <PaintBrushIcon className="h-5 w-5" />
       </div>
     ),
-    watermarkIcon: <Palette className="h-24 w-24" />,
+    watermarkIcon: <PaintBrushIcon className="h-40 w-40" strokeWidth={1} />,
   },
 ];
