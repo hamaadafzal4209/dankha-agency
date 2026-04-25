@@ -10,7 +10,7 @@ import { SectionHeading } from "../SectionHeading";
 
 export function ServicesPreview() {
   return (
-    <div className="mx-auto max-w-7xl px-6">
+    <div className="mx-auto max-w-5xl px-6">
       <SectionHeading
         eyebrow="Our Services"
         title="Crafted for impact, built for growth."
@@ -38,7 +38,7 @@ const items = [
     description:
       "Reliable infrastructure, scalable web systems, and technical support built for growing businesses.",
     className: "md:col-span-2",
-    href: "/services#it",
+    href: "/services/it",
     icon: (
       <div className="inline-flex items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-300">
         <ComputerDesktopIcon className="h-5 w-5" />
@@ -51,7 +51,7 @@ const items = [
     description:
       "Conversion-focused storefronts, smooth checkout journeys, and catalog experiences that sell.",
     className: "md:col-span-1",
-    href: "/services#ecommerce",
+    href: "/services/ecommerce",
     icon: (
       <div className="inline-flex items-center justify-center rounded-2xl border border-sky-400/20 bg-sky-400/10 p-3 text-sky-300">
         <ShoppingBagIcon className="h-5 w-5" />
@@ -64,7 +64,7 @@ const items = [
     description:
       "Campaign strategy, brand messaging, and growth tactics designed to attract qualified leads.",
     className: "md:col-span-1",
-    href: "/services#marketing",
+    href: "/services/marketing",
     icon: (
       <div className="inline-flex items-center justify-center rounded-2xl border border-violet-400/20 bg-violet-400/10 p-3 text-violet-300">
         <PresentationChartBarIcon className="h-5 w-5" />
@@ -77,7 +77,7 @@ const items = [
     description:
       "Brand identity, interface design, and polished visuals that make every interaction feel intentional.",
     className: "md:col-span-2",
-    href: "/services#design",
+    href: "/services/designing",
     icon: (
       <div className="inline-flex items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-300">
         <PaintBrushIcon className="h-5 w-5" />

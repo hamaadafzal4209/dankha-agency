@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Background } from "@/components/Background";
-import { CursorGlow } from "@/components/CursorGlow";
-import { BackToTop } from "@/components/BackToTop";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import NextTopLoader from "nextjs-toploader";
-import { Preloader } from "@/components/Preloader";
-import { Analytics } from "@vercel/analytics/next"
+import { AppShell } from "@/components/AppShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,17 +34,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <>
-          <NextTopLoader color="var(--secondary)" showSpinner={false} />
-          <Analytics />
-          <Preloader />
-          <Background />
-          <CursorGlow />
-          <Navbar />
-          <main className="relative pt-24 min-h-screen">{children}</main>
-          <Footer />
-          <BackToTop />
-        </>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

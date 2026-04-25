@@ -3,22 +3,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/contact", label: "Contact" },
+] as const;
+
+const serviceLinks = [
+  { href: "/services/it", label: "IT Solutions" },
+  { href: "/services/ecommerce", label: "Ecommerce" },
+  { href: "/services/marketing", label: "Marketing" },
+  { href: "/services/designing", label: "Designing" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const desktopCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -27,6 +34,59 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!pathname.startsWith("/services")) {
+      setDesktopServicesOpen(false);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (desktopCloseTimeoutRef.current) {
+        clearTimeout(desktopCloseTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const body = document.body;
+    const html = document.documentElement;
+
+    if (open) {
+      body.style.overflow = "hidden";
+      html.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "";
+      html.style.overflow = "";
+    }
+
+    return () => {
+      body.style.overflow = "";
+      html.style.overflow = "";
+    };
+  }, [open]);
+
+  const openDesktopServices = () => {
+    if (desktopCloseTimeoutRef.current) {
+      clearTimeout(desktopCloseTimeoutRef.current);
+      desktopCloseTimeoutRef.current = null;
+    }
+    setDesktopServicesOpen(true);
+  };
+
+  const closeDesktopServices = () => {
+    if (desktopCloseTimeoutRef.current) {
+      clearTimeout(desktopCloseTimeoutRef.current);
+    }
+    desktopCloseTimeoutRef.current = setTimeout(() => {
+      setDesktopServicesOpen(false);
+    }, 120);
+  };
 
   return (
     <motion.header
@@ -63,6 +123,59 @@ export function Navbar() {
                 )}
               </Link>
             ))}
+
+            <div
+              className="relative"
+              onMouseEnter={openDesktopServices}
+              onMouseLeave={closeDesktopServices}
+            >
+              <button
+                type="button"
+                onClick={() => setDesktopServicesOpen((prev) => !prev)}
+                onFocus={openDesktopServices}
+                aria-haspopup="menu"
+                aria-expanded={desktopServicesOpen}
+                className={`relative inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
+                  pathname.startsWith("/services")
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Services
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    desktopServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+                {pathname.startsWith("/services") && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-3 -bottom-0.5 h-0.5 gradient-primary rounded-full"
+                  />
+                )}
+              </button>
+
+              <div
+                className={`absolute left-0 top-full z-70 w-64 pt-3 transition-all duration-200 ${
+                  desktopServicesOpen
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none translate-y-2 opacity-0"
+                }`}
+              >
+                <div className="rounded-2xl border border-white/15 bg-card/95 shadow-card backdrop-blur-xl p-2">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      onClick={() => setDesktopServicesOpen(false)}
+                      className="block rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </nav>
 
           <div className="hidden lg:block">
@@ -92,7 +205,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden mx-4 mt-3 rounded-2xl backdrop-blur-3xl p-4"
+            className="lg:hidden mx-4 mt-3 max-h-[calc(100dvh-7.5rem)] overflow-y-auto rounded-2xl backdrop-blur-3xl p-4"
           >
             <nav className="flex flex-col gap-1">
               {links.map((l) => (
@@ -107,6 +220,47 @@ export function Navbar() {
                   {l.label}
                 </Link>
               ))}
+
+              <button
+                type="button"
+                onClick={() => setMobileServicesOpen((prev) => !prev)}
+                className="mt-1 inline-flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
+              >
+                <span>Services</span>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    mobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence initial={false}>
+                {mobileServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-1 space-y-1 pl-3">
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          onClick={() => {
+                            setOpen(false);
+                            setMobileServicesOpen(false);
+                          }}
+                          className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
