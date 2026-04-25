@@ -1,57 +1,78 @@
-import Link from "next/link";
-import { ArrowRight, Code2, Megaphone, ShoppingBag } from "lucide-react";
-import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
-
-const services = [
-  {
-    icon: Code2,
-    title: "IT & Engineering",
-    desc: "Web, mobile, SaaS and AI-powered platforms built on a solid foundation.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "Ecommerce",
-    desc: "Shopify, WooCommerce and bespoke storefronts that convert and scale.",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital Marketing",
-    desc: "SEO, paid media and content strategy to grow your reach with precision.",
-  },
-];
+import React from "react";
+import { Code2, Megaphone, Palette, ShoppingCart } from "lucide-react";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { SectionHeading } from "../SectionHeading";
 
 export function ServicesPreview() {
   return (
-    <section className="px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="What we do"
-          title="Three disciplines, one obsession with quality."
-          description="We blend engineering, commerce and growth into a single seamless practice."
-        />
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.1}>
-              <div className="group relative h-full rounded-3xl glass-strong p-8 transition-all duration-500 hover:-translate-y-2 hover:border-secondary/40">
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 gradient-primary -z-10 blur-2xl" />
-                <div className="relative h-14 w-14 rounded-2xl gradient-primary flex items-center justify-center text-white shadow-elegant">
-                  <s.icon size={22} />
-                  <div className="absolute inset-0 rounded-2xl gradient-primary blur-xl opacity-60 -z-10 group-hover:opacity-100 transition" />
-                </div>
-                <h3 className="mt-6 font-display text-xl font-semibold">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <Link
-                  href="/services"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-secondary hover:gap-3 transition-all"
-                >
-                  Learn more <ArrowRight size={14} />
-                </Link>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="mx-auto max-w-7xl px-6">
+      <SectionHeading
+        eyebrow="Our Services"
+        title="Crafted for impact, built for growth."
+      />
+      <BentoGrid className="mx-auto mt-12 w-full md:auto-rows-[19rem]">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            className={item.className}
+            icon={item.icon}
+            watermarkIcon={item.watermarkIcon}
+          />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
+
+const items = [
+  {
+    title: "IT Solutions",
+    description:
+      "Reliable infrastructure, scalable web systems, and technical support built for growing businesses.",
+    className: "md:col-span-2",
+    icon: (
+      <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-cyan-200">
+        <Code2 className="h-5 w-5" />
+      </div>
+    ),
+    watermarkIcon: <Code2 className="h-24 w-24" />,
+  },
+  {
+    title: "Ecommerce",
+    description:
+      "Conversion-focused storefronts, smooth checkout journeys, and catalog experiences that sell clearly.",
+    className: "md:col-span-1",
+    icon: (
+      <div className="rounded-xl border border-sky-300/20 bg-sky-300/10 p-3 text-sky-100">
+        <ShoppingCart className="h-5 w-5" />
+      </div>
+    ),
+    watermarkIcon: <ShoppingCart className="h-24 w-24" />,
+  },
+  {
+    title: "Marketing",
+    description:
+      "Campaign planning, brand messaging, and digital growth tactics designed to attract qualified leads.",
+    className: "md:col-span-1",
+    icon: (
+      <div className="rounded-xl border border-blue-300/20 bg-blue-300/10 p-3 text-blue-100">
+        <Megaphone className="h-5 w-5" />
+      </div>
+    ),
+    watermarkIcon: <Megaphone className="h-24 w-24" />,
+  },
+  {
+    title: "Designing",
+    description:
+      "Brand identity, interface design, and polished visuals that make every interaction feel intentional.",
+    className: "md:col-span-2",
+    icon: (
+      <div className="rounded-xl border border-teal-300/20 bg-teal-300/10 p-3 text-teal-100">
+        <Palette className="h-5 w-5" />
+      </div>
+    ),
+    watermarkIcon: <Palette className="h-24 w-24" />,
+  },
+];
