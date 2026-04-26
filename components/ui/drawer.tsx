@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -29,21 +30,36 @@ const DrawerOverlay = React.forwardRef<
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
+const drawerContentVariants = cva("fixed z-50 flex h-auto flex-col border bg-background", {
+  variants: {
+    side: {
+      bottom: "inset-x-0 bottom-0 mt-24 rounded-t-[10px]",
+      top: "inset-x-0 top-0 rounded-b-[10px]",
+      left: "inset-y-0 left-0 h-dvh w-full rounded-r-[10px] sm:max-w-xl",
+      right: "inset-y-0 right-0 h-dvh w-full rounded-l-[10px] sm:max-w-xl",
+    },
+  },
+  defaultVariants: {
+    side: "bottom",
+  },
+});
+
+interface DrawerContentProps
+  extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
+    VariantProps<typeof drawerContentVariants> {}
+
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+  DrawerContentProps
+>(({ className, children, side = "bottom", ...props }, ref) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
       ref={ref}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
-        className,
-      )}
+      className={cn(drawerContentVariants({ side }), className)}
       {...props}
     >
-      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+      {side === "bottom" ? <div className="mx-auto mt-4 h-2 w-25 rounded-full bg-muted" /> : null}
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>

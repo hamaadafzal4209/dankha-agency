@@ -4,37 +4,36 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import {
-  Briefcase,
-  UserCheck,
-  TrendingUp,
-  Award,
-  ArrowUpRight,
-} from "lucide-react";
+  BriefcaseIcon,
+  UserGroupIcon,
+  ArrowTrendingUpIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 import { AvatarCircles } from "../ui/avatar-circles";
 
 const stats = [
   {
     value: "120+",
     label: "Projects shipped",
-    icon: Briefcase,
+    icon: BriefcaseIcon,
     description: "Across 12 industries",
   },
   {
     value: "48",
     label: "Happy clients",
-    icon: UserCheck,
+    icon: UserGroupIcon,
     description: "92% retention rate",
   },
   {
     value: "9.4x",
     label: "Average ROI",
-    icon: TrendingUp,
+    icon: ArrowTrendingUpIcon,
     description: "Within first year",
   },
   {
     value: "12",
     label: "Industry awards",
-    icon: Award,
+    icon: SparklesIcon,
     description: "For design excellence",
   },
 ];

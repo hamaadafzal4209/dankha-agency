@@ -1,237 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
+import { ServiceSubcategoryDrawer } from "@/components/services/ServiceSubcategoryDrawer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import {
-  BarChart3,
-  Briefcase,
-  Brush,
-  Code2,
-  Compass,
-  CreditCard,
-  Globe,
-  Layout,
-  Megaphone,
-  Paintbrush,
-  PenTool,
-  Search,
-  Server,
-  Share2,
-  ShoppingBag,
-  Smartphone,
-  Sparkles,
-  SwatchBook,
-} from "lucide-react";
-
-type ServicePageContent = {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  heroPoints: string[];
-  subServices: { title: string; description: string; icon: React.ComponentType<{ size?: number; className?: string }> }[];
-};
-
-const servicePages: Record<string, ServicePageContent> = {
-  it: {
-    eyebrow: "IT Solutions",
-    title: "Build reliable digital products that scale.",
-    subtitle:
-      "From architecture to deployment, we deliver robust systems designed for performance, security, and long-term growth.",
-    heroPoints: ["Product engineering", "Cloud infrastructure", "Security & scalability"],
-    subServices: [
-      { title: "Web Application Development", description: "Custom platforms built with modern stacks for speed, stability, and maintainability.", icon: Code2 },
-      { title: "Mobile App Development", description: "Cross-platform and native mobile experiences built for usability and reliability.", icon: Smartphone },
-      { title: "System Architecture", description: "Scalable architecture planning for high traffic, complex workflows, and future growth.", icon: Layout },
-      { title: "Backend & API Engineering", description: "Secure, well-structured APIs and backend systems that power modern digital products.", icon: Server },
-      { title: "Cloud & DevOps", description: "CI/CD, automated deployment pipelines, and cloud environments tuned for uptime.", icon: Globe },
-      { title: "Technical Consulting", description: "Clear technical direction for product roadmaps, migrations, and platform decisions.", icon: Briefcase },
-    ],
-  },
-  ecommerce: {
-    eyebrow: "Ecommerce",
-    title: "Launch and optimize stores that convert.",
-    subtitle:
-      "We build ecommerce ecosystems that improve shopper trust, reduce friction, and increase revenue across channels.",
-    heroPoints: ["Store strategy", "Conversion optimization", "Growth-ready commerce"],
-    subServices: [
-      { title: "Store Setup & Launch", description: "End-to-end setup for Shopify, WooCommerce, and custom commerce builds.", icon: ShoppingBag },
-      { title: "UX for Conversion", description: "Checkout, product pages, and customer journeys optimized for higher conversion rates.", icon: Compass },
-      { title: "Payment Integration", description: "Secure payment gateways, wallets, and subscription billing tailored to your model.", icon: CreditCard },
-      { title: "Catalog & Inventory Structure", description: "Smart product structuring and inventory flows for smooth operations at scale.", icon: Layout },
-      { title: "Performance Optimization", description: "Faster storefront speed, cleaner UX, and technical fixes that reduce drop-offs.", icon: BarChart3 },
-      { title: "International Commerce", description: "Multi-region stores with currency, language, and shipping localization.", icon: Globe },
-    ],
-  },
-  marketing: {
-    eyebrow: "Marketing",
-    title: "Create marketing engines that compound growth.",
-    subtitle:
-      "We blend strategy, creative execution, and analytics to generate consistent qualified demand.",
-    heroPoints: ["Data-backed campaigns", "Brand growth", "Performance marketing"],
-    subServices: [
-      { title: "Marketing Strategy", description: "Positioning, offer strategy, and channel planning aligned with business goals.", icon: Compass },
-      { title: "SEO & Content Growth", description: "Technical SEO, content plans, and authority building for long-term visibility.", icon: Search },
-      { title: "Paid Advertising", description: "High-performance campaigns across Google, Meta, and other paid channels.", icon: BarChart3 },
-      { title: "Social Media Management", description: "Content calendars, creative direction, and engagement-focused social execution.", icon: Share2 },
-      { title: "Brand Messaging", description: "Clear messaging frameworks that sharpen your value proposition and voice.", icon: Megaphone },
-      { title: "Analytics & Reporting", description: "Attribution, dashboards, and reporting systems for confident decision-making.", icon: Sparkles },
-    ],
-  },
-  designing: {
-    eyebrow: "Designing",
-    title: "Design experiences that feel clear, premium, and memorable.",
-    subtitle:
-      "We create cohesive design systems and brand experiences that make your product look and feel world-class.",
-    heroPoints: ["Brand identity", "UI/UX systems", "Creative direction"],
-    subServices: [
-      { title: "Brand Identity Design", description: "Logos, typography, color systems, and visual language built for recognition.", icon: Paintbrush },
-      { title: "UI/UX Design", description: "User-first interface and experience design for websites, apps, and dashboards.", icon: PenTool },
-      { title: "Design Systems", description: "Reusable component systems for consistency, speed, and scalable design operations.", icon: SwatchBook },
-      { title: "Website Design", description: "High-impact website layouts balancing storytelling, usability, and conversion.", icon: Layout },
-      { title: "Visual Creative Assets", description: "Campaign graphics, social creatives, and launch assets for digital channels.", icon: Brush },
-      { title: "Design Direction", description: "Ongoing creative leadership to keep visuals polished and strategically aligned.", icon: Compass },
-    ],
-  },
-};
-
-type ServiceStep = {
-  title: string;
-  description: string;
-};
-
-type ServiceFaq = {
-  question: string;
-  answer: string;
-};
-
-const serviceApproach: Record<string, ServiceStep[]> = {
-  it: [
-    {
-      title: "Discovery & architecture",
-      description: "We map business goals to system architecture, define boundaries, and reduce technical risk early.",
-    },
-    {
-      title: "Build & integration",
-      description: "Our team ships features in short cycles, integrates with your stack, and keeps quality gates strict.",
-    },
-    {
-      title: "Launch & optimization",
-      description: "After launch, we monitor performance, harden security, and iterate against real user behavior.",
-    },
-  ],
-  ecommerce: [
-    {
-      title: "Store audit",
-      description: "We evaluate friction in catalog, cart, and checkout to identify the highest-impact opportunities.",
-    },
-    {
-      title: "UX & conversion execution",
-      description: "We redesign critical journeys and implement improvements that increase trust and purchase intent.",
-    },
-    {
-      title: "Growth loop",
-      description: "We establish experimentation, reporting, and optimization cycles for compounding performance gains.",
-    },
-  ],
-  marketing: [
-    {
-      title: "Positioning & strategy",
-      description: "We align your offer, audience, and channels into a clear plan with measurable goals.",
-    },
-    {
-      title: "Campaign production",
-      description: "Our team launches channel-specific creative and copy tailored to each stage of the funnel.",
-    },
-    {
-      title: "Measurement & scaling",
-      description: "We optimize with attribution insights, budget reallocation, and continuous creative iteration.",
-    },
-  ],
-  designing: [
-    {
-      title: "Brand and UX discovery",
-      description: "We capture voice, audience expectations, and product goals before touching visual direction.",
-    },
-    {
-      title: "Design system buildout",
-      description: "We craft reusable visual and interaction patterns to ensure consistency across every touchpoint.",
-    },
-    {
-      title: "Delivery & evolution",
-      description: "Design assets, handoff files, and iteration loops keep your brand sharp as your business grows.",
-    },
-  ],
-};
-
-const serviceOutcomes: Record<string, string[]> = {
-  it: [
-    "Faster shipping velocity with clearer engineering workflows",
-    "Higher reliability, uptime, and platform resilience",
-    "Security-aware architecture ready for scale",
-    "Technical decisions aligned with long-term product growth",
-  ],
-  ecommerce: [
-    "Improved conversion rates across product and checkout flows",
-    "Lower drop-off through streamlined purchase journeys",
-    "Stronger repeat purchase and customer retention",
-    "Operational clarity with cleaner commerce integrations",
-  ],
-  marketing: [
-    "More qualified pipeline from better channel targeting",
-    "Higher ROAS through data-led campaign optimization",
-    "Sharper brand message across all customer touchpoints",
-    "Reliable reporting cadence for faster decisions",
-  ],
-  designing: [
-    "A stronger, more recognizable visual identity",
-    "Cleaner UX that improves clarity and confidence",
-    "Consistent design language across product and marketing",
-    "Production-ready assets that speed up execution",
-  ],
-};
-
-const serviceFaqs: Record<string, ServiceFaq[]> = {
-  it: [
-    {
-      question: "Can you work with our existing codebase?",
-      answer: "Yes. We usually begin with a technical audit, then propose a phased plan to improve quality without slowing delivery.",
-    },
-    {
-      question: "Do you handle cloud and DevOps too?",
-      answer: "Yes. We support CI/CD, deployment workflows, observability, and cloud architecture decisions.",
-    },
-  ],
-  ecommerce: [
-    {
-      question: "Do you support Shopify and custom stacks?",
-      answer: "Yes. We work across Shopify, WooCommerce, and headless builds depending on your business model.",
-    },
-    {
-      question: "How do you measure ecommerce success?",
-      answer: "We track conversion, average order value, checkout completion, and retention indicators tied to revenue.",
-    },
-  ],
-  marketing: [
-    {
-      question: "Do you only run ads, or full-funnel marketing?",
-      answer: "We handle full-funnel strategy including messaging, paid channels, content, and reporting.",
-    },
-    {
-      question: "How quickly can campaigns go live?",
-      answer: "Initial campaigns typically launch within 1-3 weeks depending on assets, tracking readiness, and channel scope.",
-    },
-  ],
-  designing: [
-    {
-      question: "Can you design and hand off to our dev team?",
-      answer: "Absolutely. We deliver structured files, design tokens, and implementation notes to make handoff smooth.",
-    },
-    {
-      question: "Do you offer brand and product design together?",
-      answer: "Yes. We often combine identity, UX, and design systems so your brand feels consistent across every surface.",
-    },
-  ],
-};
+import { SERVICE_ICON_MAP } from "@/data/service-icons";
+import { serviceApproach, serviceFaqs, serviceOutcomes, servicePages } from "@/data/service-details";
 
 export function generateStaticParams() {
   return Object.keys(servicePages).map((slug) => ({ slug }));
@@ -287,31 +60,53 @@ async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }>
       <section className="mx-auto mt-14 max-w-7xl">
         <Reveal>
           <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            Included Sub-services
+            Subcategories & Sub-services
           </h2>
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Every engagement is tailored, but these are the most common scopes we deliver under this service.
+            Explore focused subcategories for this service. Open any card to view its full detailed scope.
           </p>
         </Reveal>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {service.subServices.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.04}>
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-white/10 glass p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20">
-                <div className="absolute -right-6 -top-6 text-white/5 transition group-hover:text-white/10">
-                  <item.icon size={68} />
-                </div>
+          {service.subcategories.map((subcategory, index) => {
+            const Icon = SERVICE_ICON_MAP[subcategory.icon];
 
-                <div className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-400/12 text-cyan-300">
-                  <item.icon size={20} />
-                </div>
-                <h3 className="relative mt-4 font-display text-lg font-semibold">{item.title}</h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-              </article>
-            </Reveal>
-          ))}
+            return (
+              <Reveal key={subcategory.title} delay={index * 0.04}>
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 glass p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20">
+                  <div className="absolute -right-6 -top-6 text-white/5 transition group-hover:text-white/10">
+                    <Icon size={68} />
+                  </div>
+
+                  <div className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-400/12 text-cyan-300">
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="relative mt-4 font-display text-lg font-semibold">{subcategory.title}</h3>
+                  <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {subcategory.description}
+                  </p>
+
+                  <ul className="relative mt-4 space-y-2">
+                    {subcategory.subServices.slice(0, 3).map((subService) => (
+                      <li key={subService} className="flex items-start gap-2 text-sm text-foreground/80">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                        <span>{subService}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="relative mt-auto">
+                    <ServiceSubcategoryDrawer
+                      serviceEyebrow={service.eyebrow}
+                      subcategory={subcategory}
+                    />
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
