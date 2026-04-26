@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -61,7 +62,15 @@ function PortfolioPage() {
                   href={`/portfolio/${p.slug}`}
                   className="relative block aspect-4/5 overflow-hidden rounded-3xl glass-strong text-left"
                 >
-                  <div className={`absolute inset-0 bg-linear-to-br ${p.color} opacity-80 transition group-hover:opacity-100`} />
+                  <Image
+                    src={p.heroImage}
+                    alt={p.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-black/25" />
+                  <div className={`absolute inset-0 bg-linear-to-br ${p.color} opacity-45 transition group-hover:opacity-60`} />
                   <div className="absolute inset-0 grid-bg opacity-30" />
                   <div className="absolute inset-0 flex items-center justify-center transition duration-500 group-hover:scale-110">
                     <div className="font-display text-7xl font-black text-white/10">
