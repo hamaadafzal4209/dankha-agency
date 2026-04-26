@@ -51,9 +51,9 @@ export function TimelineSection() {
                   }`}
                 >
                   <div className="inline-block rounded-2xl glass-strong p-6 text-left">
-                    <div className="font-mono text-xs tracking-wider text-secondary">
+                    <time dateTime={item.year} className="font-mono text-xs tracking-wider text-secondary">
                       {item.year}
-                    </div>
+                    </time>
                     <h3 className="mt-2 font-display text-lg font-semibold">
                       {item.title}
                     </h3>

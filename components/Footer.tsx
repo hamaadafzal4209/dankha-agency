@@ -40,7 +40,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <nav aria-label="Company links">
             <h4 className="font-display text-sm font-semibold mb-4 tracking-wider uppercase text-foreground">
               Company
             </h4>
@@ -48,17 +48,17 @@ export function Footer() {
               <li><Link href="/about" className="hover:text-foreground transition">About</Link></li>
               <li><Link href="/portfolio" className="hover:text-foreground transition">Portfolio</Link></li>
             </ul>
-          </div>
+          </nav>
 
           <div>
             <h4 className="font-display text-sm font-semibold mb-4 tracking-wider uppercase text-foreground">
               Get in touch
             </h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>hello@dankha.com</li>
-              <li>+1 (555) 010-2024</li>
-              <li>San Francisco · Remote</li>
-            </ul>
+            <address className="not-italic space-y-3 text-sm text-muted-foreground">
+              <p><a href="mailto:hello@dankha.com" className="hover:text-foreground transition">hello@dankha.com</a></p>
+              <p><a href="tel:+15550102024" className="hover:text-foreground transition">+1 (555) 010-2024</a></p>
+              <p>San Francisco &middot; Remote</p>
+            </address>
           </div>
         </div>
 

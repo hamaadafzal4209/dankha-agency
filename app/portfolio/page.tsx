@@ -26,7 +26,7 @@ function PortfolioPage() {
       </section>
 
       <div className="mx-auto max-w-7xl mt-14">
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div role="group" aria-label="Filter by category" className="flex flex-wrap items-center justify-center gap-2">
           {portfolioCategories.map((c) => (
             <button
               key={c}
@@ -49,7 +49,7 @@ function PortfolioPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((p, i) => (
-              <motion.div
+              <motion.article
                 key={p.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}
@@ -78,11 +78,11 @@ function PortfolioPage() {
                     </div>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-6 bg-linear-to-t from-black/80 via-black/30 to-transparent">
-                    <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-white/70">
+                    <p className="flex items-center gap-3 text-xs uppercase tracking-wider text-white/70">
                       <span>{p.cat}</span>
-                      <span className="h-1 w-1 rounded-full bg-white/40" />
+                      <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden="true" />
                       <span>{p.year}</span>
-                    </div>
+                    </p>
                     <h3 className="mt-1 font-display text-2xl font-bold text-white">{p.title}</h3>
                     <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/80">{p.impact}</p>
                   </div>
@@ -90,7 +90,7 @@ function PortfolioPage() {
                     View Project
                   </div>
                 </Link>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </div>

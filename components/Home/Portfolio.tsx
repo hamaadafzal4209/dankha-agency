@@ -37,7 +37,7 @@ export function Portfolio() {
                   </div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 bg-linear-to-t from-black/60 to-transparent">
-                  <div className="text-xs uppercase tracking-wider text-white/70">{project.cat}</div>
+                  <p className="text-xs uppercase tracking-wider text-white/70">{project.cat}</p>
                   <h3 className="mt-1 font-display text-2xl font-bold text-white">{project.title}</h3>
                 </div>
                 <div className="absolute top-4 right-4 h-10 w-10 rounded-full glass-strong flex items-center justify-center opacity-0 group-hover:opacity-100 transition">

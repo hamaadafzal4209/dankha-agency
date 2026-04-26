@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { ServiceSubcategoryDrawer } from "@/components/services/ServiceSubcategoryDrawer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -8,6 +9,26 @@ import { serviceApproach, serviceFaqs, serviceOutcomes, servicePages } from "@/d
 
 export function generateStaticParams() {
   return Object.keys(servicePages).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicePages[slug];
+  if (!service) return {};
+  return {
+    title: service.eyebrow,
+    description: service.subtitle,
+    alternates: { canonical: `https://dankha.co/services/${slug}` },
+    openGraph: {
+      title: `${service.eyebrow} — Dankha Agency`,
+      description: service.subtitle,
+      url: `https://dankha.co/services/${slug}`,
+    },
+  };
 }
 
 async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -22,7 +43,40 @@ async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }>
   const outcomes = serviceOutcomes[slug] ?? [];
   const faqs = serviceFaqs[slug] ?? [];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://dankha.co" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://dankha.co/services" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.eyebrow,
+        item: `https://dankha.co/services/${slug}`,
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.eyebrow,
+    description: service.subtitle,
+    provider: { "@type": "Organization", name: "Dankha Agency", url: "https://dankha.co" },
+    url: `https://dankha.co/services/${slug}`,
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
     <div className="px-6 pb-28 pt-10">
       <section className="mx-auto max-w-7xl rounded-3xl border border-white/10 glass-strong p-8 md:p-12">
         <Reveal>
@@ -192,6 +246,7 @@ async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }>
         </Reveal>
       </section>
     </div>
+    </>
   );
 }
 

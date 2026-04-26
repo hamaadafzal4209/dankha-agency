@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import {
   ArrowRightIcon,
   ArrowTrendingDownIcon,
@@ -18,6 +19,27 @@ export function generateStaticParams() {
   return portfolioProjects.map((project) => ({ slug: project.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getPortfolioProject(slug);
+  if (!project) return {};
+  return {
+    title: project.title,
+    description: project.impact,
+    alternates: { canonical: `https://dankha.co/portfolio/${slug}` },
+    openGraph: {
+      title: `${project.title} — Dankha Agency`,
+      description: project.impact,
+      url: `https://dankha.co/portfolio/${slug}`,
+      images: [{ url: project.heroImage, width: 1600, alt: project.title }],
+    },
+  };
+}
+
 async function PortfolioDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getPortfolioProject(slug);
@@ -26,7 +48,22 @@ async function PortfolioDetailPage({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://dankha.co" },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://dankha.co/portfolio" },
+      { "@type": "ListItem", position: 3, name: project.title, item: `https://dankha.co/portfolio/${slug}` },
+    ],
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     <div className="px-6 pb-28 pt-10">
       <section className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-white/10 glass-strong">
         <div className="grid gap-8 p-8 md:p-10 lg:grid-cols-[1.05fr_1.2fr] lg:items-center lg:p-12">
@@ -296,6 +333,7 @@ async function PortfolioDetailPage({ params }: { params: Promise<{ slug: string 
         </Reveal>
       </section>
     </div>
+    </>
   );
 }
 

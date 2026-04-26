@@ -121,7 +121,7 @@ export function StatsBar() {
   });
 
   return (
-    <section className="px-4 sm:px-6">
+    <section aria-label="Company statistics" className="px-4 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <motion.div

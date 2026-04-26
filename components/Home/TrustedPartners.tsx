@@ -85,7 +85,7 @@ const brands = [
 
 export function TrustedPartners() {
   return (
-    <section className="px-6 py-12">
+    <section className="px-6 py-12" aria-label="Trusted partners and technologies">
       <div className="mx-auto max-w-7xl">
         <p className="mb-8 text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">
           Our trusted partners &amp; technologies

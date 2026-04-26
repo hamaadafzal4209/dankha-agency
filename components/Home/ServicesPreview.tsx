@@ -10,7 +10,7 @@ import { SectionHeading } from "../SectionHeading";
 
 export function ServicesPreview() {
   return (
-    <div className="mx-auto max-w-5xl px-6">
+    <section className="mx-auto max-w-5xl px-6" aria-label="Our services">
       <SectionHeading
         eyebrow="Our Services"
         title="Crafted for impact, built for growth."
@@ -28,7 +28,7 @@ export function ServicesPreview() {
           />
         ))}
       </BentoGrid>
-    </div>
+    </section>
   );
 }
 

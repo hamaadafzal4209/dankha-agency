@@ -175,7 +175,7 @@ const ReviewCard = ({
 
 export function Testimonials() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <section aria-label="Client testimonials" className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <SectionHeading
         eyebrow="Kind words"
         title="Trusted by ambitious teams."
@@ -192,6 +192,6 @@ export function Testimonials() {
           ))}
         </Marquee>
       </div>
-    </div>
+    </section>
   );
 }
