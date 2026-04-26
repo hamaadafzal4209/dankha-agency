@@ -46,9 +46,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link href="/about" className="hover:text-foreground transition">About</Link></li>
-              <li><Link href="/services" className="hover:text-foreground transition">Services</Link></li>
               <li><Link href="/portfolio" className="hover:text-foreground transition">Portfolio</Link></li>
-              <li><Link href="/pricing" className="hover:text-foreground transition">Pricing</Link></li>
             </ul>
           </div>
 
