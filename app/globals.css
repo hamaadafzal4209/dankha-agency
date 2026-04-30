@@ -122,6 +122,11 @@
     overflow-x: hidden;
   }
 
+  body {
+    filter: contrast(1.08) saturate(1.05);
+    transform: translateZ(0);
+  }
+
   h1,
   h2,
   h3,
