@@ -37,7 +37,7 @@ export function ServiceSubcategoryDrawer({
         </Button>
       </DrawerTrigger>
 
-      <DrawerContent className="h-fit max-h-[82dvh] rounded-t-3xl border-white/10 bg-background/95 p-0 backdrop-blur-xl">
+      <DrawerContent className="h-fit max-h-[92vh] rounded-t-3xl border-white/10 bg-background p-0">
         <div className="mx-auto w-full max-w-4xl overflow-y-auto px-6 pb-6 pt-3 md:px-8">
           <DrawerHeader className="border-b border-white/10 px-0 pb-5 pt-2 text-left">
             <div className="flex items-start justify-between gap-4">

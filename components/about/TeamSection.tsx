@@ -11,7 +11,7 @@ export function TeamSection() {
         description="Meet the team behind strategy, design, engineering, and growth. Tap any member to view full profile details."
       />
 
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {teamMembers.map((member, index) => (
           <TeamDrawer key={member.name} member={member} index={index} />
         ))}

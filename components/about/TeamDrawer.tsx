@@ -36,7 +36,7 @@ export function TeamDrawer({ member, index }: TeamDrawerProps) {
         scrollbar appears flush against the right edge of the modal panel,
         not inset inside the padded content column.
       */}
-      <DrawerContent className="max-h-[92dvh] flex flex-col rounded-t-3xl border-white/15 bg-background/95 backdrop-blur-xl">
+      <DrawerContent className="max-h-[92dvh] flex flex-col rounded-t-3xl border-white/15 bg-background">
         <div className="flex-1 overflow-y-auto min-h-0">
         <div className="mx-auto w-full max-w-6xl px-6 pb-8 md:px-8">
           <DrawerHeader className="px-0 pb-2 pt-3 text-left">
