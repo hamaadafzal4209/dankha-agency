@@ -17,11 +17,11 @@ import {
 
 export function Hero() {
   return (
-    <section className="relative pt-0 pb-20 px-6">
+    <section className="relative pt-8 md:pt-0 pb-20 px-6">
       <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-secondary"

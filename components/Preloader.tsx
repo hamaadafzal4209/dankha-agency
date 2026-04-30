@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Preloader() {
   return (
@@ -16,10 +17,7 @@ export function Preloader() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="absolute inset-0 rounded-full blur-2xl gradient-primary opacity-60 animate-glow-pulse" />
-          <div className="relative h-20 w-20 rounded-2xl gradient-primary flex items-center justify-center font-display font-black text-2xl text-white shadow-elegant">
-            D
-          </div>
+          <Image src="/assets/dankha-illustration.png" alt="Logo" width={80} height={80} className="relative rounded-2xl shadow-elegant" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
