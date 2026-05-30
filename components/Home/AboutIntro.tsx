@@ -21,8 +21,8 @@ export function AboutIntro() {
         <div>
           <SectionHeading
             eyebrow="About DANKHA"
-            title="A studio built for the next decade of the internet."
-            description="We are a small senior team obsessed with craft. We work shoulder-to-shoulder with founders and product leaders to ship work that performs in the real world."
+            title="Your Partner for Digital Growth."
+            description="Dankha is a growth-focused agency helping businesses establish, scale, and optimize their digital presence. Through eCommerce solutions, technology services, digital marketing, and social media management, we empower brands to increase visibility, drive revenue, and achieve sustainable growth."
             align="left"
           />
           <Reveal delay={0.3}>
@@ -30,7 +30,7 @@ export function AboutIntro() {
               href="/about"
               className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold gradient-primary transition"
             >
-              Our story <ArrowRight size={14} />    
+              Our Story <ArrowRight size={14} />
             </Link>
           </Reveal>
         </div>

@@ -5,8 +5,8 @@ export function AboutIntro() {
     <section className="mx-auto max-w-5xl pt-10 text-center">
       <SectionHeading
         eyebrow="About us"
-        title="A studio built for ambitious teams."
-        description="We're DANKHA — a small senior team obsessed with shipping work that performs in the real world. We sit between engineering, design and growth, and we move fast without ever cutting corners."
+        title="Helping Brands Grow in a Digital-First World."
+        description="Dankha is a growth-focused digital agency helping businesses establish, scale, and strengthen their online presence. We combine expertise in eCommerce, technology, digital marketing, branding, and social media to deliver scalable solutions that drive measurable business growth."
       />
     </section>
   );

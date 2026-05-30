@@ -21,13 +21,13 @@ export function Hero() {
       <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
         <div className="text-left">
           <motion.div
-          initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-secondary"
           >
             <Sparkles size={12} />
-            Premium digital agency
+            Digital Growth Agency
           </motion.div>
 
           <motion.h1
@@ -36,20 +36,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
           >
-            We build{" "}
-            <span className="gradient-text-bright">digital experiences</span>{" "}
-            that scale.
+            Scale Your Business With{" "}
+            <span className="gradient-text-bright">Industry Experts</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed"
+            className="mt-6 max-w-xl text-lg text-muted-foreground"
           >
-            Engineering, ecommerce and marketing — under one roof. We design,
-            build and grow products with the rigor of a studio and the speed of
-            a startup.
+          We help brands establish, scale, and optimize their digital presence through eCommerce expertise, innovative technology solutions, and data-driven marketing strategies designed to deliver measurable business growth.
           </motion.p>
 
           <motion.div
@@ -62,7 +59,7 @@ export function Hero() {
               href="/contact"
               className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white gradient-primary overflow-hidden shadow-elegant"
             >
-              <span className="relative z-10">Get started</span>
+              <span className="relative z-10">Book a Consultation</span>
               <ArrowRight
                 size={16}
                 className="relative z-10 transition-transform group-hover:translate-x-1"
@@ -74,7 +71,7 @@ export function Hero() {
               href="/portfolio"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold glass hover:bg-white/10 transition"
             >
-              View our work
+              View Our Services
             </Link>
           </motion.div>
         </div>

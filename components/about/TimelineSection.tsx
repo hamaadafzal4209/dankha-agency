@@ -3,29 +3,34 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const timeline = [
   {
-    year: "2019",
-    title: "Founded in a garage",
-    desc: "Three friends, one laptop, big ambitions.",
+    year: "2020",
+    title: "The beginning of Dankha",
+    desc: "Started as a small freelance collaboration focused on eCommerce setup, website development, and digital marketing for early-stage businesses.",
   },
   {
-    year: "2020",
-    title: "First million in revenue",
-    desc: "Shipped 18 products across 4 industries.",
+    year: "2021",
+    title: "First structured client systems",
+    desc: "Transitioned from freelance work to structured agency services, building repeatable systems for Amazon, Shopify, and web development projects.",
   },
   {
     year: "2022",
-    title: "Global team",
-    desc: "Opened studios in Lisbon, Singapore and Toronto.",
+    title: "Expanding service capabilities",
+    desc: "Scaled into full-service digital solutions including performance marketing, automation systems, and brand development for growing businesses.",
+  },
+  {
+    year: "2023",
+    title: "Strategic growth phase",
+    desc: "Partnered with multiple brands across eCommerce and SaaS, focusing on long-term growth strategies and data-driven marketing systems.",
   },
   {
     year: "2024",
-    title: "AI practice launched",
-    desc: "Helping clients ship intelligent products responsibly.",
+    title: "Technology & scaling focus",
+    desc: "Strengthened in-house development capabilities, building scalable web platforms, automation workflows, and performance-focused digital products.",
   },
   {
     year: "2025",
-    title: "120+ projects shipped",
-    desc: "And we're just getting started.",
+    title: "Established growth partner",
+    desc: "Evolved into a full-scale digital growth agency helping brands expand globally through technology, eCommerce, and marketing systems.",
   },
 ];
 

@@ -1,0 +1,1 @@
+export const ContactEmail = 'info@dankha.co'
