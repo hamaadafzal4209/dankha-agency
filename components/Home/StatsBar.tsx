@@ -190,11 +190,11 @@ export function StatsBar() {
               transition={{ delay: 0.6, duration: 0.4 }}
               className="relative mt-8 pt-6 border-t border-white/5 flex justify-center lg:justify-start"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-muted-foreground">
+              <div className="inline-flex items-center gap-4 sm:gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs text-muted-foreground">
                 <div className="flex -space-x-1">
                   <AvatarCircles
                     numPeople={99}
-                    className="[&_img]:h-8 [&_img]:w-8 [&_img]:border-white/80 [&>a:last-child]:h-8 [&>a:last-child]:w-8 [&>a:last-child]:text-[10px]"
+                    className="[&_img]:h-8 [&_img]:w-8 [&_img]:border-white/80 [&>a:last-child]:h-8 [&>a:last-child]:w-8 [&>a:last-child]:text-[10px] shrink-0"
                     avatarUrls={[
                       {
                         imageUrl:
@@ -203,10 +203,6 @@ export function StatsBar() {
                       {
                         imageUrl:
                           "https://avatars.githubusercontent.com/u/13484763",
-                      },
-                      {
-                        imageUrl:
-                          "https://avatars.githubusercontent.com/u/14985020",
                       },
                       {
                         imageUrl:
