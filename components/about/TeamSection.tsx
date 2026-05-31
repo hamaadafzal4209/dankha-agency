@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/SectionHeading";
-import { TeamDrawer } from "@/components/about/TeamDrawer";
+import { TeamCard } from "@/components/about/TeamCard";
 import { teamMembers } from "@/data/team";
 
 export function TeamSection() {
@@ -13,7 +13,7 @@ export function TeamSection() {
 
       <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {teamMembers.map((member, index) => (
-          <TeamDrawer key={member.name} member={member} index={index} />
+          <TeamCard key={member.name} member={member} index={index} />
         ))}
       </div>
     </section>

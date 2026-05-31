@@ -2,120 +2,132 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "../ui/marquee";
 import { SectionHeading } from "../SectionHeading";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 const reviews = [
   {
-    name: "Ali Raza",
-    username: "Founder, Ecomify",
+    name: "James Whitfield",
+    username: "CTO, Vaultline Fintech",
     rating: 5,
-    body: "We migrated from WooCommerce to Shopify with DANKHA. Within ~5 weeks, conversion rate jumped from 1.9% to 3.7%. Not everything was perfect in week 1, but they iterated fast and fixed issues quickly. Solid team.",
-    img: "https://avatar.vercel.sh/ali",
+    body: "We handed DANKHA a complete Next.js rebuild of our client portal. They delivered in 9 weeks — Lighthouse scores sitting at 97 performance, 100 accessibility out of the box. Codebase is clean enough that our internal devs actually enjoy working in it.",
+    img: "https://i.pravatar.cc/150?img=11",
   },
   {
-    name: "Sarah Khan",
-    username: "CMO, Growthly",
+    name: "Priya Menon",
+    username: "Head of Engineering, Stackrise",
+    rating: 5,
+    body: "Custom ERP built around our logistics workflows. The requirements gathering phase alone saved us from at least two costly scope changes. They mapped every edge case before writing a line of code. Six months in, zero critical bugs in production.",
+    img: "https://i.pravatar.cc/150?img=47",
+  },
+  {
+    name: "Tom Graves",
+    username: "Founder, Bridgepoint Legal",
     rating: 4,
-    body: "They handled our landing pages + paid traffic. CAC dropped around 28% over 2 months. Communication was good overall, just a slight delay during revisions — but results made up for it.",
-    img: "https://avatar.vercel.sh/sarah",
+    body: "Needed a corporate site that didn't look like every other law firm. They delivered something genuinely distinctive. Page speed is exceptional — under 1.8s on mobile. One revision round took longer than quoted, but the final result was worth it.",
+    img: "https://i.pravatar.cc/150?img=12",
   },
   {
-    name: "Usman Tariq",
-    username: "CTO, Finstack",
+    name: "Nadia Osei",
+    username: "Product Lead, Clarix SaaS",
     rating: 5,
-    body: "We brought them in for backend architecture and scaling. Code quality is clean and well-structured. We shipped faster than expected and avoided a lot of technical debt.",
-    img: "https://avatar.vercel.sh/usman",
+    body: "The UX audit they ran on our onboarding flow found friction points we'd completely normalized. After their redesign, trial-to-paid conversion went from 14% to 22% in 6 weeks. That's the kind of work that pays for itself immediately.",
+    img: "https://i.pravatar.cc/150?img=49",
   },
   {
-    name: "Emily Carter",
-    username: "Head of Product, Nexlify",
+    name: "Ryan Callahan",
+    username: "CEO, Northfield Analytics",
     rating: 5,
-    body: "They think like product people, not just developers. UX improvements they suggested increased activation by ~18%. That alone paid for the project.",
-    img: "https://avatar.vercel.sh/emily",
+    body: "We needed a custom internal dashboard for real-time data visualization. They handled everything — architecture, API design, the frontend. What impressed me most was how they pushed back on two of our initial requirements that would've created technical debt. Right call both times.",
+    img: "https://i.pravatar.cc/150?img=15",
   },
   {
-    name: "Hassan Ahmed",
-    username: "Founder, Cartify",
+    name: "Layla Hassan",
+    username: "Founder, Lumère Skincare",
     rating: 5,
-    body: "Our store redesign + checkout optimization doubled revenue in 3 months. The small UX tweaks they did made a big difference.",
-    img: "https://avatar.vercel.sh/hassan",
+    body: "They rebuilt our Amazon listings from scratch — new keyword strategy, A+ content, storefront. Organic ranking for our hero product went from page 4 to position 7 on page 1 within 11 weeks. ACOS dropped from 38% to 21% over the same period.",
+    img: "https://i.pravatar.cc/150?img=44",
   },
   {
-    name: "Daniel Lee",
-    username: "CEO, ScaleOps",
+    name: "Marcus Dyer",
+    username: "Amazon Brand Manager, Kova Home",
+    rating: 5,
+    body: "We'd been running PPC in-house and burning money. DANKHA restructured our entire campaign architecture, culled dead ASINs from our ad groups, and got us to a 3.8x ROAS within 60 days. The systematic approach to negative keyword management alone made a huge difference.",
+    img: "https://i.pravatar.cc/150?img=17",
+  },
+  {
+    name: "Sophie Brennan",
+    username: "Co-founder, Hearthwell Candles",
+    rating: 5,
+    body: "Etsy was an afterthought for us until DANKHA showed us what proper SEO optimization actually looked like on the platform. Impressions up 340% in 8 weeks. We're now getting 60–70 organic orders a month from what was basically a dead channel.",
+    img: "https://i.pravatar.cc/150?img=46",
+  },
+  {
+    name: "David Okonkwo",
+    username: "eCommerce Director, Trove Outdoors",
     rating: 4,
-    body: "Reliable team. No overpromising, just consistent delivery. We had a few scope changes mid-project and they handled it professionally.",
-    img: "https://avatar.vercel.sh/daniel",
+    body: "Walmart Marketplace setup and first 90 days of management. They navigated the onboarding process way faster than we expected — we were live in 3 weeks. Revenue is modest but growing steadily. Would've liked more aggressive catalog expansion in month two.",
+    img: "https://i.pravatar.cc/150?img=18",
   },
-
-  // 🔥 NEW ONES
-
   {
-    name: "Ayesha Malik",
-    username: "Founder, Skinly",
+    name: "Yasmin Farhat",
+    username: "Founder, Baya Beauty",
     rating: 5,
-    body: "We saw a 2.3x increase in mobile conversions after the redesign. They clearly understand ecommerce UX at a deeper level.",
-    img: "https://avatar.vercel.sh/ayesha",
+    body: "TikTok Shop felt overwhelming until they broke it down. Creator outreach, commission structure, Spark Ads — all of it set up in the first month. Two creators went semi-viral on our serums and we sold out in 4 days. Restocking now.",
+    img: "https://i.pravatar.cc/150?img=45",
   },
   {
-    name: "Bilal Sheikh",
-    username: "Marketing Lead, AdSphere",
+    name: "Chris Hartley",
+    username: "Founder, Formly Apparel",
+    rating: 5,
+    body: "Full custom Shopify theme — they didn't touch a pre-built template. Brand identity translated exactly how we envisioned it. Checkout completion rate went from 61% to 74% after their UX pass on the cart flow. That's not nothing.",
+    img: "https://i.pravatar.cc/150?img=13",
+  },
+  {
+    name: "Ingrid Solberg",
+    username: "Head of Growth, Verd Supplements",
+    rating: 5,
+    body: "Migrated from WooCommerce to Shopify Plus. Zero downtime, all redirects mapped, SEO rankings completely intact a month later. They documented everything so our team wasn't left guessing. Smooth handoff.",
+    img: "https://i.pravatar.cc/150?img=48",
+  },
+  {
+    name: "Ben Alcott",
+    username: "CMO, Prentice B2B Software",
+    rating: 5,
+    body: "Organic traffic was flat for 18 months before we brought them in. Their technical audit uncovered 40+ indexation issues we didn't know existed. Six months post-fix, organic sessions are up 73% and we're ranking page 1 for 11 commercial keywords we'd given up on.",
+    img: "https://i.pravatar.cc/150?img=14",
+  },
+  {
+    name: "Fatima Al-Rashid",
+    username: "Marketing Manager, Zenpath Consulting",
     rating: 4,
-    body: "Landing pages were solid and performance improved. Would’ve liked faster turnaround on one campaign, but overall very good experience.",
-    img: "https://avatar.vercel.sh/bilal",
+    body: "Google Ads management for a competitive B2B niche. They restructured our campaign architecture in week one, which was painful initially — performance dipped. But by week six we were at a 4.1x ROAS, up from 1.9x. They were transparent throughout the learning period.",
+    img: "https://i.pravatar.cc/150?img=43",
   },
   {
-    name: "Omar Farooq",
-    username: "Founder, QuickCart",
+    name: "Oliver Nash",
+    username: "Founder, Grounded Coffee Co.",
     rating: 5,
-    body: "Checkout optimization alone increased our AOV by ~22%. They focus on metrics that actually matter.",
-    img: "https://avatar.vercel.sh/omar",
+    body: "Email was completely underutilized — we had 12,000 subscribers doing basically nothing. They built out our full Klaviyo flow stack in 3 weeks. Abandoned cart recovery alone is generating about $8K/month that we were leaving on the table.",
+    img: "https://i.pravatar.cc/150?img=16",
   },
   {
-    name: "Jessica Wong",
-    username: "Product Manager, Flowdesk",
+    name: "Amara Diallo",
+    username: "CEO, Solace Wellness",
     rating: 5,
-    body: "The UI they delivered was clean and extremely intuitive. Our onboarding drop-off reduced significantly.",
-    img: "https://avatar.vercel.sh/jessica",
+    body: "Complete brand identity — logo, color system, typography, guidelines. They ran a proper discovery session before presenting anything, which meant the two concepts they showed us were both genuinely on-brief. We landed on a direction in one round. Rare.",
+    img: "https://i.pravatar.cc/150?img=41",
   },
   {
-    name: "Hamza Saeed",
-    username: "CTO, DevCore",
+    name: "Jack Pemberton",
+    username: "Founder, Mercer Architecture",
     rating: 5,
-    body: "They helped refactor our messy codebase into something maintainable. Huge difference in developer productivity.",
-    img: "https://avatar.vercel.sh/hamza",
-  },
-  {
-    name: "David Kim",
-    username: "Founder, Launchly",
-    rating: 4,
-    body: "Good design sense and solid dev team. A couple of iterations were needed, but they were responsive throughout.",
-    img: "https://avatar.vercel.sh/david",
-  },
-  {
-    name: "Zara Noor",
-    username: "Brand Manager, Elevate",
-    rating: 5,
-    body: "Brand identity + website redesign gave us a much stronger presence. Clients started taking us more seriously.",
-    img: "https://avatar.vercel.sh/zara",
-  },
-  {
-    name: "Ahmed Rauf",
-    username: "Founder, TechNest",
-    rating: 5,
-    body: "They built our MVP in record time. We were able to raise funding shortly after launch.",
-    img: "https://avatar.vercel.sh/ahmed",
-  },
-  {
-    name: "Chris Evans",
-    username: "Growth Lead, Marketly",
-    rating: 4,
-    body: "Performance campaigns improved steadily. Not overnight magic, but consistent and reliable results.",
-    img: "https://avatar.vercel.sh/chris",
+    body: "Portfolio redesign and full brand refresh. Prospective clients have mentioned the website specifically in intro calls — unprompted. That tells you everything about how much first impressions matter and how well they executed.",
+    img: "https://i.pravatar.cc/150?img=19",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
 const ReviewCard = ({
   img,
@@ -133,30 +145,30 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-72 cursor-pointer overflow-hidden rounded-xl border p-4 glass-strong transition hover:shadow-elegant",
+        "relative h-full w-80 cursor-pointer overflow-hidden rounded-xl border p-5 glass-strong transition hover:shadow-elegant",
       )}
     >
-      <div className="flex items-center gap-2">
-        <img
-          className="rounded-full"
-          width="32"
-          height="32"
-          alt=""
+      <div className="flex items-center gap-3">
+        <Image
+          className="rounded-full object-cover"
+          width="36"
+          height="36"
+          alt={name}
           src={img}
         />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium">
+        <div className="flex flex-col min-w-0">
+          <figcaption className="text-sm font-semibold leading-tight truncate">
             {name}
           </figcaption>
-          <p className="text-xs text-white/50">{username}</p>
+          <p className="text-xs text-white/45 truncate">{username}</p>
         </div>
       </div>
 
-      <div className="flex gap-1 mt-2">
+      <div className="flex gap-0.5 mt-3">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
-            size={14}
+            size={12}
             className={
               i < rating
                 ? "fill-yellow-400 text-yellow-400"
@@ -166,7 +178,7 @@ const ReviewCard = ({
         ))}
       </div>
 
-      <blockquote className="mt-3 text-sm leading-relaxed text-white/80">
+      <blockquote className="mt-3 text-sm leading-relaxed text-white/75">
         {body}
       </blockquote>
     </figure>
@@ -175,18 +187,21 @@ const ReviewCard = ({
 
 export function Testimonials() {
   return (
-    <section aria-label="Client testimonials" className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <section
+      aria-label="Client testimonials"
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden"
+    >
       <SectionHeading
-        eyebrow="Kind words"
+        eyebrow="Client results"
         title="Trusted by ambitious teams."
       />
-      <div className="my-12">
-        <Marquee pauseOnHover className="[--duration:40s]">
+      <div className="my-12 w-full">
+        <Marquee pauseOnHover className="[--duration:50s]">
           {firstRow.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}
         </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:40s]">
+        <Marquee reverse pauseOnHover className="[--duration:50s]">
           {secondRow.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}

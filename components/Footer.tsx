@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MessageCircle, Send, Mail, Globe, MapPin } from "lucide-react";
 import Image from "next/image";
+import { ContactEmail, PhoneNumber } from "@/data/commonConstants";
 
 export function Footer() {
   return (
@@ -17,7 +18,7 @@ export function Footer() {
         />
       </svg>
 
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-8">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
@@ -55,9 +56,8 @@ export function Footer() {
               Get in touch
             </h4>
             <address className="not-italic space-y-3 text-sm text-muted-foreground">
-              <p><a href="mailto:hello@dankha.com" className="hover:text-foreground transition">hello@dankha.com</a></p>
-              <p><a href="tel:+15550102024" className="hover:text-foreground transition">+1 (555) 010-2024</a></p>
-              <p>San Francisco &middot; Remote</p>
+              <p><a href={`mailto:${ContactEmail}`} className="hover:text-foreground transition">{ContactEmail}</a></p>
+              <p><a href={`tel:${PhoneNumber.replace(/\s/g, "")}`} className="hover:text-foreground transition">{PhoneNumber}</a></p>
             </address>
           </div>
         </div>

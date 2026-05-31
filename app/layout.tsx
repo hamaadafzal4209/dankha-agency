@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "@/components/AppShell";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -119,6 +120,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-[var(--bg-gradient-radial)">
         <AppShell>{children}</AppShell>
+        <Toaster />
       </body>
     </html>
   );

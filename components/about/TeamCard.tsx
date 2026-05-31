@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { DrawerTrigger } from "@/components/ui/drawer";
 import type { TeamMember } from "@/data/team";
 import { Badge } from "../ui/badge";
 
@@ -35,11 +35,11 @@ export function TeamCard({ member, index }: TeamCardProps) {
           {member.tagline}
         </p>
 
-        <DrawerTrigger asChild>
+        <Link href={`/team/${member.slug}`}>
           <Button className="mt-5 w-full rounded-full gradient-primary text-white hover:opacity-95">
             View Profile
           </Button>
-        </DrawerTrigger>
+        </Link>
       </article>
     </Reveal>
   );
