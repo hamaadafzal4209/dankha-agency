@@ -1,4 +1,4 @@
-export type PortfolioCategory = "Web" | "Ecommerce" | "Marketing" | "Designing";
+export type PortfolioCategory = "Web" | "Ecommerce" | "Marketing" | "Designing" | "Mobile";
 
 export type PortfolioProject = {
   id: number;
@@ -33,319 +33,635 @@ export type PortfolioProject = {
 };
 
 export const portfolioProjects: PortfolioProject[] = [
+  // ─────────────────────────────────────────────
+  // 1. ServiceMarket Partners
+  // ─────────────────────────────────────────────
   {
     id: 1,
-    slug: "nova-flow-platform",
-    title: "Nova Flow Platform",
-    cat: "Web",
-    year: "2024",
-    color: "from-[#3fa1ad] to-[#2a4263]",
-    impact: "Rebuilt a complex operations platform into a faster, clearer product for distributed teams.",
-    client: "Nova Flow",
-    industry: "B2B SaaS",
-    heroImage:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+    slug: "servicemarket-partners",
+    title: "ServiceMarket Partners",
+    cat: "Mobile",
+    year: "2023",
+    color: "from-[#1a6b5a] to-[#0f3d30]",
+    impact:
+      "Rebuilt the B2B partner experience for the Middle East's largest home-services marketplace, enabling thousands of service providers to manage leads and customers entirely from their phones.",
+    client: "ServiceMarket",
+    industry: "B2B Marketplace / Home Services",
+    heroImage: "/projects/thumbnail/partner-app.jpeg",
     overview: {
-      what: "A multi-team workflow platform for managing approvals, reporting, and internal operations.",
-      who: "Operations managers, analysts, and leadership teams across enterprise accounts.",
-      problem: "The old product was slow, visually inconsistent, and hard for teams to navigate at scale.",
+      what: "A cross-platform mobile application that allows service providers on ServiceMarket — the UAE's largest home-services and moving marketplace — to receive, manage, and convert high-quality leads without relying on traditional advertising.",
+      who: "Independent contractors, SME service businesses, and operations managers across moving, cleaning, and home-maintenance verticals in the Middle East.",
+      problem:
+        "Partners had no unified mobile tool to track incoming leads, communicate with customers, or measure business performance. Reliance on phone calls and manual follow-ups led to missed opportunities and inconsistent service delivery.",
     },
     challenges: [
-      "Slow performance across core dashboard views",
-      "Poor UX in approval and reporting flows",
-      "Inconsistent interface patterns across modules",
-      "Low confidence in the product during enterprise demos",
+      "Real-time lead distribution with zero tolerance for delivery delay",
+      "Complex state management across simultaneous active jobs and customer threads",
+      "Cross-platform parity on Android and iOS with a single codebase",
+      "Designing an intuitive UX for non-technical trade professionals",
     ],
     solution: [
       {
         title: "Strategy",
         items: [
-          "Mapped critical user journeys across reporting, approvals, and workspace setup",
-          "Prioritized high-friction flows with the biggest operational impact",
+          "Mapped the end-to-end partner journey from lead receipt to job completion and review",
+          "Prioritised real-time communication and lead visibility as the two highest-value features",
         ],
       },
       {
         title: "Design",
         items: [
-          "Created a cleaner interface hierarchy for tables, dashboards, and action states",
-          "Built a reusable design system for product consistency",
+          "Designed a clean, task-focused mobile UI optimised for quick decision-making on small screens",
+          "Built clear visual hierarchy for active leads, pending actions, and business metrics",
         ],
       },
       {
         title: "Development",
         items: [
-          "Refactored slow modules into a more maintainable frontend architecture",
-          "Optimized data-heavy screens for faster interactions and loading",
+          "Implemented real-time lead delivery and customer messaging via WebSocket connections",
+          "Built the app in React Native for a unified Android/iOS codebase with native-level performance",
+          "Integrated performance-tracking dashboards to surface actionable business insights",
         ],
       },
       {
         title: "Marketing",
         items: [
-          "Prepared polished product screens for sales enablement and launch materials",
+          "Structured onboarding flows to reduce time-to-first-lead for newly registered partners",
         ],
       },
     ],
     features: [
-      "Admin dashboard",
-      "Role-based access control",
-      "Advanced filtering and reports",
-      "Design system",
-      "Workflow automation",
+      "Real-time lead distribution via WebSocket",
+      "In-app customer communication",
+      "Business performance dashboard",
+      "Job status tracking",
+      "Cross-platform (Android & iOS)",
     ],
     results: [
-      "+58% faster task completion across core flows",
-      "-37% support tickets tied to navigation issues",
-      "2.4x better engagement on reporting modules",
-      "Stronger enterprise demo conversion confidence",
+      "High-quality, instant lead distribution replacing manual phone-based workflows",
+      "Real-time customer communication reducing response time significantly",
+      "Centralised business performance tracking for partner growth",
+      "Published and live on Google Play Store",
     ],
     visuals: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1601972599720-36938d4ecd31?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
     ],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
-    testimonial: {
-      quote: "The new platform finally feels enterprise-ready. Our teams move faster and clients notice the difference.",
-      author: "Ariana Cole",
-      role: "Product Lead, Nova Flow",
-    },
+    techStack: ["React Native", "WebSocket"],
   },
+
+  // ─────────────────────────────────────────────
+  // 2. DigitalTolk Web Dashboard
+  // ─────────────────────────────────────────────
   {
     id: 2,
-    slug: "lumen-commerce-growth",
-    title: "Lumen Commerce",
-    cat: "Ecommerce",
-    year: "2024",
-    color: "from-[#39587b] to-[#3fa1ad]",
-    impact: "Turned a flat-performing storefront into a conversion-focused shopping experience.",
-    client: "Lumen Commerce",
-    industry: "Retail Ecommerce",
-    heroImage:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80",
+    slug: "digitaltolk-web",
+    title: "DigitalTolk Web Dashboard",
+    cat: "Web",
+    year: "2025",
+    color: "from-[#1e3a5f] to-[#3a7bd5]",
+    impact:
+      "Delivered a comprehensive admin dashboard that gives DigitalTolk's operations team full visibility and control over bookings, interpreter assignments, and service analytics in real time.",
+    client: "DigitalTolk",
+    industry: "Language Services / Interpretation",
+    heroImage: "/projects/thumbnail/dt-web.jpeg",
     overview: {
-      what: "A modern ecommerce storefront and backend operations setup for a fast-growing retail brand.",
-      who: "Online shoppers, marketing teams, and fulfillment managers.",
-      problem: "The store had weak product storytelling, low trust signals, and too much checkout friction.",
+      what: "An administrative web platform for managing the full lifecycle of interpretation service bookings — from scheduling and interpreter assignment to real-time monitoring and operational analytics.",
+      who: "Operations managers, booking coordinators, and leadership teams at DigitalTolk and its enterprise clients across Sweden and Europe.",
+      problem:
+        "Rapid growth in booking volume made manual coordination untenable. The team needed a single, reliable interface to monitor assignments, surface bottlenecks, and generate insights without switching between disconnected tools.",
     },
     challenges: [
-      "Low conversions on paid traffic",
-      "Poor UX on mobile product pages",
-      "Slow page performance during campaigns",
-      "Weak merchandising and product hierarchy",
+      "Complex, high-volume booking data requiring fast query and render performance",
+      "Multi-role access needs for administrators, coordinators, and client accounts",
+      "Real-time operational monitoring with low-latency data refresh",
+      "Designing dense data views that remain clear and actionable under load",
     ],
     solution: [
       {
         title: "Strategy",
         items: [
-          "Reworked the purchase journey from landing page to checkout",
-          "Introduced a clearer merchandising structure around best-sellers and bundles",
+          "Defined core admin workflows around booking lifecycle management and interpreter oversight",
+          "Structured the information architecture to minimise clicks between high-frequency tasks",
         ],
       },
       {
         title: "Design",
         items: [
-          "Redesigned the storefront with stronger product storytelling and trust cues",
-          "Improved mobile-first layouts for product discovery and checkout",
+          "Built a clean, data-dense UI with clear typographic hierarchy for high-volume tables and status views",
+          "Designed consistent component patterns for filters, modals, and action flows across the dashboard",
         ],
       },
       {
         title: "Development",
         items: [
-          "Built a faster storefront with cleaner content blocks and reusable sections",
-          "Integrated payments, product data flows, and automation touchpoints",
+          "Developed the full frontend in Vue.js with a focus on performance and component reusability",
+          "Integrated real-time monitoring views with efficient data polling and state management",
+          "Built analytics and reporting modules to surface utilisation trends and service quality metrics",
         ],
       },
       {
         title: "Marketing",
         items: [
-          "Aligned landing pages and campaign messaging with conversion-focused merchandising",
+          "Structured reporting outputs to support client-facing SLA and performance reviews",
         ],
       },
     ],
     features: [
-      "Payment integration",
-      "Mobile-optimized checkout",
-      "Product recommendation logic",
-      "SEO optimization",
-      "Email automation setup",
+      "Advanced booking management system",
+      "Interpreter assignment and tracking",
+      "Real-time operational monitoring",
+      "Analytics and reporting dashboard",
+      "Multi-role access control",
     ],
     results: [
-      "+120% conversion rate",
-      "-40% bounce rate on mobile landing pages",
-      "3x revenue growth during launch cycle",
-      "Faster load time across core shopping pages",
+      "Centralised booking visibility eliminating reliance on fragmented tooling",
+      "Real-time operational monitoring enabling faster issue response",
+      "Analytics module supporting data-driven service improvements",
+      "Live and actively used at app.digitaltolk.se",
     ],
     visuals: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
     ],
-    techStack: ["Next.js", "Shopify", "TypeScript", "Tailwind CSS", "Klaviyo"],
-    testimonial: {
-      quote: "The team translated our brand into an ecommerce experience that finally performs like a premium store.",
-      author: "Marcus Lane",
-      role: "Founder, Lumen Commerce",
-    },
+    techStack: ["Vue.js"],
   },
+
+  // ─────────────────────────────────────────────
+  // 3. PCFC Digital
+  // ─────────────────────────────────────────────
   {
     id: 3,
-    slug: "atlas-travel-demand-engine",
-    title: "Atlas Travel",
-    cat: "Marketing",
+    slug: "pcfc-one",
+    title: "PCFC Digital",
+    cat: "Mobile",
     year: "2023",
-    color: "from-[#2a4263] to-[#3fa1ad]",
-    impact: "Built a full-funnel demand engine that made growth measurable across SEO, ads, and content.",
-    client: "Atlas Travel",
-    industry: "Travel",
-    heroImage:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+    color: "from-[#002a5c] to-[#006aad]",
+    impact:
+      "Delivered the official mobile application for a Dubai Government entity, unifying smart services across ports, customs, and free zone operations into a single secure digital platform.",
+    client: "Ports, Customs and Free Zone Corporation (PCFC)",
+    industry: "Government / Smart City",
+    heroImage: "/projects/thumbnail/pcfc.jpeg",
     overview: {
-      what: "A growth system spanning acquisition, brand messaging, and campaign reporting for a travel company.",
-      who: "Prospective travelers, internal marketing teams, and revenue stakeholders.",
-      problem: "Marketing channels were fragmented, reporting was weak, and campaigns lacked a consistent narrative.",
+      what: "The official mobile application for PCFC — a Dubai Government entity established in 2001 — consolidating digital access to licensing, inspection, approval, and investment services across ports, maritime, and customs departments.",
+      who: "Businesses, investors, and residents interacting with Dubai's port and customs ecosystem, along with internal government service teams.",
+      problem:
+        "Services were spread across multiple disconnected channels, requiring businesses to navigate separate portals for different departments. There was no unified, mobile-first touchpoint for the breadth of PCFC's government services.",
     },
     challenges: [
-      "No clear brand identity across campaigns",
-      "Poor attribution across paid and organic channels",
-      "Low conversions from seasonal landing pages",
-      "Content efforts not tied to revenue goals",
+      "Integrating services from multiple government departments into a single coherent UX",
+      "Meeting strict government security and compliance standards for sensitive data",
+      "Supporting a diverse user base from enterprise importers to individual licence applicants",
+      "Delivering reliable, real-time application status tracking across complex backend workflows",
     ],
     solution: [
       {
         title: "Strategy",
         items: [
-          "Defined a sharper positioning framework for core audience segments",
-          "Connected campaign planning to measurable booking goals",
+          "Mapped service categories across ports, customs, and free zone divisions to design a unified navigation model",
+          "Prioritised the highest-frequency citizen and business service journeys for the initial release",
         ],
       },
       {
         title: "Design",
         items: [
-          "Refined campaign visuals and landing page hierarchy for stronger clarity",
+          "Designed a formal, trustworthy UI language consistent with Dubai Government digital brand standards",
+          "Built clear service discovery flows and status dashboards accessible to non-technical users",
         ],
       },
       {
         title: "Development",
         items: [
-          "Implemented tracking, analytics, and landing page improvements",
+          "Built the app in React Native for cross-platform deployment on Android and iOS",
+          "Integrated Firebase for real-time application tracking and push notification delivery",
+          "Implemented secure authentication and data handling in compliance with government requirements",
         ],
       },
       {
         title: "Marketing",
         items: [
-          "Launched coordinated SEO, paid search, and content programs",
-          "Built weekly reporting workflows to optimize spend and creative direction",
+          "Structured service onboarding to reduce friction for first-time users accessing government services digitally",
         ],
       },
     ],
     features: [
-      "SEO optimization",
-      "Landing page system",
-      "Campaign reporting dashboard",
-      "Audience segmentation",
-      "Marketing automation",
+      "Unified government service ecosystem",
+      "Secure authentication and data handling",
+      "Real-time application status tracking",
+      "Push notifications for service updates",
+      "Cross-platform (Android & iOS)",
     ],
     results: [
-      "+82% qualified lead growth",
-      "-28% acquisition cost over two quarters",
-      "Stronger channel visibility and reporting clarity",
-      "Higher booking intent from campaign traffic",
+      "Single mobile entry point replacing multiple disconnected government service portals",
+      "Secure digital access for enterprises and individuals across PCFC departments",
+      "Real-time tracking reducing enquiry load on service centre staff",
+      "Published on Google Play Store under the Dubai Government entity",
     ],
     visuals: [
-      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
     ],
-    techStack: ["GA4", "Meta Ads", "Google Ads", "Looker Studio", "Webflow"],
-    testimonial: {
-      quote: "They brought structure to our marketing and gave us numbers we could actually act on.",
-      author: "Elena Brooks",
-      role: "Marketing Director, Atlas Travel",
-    },
+    techStack: ["React Native", "Firebase"],
   },
+
+  // ─────────────────────────────────────────────
+  // 4. AMF Switchgear Solutions
+  // ─────────────────────────────────────────────
   {
     id: 4,
-    slug: "halo-brand-system",
-    title: "Halo Brand System",
-    cat: "Designing",
+    slug: "amf-switchgear-solutions",
+    title: "Almaram Alfaneyah (AMF)",
+    cat: "Web",
     year: "2024",
-    color: "from-[#4a6f95] to-[#3fa1ad]",
-    impact: "Created a premium visual identity and interface language for a modern beauty brand.",
-    client: "Halo Cosmetics",
-    industry: "Beauty & Wellness",
-    heroImage:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80",
+    color: "from-[#1c2b3a] to-[#c8922a]",
+    impact:
+      "Built a credibility-first corporate website for a certified Schneider Electric channel partner in Saudi Arabia, establishing a professional digital presence that matches the company's industrial standing.",
+    client: "Almaram Alfaneyah Manufacturing Co.",
+    industry: "Industrial Manufacturing / Electrical Engineering",
+    heroImage: "/projects/thumbnail/amf.jpeg",
     overview: {
-      what: "A full identity and digital design system for a beauty brand preparing for broader market expansion.",
-      who: "Brand teams, ecommerce managers, and customers across digital touchpoints.",
-      problem: "The brand looked inconsistent, lacked premium cues, and did not translate well across campaigns or product UI.",
+      what: "A corporate web presence for a Saudi Arabian manufacturer of low-voltage switchgear panels, certified by Schneider Electric and operating under IEC and ISO 9001 standards.",
+      who: "Industrial clients, procurement teams, and engineering consultants across the GCC evaluating qualified LV switchgear manufacturers.",
+      problem:
+        "Despite strong technical credentials and international certifications, AMF lacked a web presence capable of communicating its industrial expertise to global clients. The absence of a professional digital platform was limiting inbound enquiries and B2B credibility.",
     },
     challenges: [
-      "No clear brand identity",
-      "Inconsistent visual system across channels",
-      "Weak presentation on product and campaign pages",
-      "Poor design handoff for internal teams",
+      "Communicating highly technical industrial capabilities to a non-specialist audience",
+      "Establishing international credibility for a regional manufacturer",
+      "Presenting certification and compliance information clearly alongside product storytelling",
+      "Building a scalable multi-page architecture for long-term content growth",
     ],
     solution: [
       {
         title: "Strategy",
         items: [
-          "Defined visual positioning around clarity, softness, and premium confidence",
-          "Mapped the identity system across ecommerce and campaign use cases",
+          "Positioned the site around trust signals: Schneider Electric partnership, IEC compliance, and ISO 9001 certification",
+          "Structured content to serve both technical evaluators and procurement decision-makers",
         ],
       },
       {
         title: "Design",
         items: [
-          "Built a brand identity system with refined typography, palette, and art direction",
-          "Designed reusable UI patterns for product storytelling and promotional pages",
+          "Designed an industrial-grade visual language — authoritative, precise, and globally credible",
+          "Developed a responsive multi-page layout with clear service and capability sections",
         ],
       },
       {
         title: "Development",
         items: [
-          "Prepared developer-ready design specs and component guidance for implementation",
+          "Built the site in Next.js with TypeScript and Tailwind CSS for performance and maintainability",
+          "Integrated MongoDB for dynamic content management across product and service pages",
+          "Optimised for global accessibility with fast load performance across GCC markets",
         ],
       },
       {
         title: "Marketing",
         items: [
-          "Created campaign creative direction for launch assets and paid media consistency",
+          "Structured SEO architecture and metadata to capture industrial and engineering search intent",
         ],
       },
     ],
     features: [
-      "Design system",
-      "Brand guidelines",
-      "Creative direction",
-      "Campaign asset kit",
-      "UI section library",
+      "Multi-page corporate architecture",
+      "Product and capability showcase",
+      "Certification and compliance presentation",
+      "SEO-optimised structure",
+      "Responsive design for global clients",
     ],
     results: [
-      "Stronger premium perception across digital channels",
-      "Faster campaign production for the internal team",
-      "More cohesive ecommerce and social visuals",
-      "Cleaner handoff between design and development",
+      "Professional digital presence matching AMF's industrial and certification credentials",
+      "Clear positioning as a certified Schneider Electric channel partner in the GCC",
+      "Improved inbound enquiry quality from engineering and procurement audiences",
+      "Live at amf-sa.com",
     ],
     visuals: [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
     ],
-    techStack: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Notion", "Framer"],
-    testimonial: {
-      quote: "The work gave us a visual system we can confidently scale across product, campaigns, and retail.",
-      author: "Nina Hart",
-      role: "Brand Manager, Halo Cosmetics",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+  },
+
+  // ─────────────────────────────────────────────
+  // 5. DigitalTolk Mobile App
+  // ─────────────────────────────────────────────
+  {
+    id: 5,
+    slug: "digitaltolk",
+    title: "DigitalTolk",
+    cat: "Mobile",
+    year: "2025",
+    color: "from-[#0d2137] to-[#1a6fa8]",
+    impact:
+      "Brought DigitalTolk's real-time language services platform to mobile, enabling clients and interpreters to manage bookings and conduct live sessions entirely from a cross-platform app.",
+    client: "DigitalTolk",
+    industry: "Language Services / Interpretation",
+    heroImage: "/projects/thumbnail/dt.jpeg",
+    overview: {
+      what: "A cross-platform mobile application for DigitalTolk's language interpretation platform, allowing clients to create and manage bookings while enabling interpreters to accept assignments and conduct live sessions.",
+      who: "Clients requiring interpretation services and professional translators/interpreters operating across European markets.",
+      problem:
+        "The web platform's full functionality was inaccessible on mobile, limiting interpreter availability and client flexibility. The absence of a dedicated app created friction in time-sensitive interpretation scenarios.",
     },
+    challenges: [
+      "Implementing low-latency live audio/video communication via WebRTC on mobile",
+      "Maintaining consistent UX parity with the existing web dashboard",
+      "Managing complex booking state transitions in real time across client and interpreter views",
+      "Bridging web-native capabilities to mobile using Capacitor without sacrificing performance",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Mapped dual-sided user journeys for clients and interpreters to design role-specific mobile experiences",
+          "Prioritised live communication quality and booking reliability as the two core product values",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Designed mobile-optimised layouts for booking management and live session interfaces",
+          "Built clear status indicators and notifications for real-time booking state changes",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Built with Vue.js and Capacitor for cross-platform Android and iOS deployment from a single codebase",
+          "Integrated WebRTC for real-time, low-latency audio/video interpretation sessions",
+          "Implemented robust booking lifecycle management with real-time state synchronisation",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Enabled push notification workflows to reduce interpreter response time on new assignments",
+        ],
+      },
+    ],
+    features: [
+      "Real-time interpreter booking system",
+      "Live audio/video via WebRTC",
+      "Cross-platform (Android & iOS)",
+      "Booking lifecycle management",
+      "Push notifications",
+    ],
+    results: [
+      "Full mobile access to DigitalTolk's interpretation platform for clients and interpreters",
+      "Live communication via WebRTC enabling on-demand remote interpretation",
+      "Cross-platform deployment from a single Vue.js/Capacitor codebase",
+      "Published on Google Play Store",
+    ],
+    visuals: [
+      "https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80",
+    ],
+    techStack: ["Vue.js", "Capacitor", "WebRTC"],
+  },
+
+  // ─────────────────────────────────────────────
+  // 6. WebCraft Digital Agency
+  // ─────────────────────────────────────────────
+  {
+    id: 6,
+    slug: "webcraft-digital-agency",
+    title: "WebCraft Digital Agency",
+    cat: "Web",
+    year: "2024",
+    color: "from-[#0f0f0f] to-[#3a3a6e]",
+    impact:
+      "Designed and built a conversion-focused agency website that communicates creative capability, builds client trust, and drives inbound enquiries for branding and web development services.",
+    client: "WebCraft",
+    industry: "Digital Agency",
+    heroImage: "/projects/thumbnail/webcraft.jpeg",
+    overview: {
+      what: "A full marketing website for WebCraft, a Pakistan-based digital agency offering branding, web development, and UI/UX design services — built to communicate creativity and convert visiting prospects into enquiries.",
+      who: "Business owners, startup founders, and marketing managers across Pakistan and international markets evaluating digital service partners.",
+      problem:
+        "WebCraft needed a website that could do the selling — one that demonstrated design capability at a glance, built trust through structured service presentation, and gave visitors a clear path to engage. A generic site would undermine the brand.",
+    },
+    challenges: [
+      "Communicating design and development quality through the website itself",
+      "Balancing visual ambition with fast page performance and SEO requirements",
+      "Creating a strong first impression that differentiates from competing agencies",
+      "Building an animation system that enhances rather than distracts from the content",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Structured the site around service clarity and social proof to reduce prospect hesitation",
+          "Planned the content hierarchy to move visitors from discovery to contact in as few steps as possible",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Designed a modern, high-contrast visual identity with intentional typography and motion",
+          "Built an animation system using smooth transitions and scroll-driven reveals for a premium feel",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Developed in Next.js with TypeScript and Tailwind CSS for performance, scalability, and clean code",
+          "Implemented SEO-optimised page structure, metadata, and semantic HTML for search visibility",
+          "Ensured responsive, pixel-perfect rendering across all device sizes",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Aligned service page copy and CTAs with conversion best practices for agency client acquisition",
+        ],
+      },
+    ],
+    features: [
+      "Conversion-focused service presentation",
+      "Scroll-driven animation system",
+      "SEO-optimised architecture",
+      "Responsive across all devices",
+      "Performance-first build",
+    ],
+    results: [
+      "High-quality agency web presence that demonstrates capability through execution",
+      "SEO-optimised structure improving organic search visibility",
+      "Modern animation system reinforcing the premium agency positioning",
+      "Live at webcraft.pk",
+    ],
+    visuals: [
+      "https://images.unsplash.com/photo-1545665277-5937489579f2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80",
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+
+  // ─────────────────────────────────────────────
+  // 7. Healup Pharma
+  // ─────────────────────────────────────────────
+  {
+    id: 7,
+    slug: "healup-pharma",
+    title: "Healup Pharma",
+    cat: "Web",
+    year: "2023",
+    color: "from-[#005f73] to-[#0a9396]",
+    impact:
+      "Built a globally credible pharmaceutical corporate website that communicates Healup's scale, international reach, and healthcare mission to clients and partners across 50+ markets.",
+    client: "Healup Pharma",
+    industry: "Pharmaceutical / Healthcare",
+    heroImage: "/projects/thumbnail/healupPharma.jpeg",
+    overview: {
+      what: "A corporate marketing website for Healup Pharma, a global pharmaceutical company, communicating its product range, international presence, and healthcare mission to medical partners and institutional clients worldwide.",
+      who: "Healthcare professionals, pharmaceutical distributors, institutional buyers, and regulatory stakeholders across international markets.",
+      problem:
+        "Healup's operational scale — spanning 50+ countries — was not reflected in its digital presence. The company needed a website that matched its international standing, built trust with global partners, and clearly communicated its product and service scope.",
+    },
+    challenges: [
+      "Communicating a global operational footprint with clarity and authority",
+      "Meeting the trust and credibility standards expected in the pharmaceutical sector",
+      "Ensuring fast, accessible performance for audiences across varied international markets",
+      "Presenting a broad product portfolio without overwhelming the visitor",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Structured the site narrative around global reach, product quality, and healthcare impact",
+          "Designed the information architecture to serve both clinical professionals and corporate partners",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Built a clean, medically credible visual language with a trustworthy colour palette and typography",
+          "Designed clear product and service sections balancing depth with accessibility for non-specialist audiences",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Developed with React and Tailwind CSS for a fast, responsive, and maintainable frontend",
+          "Optimised for performance across diverse international network conditions",
+          "Ensured semantic HTML structure for accessibility and search engine visibility",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Positioned company credentials and international presence as the primary trust-building narrative",
+        ],
+      },
+    ],
+    features: [
+      "Global brand presence architecture",
+      "Product portfolio showcase",
+      "International market coverage display",
+      "Performance-optimised responsive UI",
+      "Accessible semantic structure",
+    ],
+    results: [
+      "Corporate digital presence aligned with a 50+ country operational footprint",
+      "Medically credible visual identity suitable for institutional and B2B audiences",
+      "Performance-optimised delivery for global accessibility",
+      "Live at healuppharma.com",
+    ],
+    visuals: [
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
+    ],
+    techStack: ["React", "Tailwind CSS"],
+  },
+
+  // ─────────────────────────────────────────────
+  // 8. RISE Premier
+  // ─────────────────────────────────────────────
+  {
+    id: 8,
+    slug: "rise-premier",
+    title: "RISE Premier",
+    cat: "Web",
+    year: "2024",
+    color: "from-[#2c3e7a] to-[#4a69bd]",
+    impact:
+      "Delivered a professional, mobile-first educational platform for Pakistan's leading accountancy institution, helping students discover courses and connect with faculty with clarity and ease.",
+    client: "RISE Premier School of Accountancy",
+    industry: "Education / Professional Qualifications",
+    heroImage: "/projects/thumbnail/rise.jpeg",
+    overview: {
+      what: "A full institutional website for RISE Premier School of Accountancy — a leading professional education provider in Pakistan offering ACCA, CA, and business qualifications — designed to serve both prospective and enrolled students.",
+      who: "Students at O/A-level and beyond exploring professional accountancy qualifications, as well as parents and academic advisors researching education providers.",
+      problem:
+        "RISE Premier's existing presence did not reflect the quality of its programmes or faculty. Prospective students struggled to find clear programme information, compare course options, or understand the institution's academic credentials — leading to lost enrolment opportunities.",
+    },
+    challenges: [
+      "Presenting a wide range of academic programmes clearly without overwhelming visitors",
+      "Building trust and academic credibility for an institutional audience",
+      "Ensuring excellent mobile usability for a predominantly mobile-first student demographic in Pakistan",
+      "Creating a maintainable, scalable architecture for ongoing content updates",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Structured the site around programme discovery, faculty credibility, and enrolment pathways",
+          "Mapped the student decision journey to surface the right information at each stage",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Designed a clean, academic visual identity that conveys institutional trust and professionalism",
+          "Built mobile-first layouts prioritising fast programme browsing and easy contact access",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Built with Next.js, TypeScript, and Tailwind CSS for performance, type safety, and maintainability",
+          "Implemented SEO-optimised page structure to improve visibility for local academic search queries",
+          "Ensured responsive, accessible design across all major devices and screen sizes",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Structured course and faculty pages to reduce time-to-enquiry for prospective students",
+        ],
+      },
+    ],
+    features: [
+      "Academic course management interface",
+      "Faculty and programme showcase",
+      "Mobile-first responsive experience",
+      "SEO-optimised page structure",
+      "Enrolment pathway flows",
+    ],
+    results: [
+      "Professional institutional presence reflecting RISE Premier's academic quality",
+      "Clear programme discovery reducing prospective student friction",
+      "Mobile-first experience serving Pakistan's mobile-dominant student audience",
+      "Live at risepremier.edu.pk",
+    ],
+    visuals: [
+      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
 
 export const portfolioCategories: Array<"All" | PortfolioCategory> = [
   "All",
   "Web",
-  "Ecommerce",
-  "Marketing",
+  "Mobile",
   "Designing",
 ];
 
