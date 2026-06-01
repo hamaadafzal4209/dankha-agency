@@ -361,8 +361,8 @@ const brands = [
           y2="24.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#0081fb"></stop>
-          <stop offset=".995" stop-color="#0064e1"></stop>
+          <stop offset="0" stopColor="#0081fb"></stop>
+          <stop offset=".995" stopColor="#0064e1"></stop>
         </linearGradient>
         <path
           fill="url(#wSMw7pqi7WIWHewz2_TZXa_PvvcWRWxRKSR_gr1)"
@@ -376,8 +376,8 @@ const brands = [
           y2="13.012"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#0081fb"></stop>
-          <stop offset=".995" stop-color="#0064e1"></stop>
+          <stop offset="0" stopColor="#0081fb"></stop>
+          <stop offset=".995" stopColor="#0064e1"></stop>
         </linearGradient>
         <path
           fill="url(#wSMw7pqi7WIWHewz2_TZXb_PvvcWRWxRKSR_gr2)"
