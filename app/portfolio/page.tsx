@@ -46,8 +46,14 @@ function PortfolioPage() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key="project-cards"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3"
+          >
             {filtered.map((p, i) => (
               <motion.div
                 key={p.id}
@@ -68,8 +74,8 @@ function PortfolioPage() {
                 </Reveal>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <Reveal>

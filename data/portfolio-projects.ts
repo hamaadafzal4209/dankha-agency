@@ -1,4 +1,9 @@
-export type PortfolioCategory = "Web" | "Ecommerce" | "Marketing" | "Designing" | "Mobile";
+export type PortfolioCategory =
+  | "Web"
+  | "Ecommerce"
+  | "Marketing"
+  | "Designing"
+  | "Mobile";
 
 export type PortfolioProject = {
   id: number;
@@ -656,13 +661,371 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
+  // ─────────────────────────────────────────────
+  // 9. eBay Store Optimisation
+  // ─────────────────────────────────────────────
+  {
+    id: 9,
+    slug: "ebay-store-optimisation",
+    title: "eBay Store Optimisation",
+    cat: "Ecommerce",
+    year: "2024",
+    color: "from-[#e53238] to-[#0064d2]",
+    impact:
+      "Transformed an underperforming eBay seller account into a high-visibility storefront through strategic listing optimisation, competitive pricing analysis, and data-driven catalogue restructuring — driving measurable uplift in organic search ranking and conversion rate.",
+    client: "Confidential (Retail SME)",
+    industry: "Ecommerce / Retail",
+    heroImage: "/projects/ecommerce/ebay-1.jpeg",
+    overview: {
+      what: "A comprehensive eBay store audit and optimisation engagement covering listing quality, catalogue architecture, pricing strategy, and seller performance metrics — executed to maximise visibility within eBay's Cassini search algorithm.",
+      who: "A multi-category retail SME selling across electronics, home goods, and lifestyle verticals on eBay UK and eBay US, with an established inventory but stagnating organic reach.",
+      problem:
+        "The client's eBay store had significant inventory depth but poor discoverability. Listings lacked keyword-optimised titles, item specifics were incomplete, and pricing was misaligned with category benchmarks — resulting in suppressed search placement and below-average sell-through rates.",
+    },
+    challenges: [
+      "Auditing and restructuring hundreds of live listings without disrupting active sales",
+      "Reverse-engineering eBay's Cassini algorithm signals to prioritise the highest-impact optimisations",
+      "Aligning pricing competitively across multiple categories with distinct margin profiles",
+      "Improving seller performance metrics (defect rate, late shipment, feedback score) alongside listing quality",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Conducted a full store audit scoring each listing against Cassini ranking factors: title relevance, item specifics completeness, pricing competitiveness, and image quality",
+          "Prioritised optimisation by revenue potential, focusing on top-20% SKUs driving 80% of historical GMV",
+          "Developed a category-level pricing strategy benchmarked against sold listings and competitor sell-through data",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Redesigned listing layouts with eBay's mobile-first template standards, ensuring visual clarity on both app and desktop",
+          "Standardised image requirements across the catalogue: white backgrounds, multi-angle shots, and lifestyle imagery for key SKUs",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Bulk-updated item specifics and listing attributes via eBay's File Exchange and Seller Hub tools",
+          "Implemented structured title formulas incorporating high-volume search keywords validated through Terapeak research",
+          "Set up automated repricing rules tied to competitor activity and stock level triggers",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Activated eBay Promoted Listings Standard on the top 30% of SKUs with bid rates calibrated to category ad rate benchmarks",
+          "Structured a seasonal promotional calendar aligned with eBay's flagship sale events to maximise promoted visibility",
+        ],
+      },
+    ],
+    features: [
+      "Full catalogue listing audit and restructure",
+      "Cassini-optimised title and item specifics strategy",
+      "Competitive pricing and repricing automation",
+      "Promoted Listings campaign setup and management",
+      "Seller performance metric improvement programme",
+    ],
+    results: [
+      "Significant improvement in organic search ranking across primary product categories",
+      "Measurable uplift in click-through rate following title and image optimisation",
+      "Increased sell-through rate driven by competitive pricing alignment",
+      "Promoted Listings ROAS exceeding category benchmarks within the first campaign cycle",
+    ],
+    visuals: [
+      "/projects/ecommerce/ebay-1.jpeg",
+      "/projects/ecommerce/ebay-2.jpeg",
+      "/projects/ecommerce/ebay-3.jpeg",
+      "/projects/ecommerce/ebay-4.jpeg",
+      "/projects/ecommerce/ebay-5.jpeg",
+      "/projects/ecommerce/ebay-6.jpeg",
+      "/projects/ecommerce/ebay-7.jpeg",
+      "/projects/ecommerce/ebay-8.jpeg",
+      "/projects/ecommerce/ebay-9.jpeg",
+      "/projects/ecommerce/ebay-10.jpeg",
+    ],
+    techStack: [
+      "eBay Seller Hub",
+      "Terapeak",
+      "File Exchange",
+      "Promoted Listings",
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 10. Amazon Marketplace Growth
+  // ─────────────────────────────────────────────
+  {
+    id: 10,
+    slug: "amazon-marketplace-growth",
+    title: "Amazon Marketplace Growth",
+    cat: "Ecommerce",
+    year: "2024",
+    color: "from-[#131921] to-[#f90]",
+    impact:
+      "Scaled an Amazon seller account from page-three obscurity to category page-one ranking through full-funnel listing optimisation, A+ Content creation, and a precision-targeted Sponsored Ads strategy — delivering sustained organic ranking growth and revenue uplift.",
+    client: "Confidential (Consumer Goods Brand)",
+    industry: "Ecommerce / Consumer Goods",
+    heroImage: "/projects/ecommerce/amazon-2.jpeg",
+    overview: {
+      what: "An end-to-end Amazon marketplace growth engagement covering catalogue optimisation, A+ Content and Brand Store development, and a full Sponsored Products, Sponsored Brands, and Sponsored Display advertising strategy across Amazon UK and Amazon UAE.",
+      who: "A branded consumer goods seller with an established product range but limited Amazon expertise, seeking to build sustainable organic ranking and reduce dependence on paid traffic for revenue.",
+      problem:
+        "The client's ASINs were indexed but not ranking. Listings lacked keyword depth, A+ Content was absent, and advertising spend was concentrated in broad-match campaigns with no structure — generating impressions without profitable conversion. Organic rank stagnation was costing market share to better-optimised competitors.",
+    },
+    challenges: [
+      "Building keyword-ranked organic positions from page three without cannibalising margin through over-investment in paid ads",
+      "Structuring an advertising account across three campaign types with distinct objectives and bid strategies",
+      "Producing A+ Content and Brand Store assets that differentiated the brand in competitive, price-sensitive categories",
+      "Managing listing compliance and suppression risks across Amazon's evolving content policy requirements",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Conducted deep keyword research using Helium 10 and Amazon Brand Analytics to identify high-volume, convertible search terms with achievable organic ranking potential",
+          "Defined a phased approach: establish keyword indexation and listing quality in month one, launch structured paid campaigns in month two, and harvest organic ranking data to reduce paid reliance by month three",
+          "Mapped competitor ASIN strategies to identify positioning gaps and content differentiation opportunities",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Produced A+ Content modules with benefit-led hero imagery, comparison tables, and lifestyle visuals aligned to the brand's identity",
+          "Designed a Brand Store architecture with category-level landing pages and curated product collections to increase basket size and time on brand",
+          "Standardised main image compliance and created zoomable secondary image sequences communicating product features at a glance",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Rebuilt all listing titles, bullet points, and backend search terms using a structured keyword insertion framework prioritising exact-match volume and relevance score",
+          "Structured Sponsored Products campaigns in a tiered architecture: exact-match harvesting campaigns fed by auto and broad discovery campaigns",
+          "Implemented negative keyword protocols and search term harvesting cycles to continuously improve advertising efficiency",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Launched Sponsored Brands video campaigns targeting competitor branded keywords to intercept category-aware buyers",
+          "Ran Sponsored Display retargeting on product detail pages and category audiences to maintain visibility across the consideration phase",
+          "Coordinated campaign scaling with Amazon Vine enrolment to accelerate review velocity on new ASINs",
+        ],
+      },
+    ],
+    features: [
+      "Full listing optimisation (title, bullets, backend keywords)",
+      "A+ Content and Brand Store design and build",
+      "Sponsored Products, Brands, and Display campaign management",
+      "Keyword ranking and organic position tracking",
+      "Review velocity strategy via Amazon Vine",
+    ],
+    results: [
+      "Primary ASINs achieved page-one organic ranking for target keywords within 90 days",
+      "Advertising Cost of Sale (ACoS) reduced to below category average through campaign restructuring",
+      "A+ Content and Brand Store contributing to measurable increase in conversion rate",
+      "Total Advertising Cost of Sale (TACoS) declining month-on-month as organic revenue share increased",
+    ],
+    visuals: [
+      "/projects/ecommerce/amazon-2.jpeg",
+      "/projects/ecommerce/amazon-3.jpeg",
+      "/projects/ecommerce/amazon-4.jpeg",
+      "/projects/ecommerce/amazon-5.jpeg",
+    ],
+    techStack: [
+      "Amazon Seller Central",
+      "Helium 10",
+      "Amazon Ads Console",
+      "Brand Analytics",
+      "Amazon Vine",
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 11. Walmart Seller Growth
+  // ─────────────────────────────────────────────
+  {
+    id: 11,
+    slug: "walmart-seller-growth",
+    title: "Walmart Seller Growth",
+    cat: "Ecommerce",
+    year: "2025",
+    color: "from-[#0071ce] to-[#ffc220]",
+    impact:
+      "Established and scaled a Walmart Marketplace seller account from initial onboarding to consistent revenue generation — leveraging Walmart's rapidly growing third-party seller ecosystem to capture high-intent buyers with significantly lower paid competition than Amazon.",
+    client: "Confidential (US Consumer Brand)",
+    industry: "Ecommerce / Consumer Goods",
+    heroImage: "/projects/ecommerce/walmart-1.jpeg",
+    overview: {
+      what: "A Walmart Marketplace launch and growth engagement covering seller account setup, catalogue onboarding, listing quality optimisation, and Walmart Connect advertising — executed to build organic ranking and profitable paid performance on one of the US's largest and fastest-growing ecommerce platforms.",
+      who: "An established Amazon seller seeking to diversify revenue across additional US marketplace channels, reduce Amazon dependency, and access Walmart's expanding online customer base with lower advertising cost-per-click benchmarks.",
+      problem:
+        "The client had strong Amazon performance but near-zero presence on Walmart Marketplace — missing a significant and growing revenue channel. Walmart's distinct content requirements, fulfilment expectations, and advertising platform demanded a purpose-built strategy rather than a direct catalogue transfer from Amazon.",
+    },
+    challenges: [
+      "Navigating Walmart's seller approval process and strict item setup requirements for catalogue onboarding",
+      "Adapting Amazon-native listings to Walmart's content taxonomy, item specifics structure, and style guide standards",
+      "Building review velocity on a platform without Amazon's established social proof mechanisms",
+      "Developing a Walmart Connect advertising strategy in a less mature but rapidly evolving ad platform",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Mapped the client's existing catalogue against Walmart's category taxonomy to identify the highest-opportunity SKUs for priority onboarding",
+          "Defined a 90-day roadmap covering account setup, listing quality scoring, fulfilment configuration, and paid traffic activation",
+          "Benchmarked Walmart category dynamics against Amazon equivalents to identify pricing and content differentiation opportunities",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Produced Walmart-compliant listing content: keyword-rich titles within character limits, structured feature bullets, and rich media descriptions formatted to Walmart's style guide",
+          "Adapted existing product imagery to Walmart's image requirement standards, ensuring main image compliance and supplementary visual depth",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Executed bulk catalogue onboarding via Walmart's Seller Center and Item Setup templates, resolving attribute mapping and taxonomy alignment errors",
+          "Configured Walmart Fulfilment Services (WFS) for eligible SKUs to unlock the 'Fulfilled by Walmart' trust badge and two-day delivery eligibility",
+          "Implemented listing quality score optimisation targeting Walmart's Content Score and Buybox eligibility criteria",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Launched Walmart Connect Sponsored Products campaigns targeting category-relevant keywords with lower CPCs than Amazon equivalents",
+          "Activated Walmart's Brand Amplifier campaigns to drive awareness across category browse and search placements",
+          "Structured a review acquisition strategy using Walmart's Review Accelerator programme to build social proof on new listings",
+        ],
+      },
+    ],
+    features: [
+      "Walmart Marketplace account setup and onboarding",
+      "Catalogue listing creation and quality score optimisation",
+      "Walmart Fulfilment Services (WFS) configuration",
+      "Walmart Connect Sponsored Products and Brand Amplifier management",
+      "Review Accelerator programme enrolment",
+    ],
+    results: [
+      "Full catalogue successfully onboarded and live on Walmart Marketplace within target timeline",
+      "Walmart Fulfilment Services activation unlocking two-day delivery badge across eligible SKUs",
+      "Sponsored Products campaigns achieving below-benchmark CPCs versus equivalent Amazon categories",
+      "Incremental revenue channel established, reducing single-marketplace revenue concentration",
+    ],
+    visuals: [
+      "/projects/ecommerce/walmart-1.jpeg",
+      "/projects/ecommerce/walmart-2.jpeg",
+      "/projects/ecommerce/walmart-3.jpeg",
+      "/projects/ecommerce/walmart-4.jpeg",
+      "/projects/ecommerce/walmart-5.jpeg",
+      "/projects/ecommerce/walmart-6.jpeg",
+      "/projects/ecommerce/walmart-7.jpeg",
+      "/projects/ecommerce/walmart-8.jpeg",
+      "/projects/ecommerce/walmart-9.jpeg",
+    ],
+    techStack: [
+      "Walmart Seller Center",
+      "Walmart Connect",
+      "Walmart Fulfilment Services",
+      "Review Accelerator",
+    ],
+  },
+  {
+    id: 12,
+    slug: "tiktok-shop-ads",
+    title: "TikTok Shop & Ads",
+    cat: "Ecommerce",
+    year: "2025",
+    color: "from-[#010101] to-[#ff0050]",
+    impact:
+      "Launched and scaled a TikTok Shop presence and paid advertising strategy that converted short-form content engagement into measurable product sales — capitalising on TikTok's native commerce infrastructure to reach high-intent buyers at the moment of discovery.",
+    client: "Confidential (DTC Consumer Brand)",
+    industry: "Ecommerce / Direct-to-Consumer",
+    heroImage: "/projects/ecommerce/tiktok-1.jpeg",
+    overview: {
+      what: "An end-to-end TikTok commerce engagement covering TikTok Shop setup and product catalogue onboarding, organic content strategy, creator affiliate programme activation, and a full-funnel TikTok Ads campaign strategy spanning TopView, In-Feed, and Spark Ads formats.",
+      who: "A direct-to-consumer brand with strong product-market fit but limited social commerce presence — seeking to reach younger, discovery-driven audiences and convert TikTok's uniquely high engagement rates into a scalable sales channel.",
+      problem:
+        "The client was generating brand awareness through organic social content but failing to convert that attention into revenue. There was no shoppable infrastructure, no paid amplification strategy, and no affiliate creator network to scale content production — leaving significant commerce potential unrealised on a platform where purchase intent and content consumption are uniquely fused.",
+    },
+    challenges: [
+      "Building a TikTok Shop catalogue compliant with platform content and product eligibility requirements",
+      "Developing a content strategy that feels native to TikTok's entertainment-first format while driving purchase intent",
+      "Identifying and activating relevant affiliate creators without inflating influencer spend",
+      "Structuring a paid ads funnel that bridges awareness, consideration, and conversion in a platform optimised for entertainment rather than intent-based search",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Mapped the full TikTok commerce funnel: organic discovery → creator amplification → shoppable content → Shop checkout → retargeting — and defined the role of paid and organic at each stage",
+          "Identified the client's top-performing product SKUs by margin and repeat purchase potential to prioritise for Shop listing and creator seeding",
+          "Conducted competitive creative analysis across TikTok to identify high-performing content formats and hooks in the client's category",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Produced Shop listing creative assets: compliant product imagery, short-form demo video clips, and product showcase content formatted for TikTok's native commerce surfaces",
+          "Developed a content brief framework for creator affiliates covering hook structures, key product claims, and call-to-action formats aligned with TikTok's organic best practices",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Configured TikTok Shop via TikTok Seller Center, integrating the product catalogue and enabling in-video and profile tab shopping surfaces",
+          "Set up TikTok Pixel and Events API for full-funnel conversion tracking across View Content, Add to Cart, and Purchase events",
+          "Built Custom Audiences from pixel data and Lookalike Audiences for retargeting and prospecting campaign layers",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Launched an affiliate creator programme through TikTok Shop's Affiliate Marketplace, recruiting micro and mid-tier creators with high category affinity and strong engagement rates",
+          "Activated Spark Ads to amplify top-performing organic and creator content with paid distribution, preserving native feel while expanding reach",
+          "Structured In-Feed Ads campaigns with dedicated creative sets for prospecting (awareness and consideration) and retargeting (conversion), with weekly creative refresh cycles to counter ad fatigue",
+          "Ran limited-period TikTok Shop vouchers and flash sale mechanics to drive urgency and boost Shop conversion rate during campaign windows",
+        ],
+      },
+    ],
+    features: [
+      "TikTok Shop setup and catalogue onboarding",
+      "TikTok Pixel and Events API integration",
+      "Affiliate creator programme activation via TikTok Marketplace",
+      "Spark Ads and In-Feed Ads campaign management",
+      "Full-funnel audience strategy (Custom and Lookalike Audiences)",
+    ],
+    results: [
+      "TikTok Shop live and generating attributed revenue within the first campaign month",
+      "Affiliate creator network generating consistent product content at a fraction of traditional influencer costs",
+      "Spark Ads delivering above-benchmark video completion rates and click-through performance",
+      "Paid ads Return on Ad Spend (ROAS) scaling positively as pixel data matured and creative optimisation compounded",
+    ],
+    visuals: [
+      "/projects/ecommerce/tiktok-1.jpeg",
+      "/projects/ecommerce/tiktok-2.jpeg",
+      "/projects/ecommerce/tiktok-3.jpeg",
+      "/projects/ecommerce/tiktok-4.jpeg",
+      "/projects/ecommerce/tiktok-5.jpeg",
+    ],
+    techStack: [
+      "TikTok Seller Center",
+      "TikTok Ads Manager",
+      "TikTok Pixel",
+      "Events API",
+      "TikTok Affiliate Marketplace",
+    ],
+  },
 ];
 
 export const portfolioCategories: Array<"All" | PortfolioCategory> = [
   "All",
   "Web",
   "Mobile",
-  "Designing",
+  "Ecommerce",
 ];
 
 export function getPortfolioProject(slug: string) {

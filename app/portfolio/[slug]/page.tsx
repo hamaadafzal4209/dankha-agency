@@ -318,36 +318,59 @@ async function PortfolioDetailPage({
               </h2>
             </div>
           </Reveal>
-          <div className="mt-8 grid gap-5 lg:h-136 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.8fr)] lg:grid-rows-2">
-            <Reveal className="h-full lg:row-span-2">
-              <div className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card">
-                <Image
-                  src={project.visuals[0]}
-                  alt={`${project.title} showcase 1`}
-                  width={1600}
-                  height={1200}
-                  className="aspect-16/11 h-full min-h-96 w-full object-cover transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0"
-                />
-              </div>
-            </Reveal>
+          <div className={`mt-8 grid gap-5 ${project.visuals.length > 3 ? 'grid-cols-2 md:grid-cols-3' : 'lg:h-136 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.8fr)] lg:grid-rows-2'}`}>
+            {project.visuals.length > 3 ? (
+              // Simple grid for more than 3 images
+              project.visuals.map((visual, index) => (
+                <Reveal
+                  key={visual}
+                  delay={index * 0.04}
+                >
+                  <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-card">
+                    <Image
+                      src={visual}
+                      alt={`${project.title} showcase ${index + 1}`}
+                      width={600}
+                      height={800}
+                      className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                    />
+                  </div>
+                </Reveal>
+              ))
+            ) : (
+              // Original layout for 3 or fewer images
+              <>
+                <Reveal className="h-full lg:row-span-2">
+                  <div className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card">
+                    <Image
+                      src={project.visuals[0]}
+                      alt={`${project.title} showcase 1`}
+                      width={1600}
+                      height={1200}
+                      className="aspect-16/11 h-full min-h-96 w-full object-cover transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0"
+                    />
+                  </div>
+                </Reveal>
 
-            {project.visuals.slice(1).map((visual, index) => (
-              <Reveal
-                key={visual}
-                delay={(index + 1) * 0.05}
-                className="h-full"
-              >
-                <div className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card">
-                  <Image
-                    src={visual}
-                    alt={`${project.title} showcase ${index + 2}`}
-                    width={1200}
-                    height={900}
-                    className="aspect-16/10 h-full min-h-72 w-full object-cover transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0"
-                  />
-                </div>
-              </Reveal>
-            ))}
+                {project.visuals.slice(1).map((visual, index) => (
+                  <Reveal
+                    key={visual}
+                    delay={(index + 1) * 0.05}
+                    className="h-full"
+                  >
+                    <div className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card">
+                      <Image
+                        src={visual}
+                        alt={`${project.title} showcase ${index + 2}`}
+                        width={1200}
+                        height={900}
+                        className="aspect-16/10 h-full min-h-72 w-full object-cover transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0"
+                      />
+                    </div>
+                  </Reveal>
+                ))}
+              </>
+            )}
           </div>
         </section>
 
