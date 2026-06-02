@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowRight, MapPin, Clock, Briefcase } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { TeamAvatar } from "@/components/TeamAvatar";
 import { getMemberBySlug, teamMembers, type TeamMember } from "@/data/team";
 
 export function generateStaticParams() {
@@ -53,22 +53,7 @@ async function TeamMemberPage({
 
               {/* Avatar */}
               <div className="relative mx-auto md:mx-0">
-                <div className="relative h-28 w-28 md:h-36 md:w-36">
-                  <Image
-                    src={member.avatar}
-                    alt={member.name}
-                    fill
-                    className="rounded-2xl object-cover border border-white/10 shadow-2xl"
-                    priority
-                  />
-                  {/* Available badge — overlaps corner */}
-                  {member.available && (
-                    <span className="absolute -bottom-2 -right-2 flex items-center gap-1.5 rounded-full border border-green-400/30 bg-[#0a0a0a] px-2.5 py-1 text-[10px] font-semibold tracking-wide text-green-300 shadow-lg">
-                      <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-                      Available
-                    </span>
-                  )}
-                </div>
+                <TeamAvatar member={member} />
               </div>
 
               {/* Identity */}

@@ -254,7 +254,7 @@ export const teamMembers: TeamMember[] = [
       "Great marketing isn't about being louder — it's about being relevant at exactly the right moment.",
     about:
       "Taiba leads Dankha's marketing division with a philosophy that strategy always comes before execution. In an industry full of agencies that rush to post and boost, she insists on building the foundation first: clear brand positioning, documented audience insights, a coherent content system, and a paid strategy grounded in unit economics — not vanity metrics.\n\nOver five years, she has launched and managed campaigns for 60+ brands across beauty, lifestyle, wellness, B2B, and eCommerce — driving over 2M followers in organic growth and consistently reducing client CAC by 25–35% through funnel optimization and creative testing.\n\nHer work spans the full marketing stack: paid social on Meta and TikTok, SEO-driven content programs, email automation via Klaviyo, and organic social strategy. She is particularly skilled at building repeatable content systems that in-house teams can actually operate — a rarity in agency work, and something her clients consistently highlight as the most lasting value she delivers.",
-    avatar: "/team/Taiba-fatima.jpeg",
+    avatar: "",
     initials: "TF",
     skills: {
       "Paid Performance": [
