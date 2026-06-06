@@ -28,7 +28,7 @@ export type PortfolioProject = {
   }>;
   features: string[];
   results: string[];
-  visuals: string[];
+  visuals?: string[];
   techStack: string[];
   testimonial?: {
     quote: string;
@@ -108,11 +108,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Centralised business performance tracking for partner growth",
       "Published and live on Google Play Store",
     ],
-    visuals: [
-      "https://images.unsplash.com/photo-1601972599720-36938d4ecd31?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-    ],
     techStack: ["React Native", "WebSocket"],
   },
 
@@ -185,11 +180,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Real-time operational monitoring enabling faster issue response",
       "Analytics module supporting data-driven service improvements",
       "Live and actively used at app.digitaltolk.se",
-    ],
-    visuals: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
     ],
     techStack: ["Vue.js"],
   },
@@ -264,11 +254,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Real-time tracking reducing enquiry load on service centre staff",
       "Published on Google Play Store under the Dubai Government entity",
     ],
-    visuals: [
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    ],
     techStack: ["React Native", "Firebase"],
   },
 
@@ -341,11 +326,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Clear positioning as a certified Schneider Electric channel partner in the GCC",
       "Improved inbound enquiry quality from engineering and procurement audiences",
       "Live at amf-sa.com",
-    ],
-    visuals: [
-      "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
     ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
   },
@@ -420,11 +400,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Cross-platform deployment from a single Vue.js/Capacitor codebase",
       "Published on Google Play Store",
     ],
-    visuals: [
-      "https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80",
-    ],
     techStack: ["Vue.js", "Capacitor", "WebRTC"],
   },
 
@@ -497,11 +472,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "SEO-optimised structure improving organic search visibility",
       "Modern animation system reinforcing the premium agency positioning",
       "Live at webcraft.pk",
-    ],
-    visuals: [
-      "https://images.unsplash.com/photo-1545665277-5937489579f2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80",
     ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
@@ -576,11 +546,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Performance-optimised delivery for global accessibility",
       "Live at healuppharma.com",
     ],
-    visuals: [
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
-    ],
     techStack: ["React", "Tailwind CSS"],
   },
 
@@ -654,11 +619,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "Mobile-first experience serving Pakistan's mobile-dominant student audience",
       "Live at risepremier.edu.pk",
     ],
-    visuals: [
-      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
-    ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   // ─────────────────────────────────────────────
@@ -675,7 +635,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Transformed an underperforming eBay seller account into a high-visibility storefront through strategic listing optimisation, competitive pricing analysis, and data-driven catalogue restructuring — driving measurable uplift in organic search ranking and conversion rate.",
     client: "Confidential (Retail SME)",
     industry: "Ecommerce / Retail",
-    heroImage: "/projects/ecommerce/ebay-1.jpeg",
+    heroImage: "/projects/thumbnail/ebay.jpeg",
     overview: {
       what: "A comprehensive eBay store audit and optimisation engagement covering listing quality, catalogue architecture, pricing strategy, and seller performance metrics — executed to maximise visibility within eBay's Cassini search algorithm.",
       who: "A multi-category retail SME selling across electronics, home goods, and lifestyle verticals on eBay UK and eBay US, with an established inventory but stagnating organic reach.",
@@ -767,7 +727,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Scaled an Amazon seller account from page-three obscurity to category page-one ranking through full-funnel listing optimisation, A+ Content creation, and a precision-targeted Sponsored Ads strategy — delivering sustained organic ranking growth and revenue uplift.",
     client: "Confidential (Consumer Goods Brand)",
     industry: "Ecommerce / Consumer Goods",
-    heroImage: "/projects/ecommerce/amazon-2.jpeg",
+    heroImage: "/projects/thumbnail/amazon-thumbnail.jpeg",
     overview: {
       what: "An end-to-end Amazon marketplace growth engagement covering catalogue optimisation, A+ Content and Brand Store development, and a full Sponsored Products, Sponsored Brands, and Sponsored Display advertising strategy across Amazon UK and Amazon UAE.",
       who: "A branded consumer goods seller with an established product range but limited Amazon expertise, seeking to build sustainable organic ranking and reduce dependence on paid traffic for revenue.",
@@ -856,7 +816,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Established and scaled a Walmart Marketplace seller account from initial onboarding to consistent revenue generation — leveraging Walmart's rapidly growing third-party seller ecosystem to capture high-intent buyers with significantly lower paid competition than Amazon.",
     client: "Confidential (US Consumer Brand)",
     industry: "Ecommerce / Consumer Goods",
-    heroImage: "/projects/ecommerce/walmart-1.jpeg",
+    heroImage: "/projects/thumbnail/walmart-thumbnail.jpeg",
     overview: {
       what: "A Walmart Marketplace launch and growth engagement covering seller account setup, catalogue onboarding, listing quality optimisation, and Walmart Connect advertising — executed to build organic ranking and profitable paid performance on one of the US's largest and fastest-growing ecommerce platforms.",
       who: "An established Amazon seller seeking to diversify revenue across additional US marketplace channels, reduce Amazon dependency, and access Walmart's expanding online customer base with lower advertising cost-per-click benchmarks.",
@@ -944,7 +904,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Launched and scaled a TikTok Shop presence and paid advertising strategy that converted short-form content engagement into measurable product sales — capitalising on TikTok's native commerce infrastructure to reach high-intent buyers at the moment of discovery.",
     client: "Confidential (DTC Consumer Brand)",
     industry: "Ecommerce / Direct-to-Consumer",
-    heroImage: "/projects/ecommerce/tiktok-1.jpeg",
+    heroImage: "/projects/thumbnail/tiktok.jpeg",
     overview: {
       what: "An end-to-end TikTok commerce engagement covering TikTok Shop setup and product catalogue onboarding, organic content strategy, creator affiliate programme activation, and a full-funnel TikTok Ads campaign strategy spanning TopView, In-Feed, and Spark Ads formats.",
       who: "A direct-to-consumer brand with strong product-market fit but limited social commerce presence — seeking to reach younger, discovery-driven audiences and convert TikTok's uniquely high engagement rates into a scalable sales channel.",
@@ -1017,6 +977,180 @@ export const portfolioProjects: PortfolioProject[] = [
       "TikTok Pixel",
       "Events API",
       "TikTok Affiliate Marketplace",
+    ],
+  },
+  // ─────────────────────────────────────────────
+  // 13. Etsy Shop Growth
+  // ─────────────────────────────────────────────
+  {
+    id: 13,
+    slug: "etsy-shop-growth",
+    title: "Etsy Shop Growth",
+    cat: "Ecommerce",
+    year: "2025",
+    color: "from-[#f1641e] to-[#f5a623]",
+    impact:
+      "Transformed an underperforming Etsy shop into a top-ranked seller within its niche — through systematic listing optimisation, search-aligned product titling, and a conversion-focused shop experience that drove sustained organic traffic growth and a measurable uplift in order volume.",
+    client: "Confidential (Independent Creative Brand)",
+    industry: "Ecommerce / Handmade & Creative Goods",
+    heroImage: "/projects/thumbnail/etsy.jpeg",
+    overview: {
+      what: "A full Etsy shop growth engagement covering shop audit and restructure, listing SEO optimisation across the full catalogue, photography and thumbnail strategy, Etsy Ads management, and Star Seller programme alignment — executed to build organic search visibility and improve shop-wide conversion performance.",
+      who: "An independent creative seller with a distinctive product range and loyal repeat customer base, but limited visibility in Etsy's competitive search environment — seeking to grow beyond word-of-mouth and unlock the platform's organic discovery potential.",
+      problem:
+        "Despite strong product quality and positive reviews, the client's shop was being consistently outranked by competitors with lower-quality listings but stronger Etsy SEO fundamentals. Listing titles were creative rather than search-aligned, tags were underutilised, and the shop lacked the structural signals — shipping speed, response rate, review velocity — required to achieve and maintain Star Seller status. Etsy Ads spend was active but unstructured, generating spend without attributable return.",
+    },
+    challenges: [
+      "Rebuilding listing titles and tags to reflect Etsy's search algorithm priorities without losing the brand's authentic voice",
+      "Improving shop-level trust signals (response rate, dispatch time, review recency) to achieve and sustain Star Seller status",
+      "Developing a thumbnail and photography strategy that increased click-through rate in crowded search result pages",
+      "Structuring Etsy Ads to prioritise high-margin, high-conversion listings rather than spreading budget indiscriminately across the catalogue",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Conducted a full shop audit assessing listing quality scores, search ranking positions, tag coverage, and conversion funnel drop-off points across the entire catalogue",
+          "Used Etsy's Search Analytics and third-party keyword research tools to identify high-volume, buyer-intent search terms with achievable ranking potential in the client's category",
+          "Defined a prioritisation framework — ranking listings by margin, review count, and conversion rate — to sequence optimisation work for maximum revenue impact",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Developed a thumbnail refresh strategy using consistent composition, background treatment, and lifestyle context to create a cohesive, scroll-stopping shop aesthetic",
+          "Produced listing image sequences communicating scale, material detail, packaging, and use-case to reduce pre-purchase uncertainty and support conversion",
+          "Redesigned shop banner, logo presentation, and About section to reinforce brand trust and communicate the maker's story — a key conversion driver on Etsy",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Rebuilt listing titles using a front-loaded keyword structure prioritising primary search terms within Etsy's character limit, followed by descriptive and style qualifiers",
+          "Overhauled all 13 tags per listing to maximise search surface coverage using a mix of exact-phrase, longtail, and occasion-based terms",
+          "Optimised listing descriptions with keyword-rich opening paragraphs, structured product specifications, and gift-occasion copy to capture both algorithm and buyer intent",
+          "Implemented shop policies, FAQ sections, and dispatch time commitments aligned with Etsy's Star Seller eligibility criteria",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Restructured Etsy Ads to concentrate daily budget on the shop's highest-converting listings, using performance data to expand or exclude listings dynamically",
+          "Activated offsite ads eligibility assessment and optimised listings for Etsy's external Google Shopping placements",
+          "Coordinated a post-purchase review request strategy using Etsy's Message to Buyers automation to improve review velocity and recency signals",
+        ],
+      },
+    ],
+    features: [
+      "Full catalogue listing SEO optimisation (titles, tags, descriptions)",
+      "Shop experience redesign (banner, About section, policies)",
+      "Thumbnail and product photography strategy",
+      "Etsy Ads budget restructuring and performance management",
+      "Star Seller alignment and review velocity strategy",
+    ],
+    results: [
+      "Priority listings achieving first-page organic ranking for target search terms within 60 days of optimisation",
+      "Shop attaining and maintaining Etsy Star Seller status following policy and fulfilment improvements",
+      "Click-through rate uplift attributed to thumbnail refresh and search-aligned title restructuring",
+      "Etsy Ads Return on Ad Spend improved significantly following budget concentration on high-conversion listings",
+    ],
+    techStack: [
+      "Etsy Seller Hub",
+      "Etsy Ads",
+      "Etsy Search Analytics",
+      "eRank",
+      "Marmalead",
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 14. Shopify Store Growth
+  // ─────────────────────────────────────────────
+  {
+    id: 14,
+    slug: "shopify-store-growth",
+    title: "Shopify Store Growth",
+    cat: "Ecommerce",
+    year: "2025",
+    color: "from-[#004c3f] to-[#96bf48]",
+    impact:
+      "Built and scaled a high-converting Shopify DTC store from initial build through to a profitable, multi-channel revenue engine — combining conversion-optimised UX, a structured paid media funnel, and retention-focused email and SMS automation to maximise customer lifetime value.",
+    client: "Confidential (DTC Consumer Brand)",
+    industry: "Ecommerce / Direct-to-Consumer",
+    heroImage: "/projects/thumbnail/shopify.jpeg",
+    overview: {
+      what: "An end-to-end Shopify store build and growth engagement covering custom theme development, conversion rate optimisation, Meta and Google Ads full-funnel management, Klaviyo email and SMS automation, and subscription and loyalty programme configuration — designed to build a sustainable, owned-channel DTC business.",
+      who: "A consumer brand with a validated product and existing wholesale distribution, seeking to establish a direct-to-consumer channel that would increase margin, build first-party customer data, and reduce dependency on third-party marketplace platforms.",
+      problem:
+        "The client had strong product-market fit and brand identity but no owned ecommerce infrastructure. Revenue was entirely dependent on wholesale accounts and marketplace listings, leaving the brand without direct customer relationships, first-party data, or the margin profile available through DTC. A purpose-built Shopify store was needed — not a template deployment, but a conversion-engineered, brand-coherent storefront capable of profitably acquiring and retaining customers at scale.",
+    },
+    challenges: [
+      "Building a Shopify store that balanced brand aesthetic integrity with proven conversion rate optimisation principles",
+      "Establishing profitable paid acquisition from launch, without the benefit of historical pixel data or established audience pools",
+      "Configuring post-purchase retention infrastructure — email flows, SMS sequences, and loyalty mechanics — to maximise customer lifetime value from the first order",
+      "Integrating subscription commerce to generate predictable recurring revenue alongside one-time purchase conversion",
+    ],
+    solution: [
+      {
+        title: "Strategy",
+        items: [
+          "Defined the DTC customer acquisition model: paid social and search as primary acquisition channels, with email and SMS as the retention and revenue compounding layer",
+          "Mapped the full customer lifecycle — from first-touch ad impression through to repeat purchase and subscription upgrade — and specified the technology stack and automations required at each stage",
+          "Conducted competitive DTC benchmarking to identify conversion experience gaps and differentiation opportunities in the client's category",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Developed a custom Shopify theme build prioritising page speed, mobile-first layout, and conversion-focused UX patterns — including sticky add-to-cart, social proof placement, and benefit-led product page architecture",
+          "Designed a homepage, collection pages, and product detail pages that balanced editorial brand storytelling with clear purchase pathways",
+          "Produced creative assets for Meta and Google Ads across static, carousel, and video formats — with dedicated creative sets for prospecting, retargeting, and dynamic product ad placements",
+        ],
+      },
+      {
+        title: "Development",
+        items: [
+          "Built the Shopify store with full Shopify Payments, Shop Pay, and buy-now-pay-later integration to maximise checkout conversion across payment preferences",
+          "Configured Recharge Subscriptions to offer subscribe-and-save options on eligible SKUs, with subscriber-exclusive pricing and cancellation-flow retention logic",
+          "Implemented Meta Pixel, Google Tag Manager, and GA4 with enhanced ecommerce event tracking for full purchase funnel visibility",
+          "Integrated Klaviyo with Shopify for segmented email and SMS flows: welcome series, abandoned cart, browse abandonment, post-purchase, and winback sequences",
+          "Set up LoyaltyLion rewards programme with points-for-purchase mechanics, referral incentives, and VIP tier progression to drive repeat purchase behaviour",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Launched Meta Ads with a structured campaign architecture: broad prospecting campaigns using Advantage+ audience targeting, retargeting campaigns segmented by funnel stage, and dynamic product ads for catalogue retargeting",
+          "Activated Google Ads across Performance Max, Shopping, and branded search campaigns to capture high-intent demand and protect brand search terms",
+          "Built Klaviyo flows generating automated revenue from day one — with A/B tested subject lines, send-time optimisation, and segment-specific messaging for new, active, and lapsed customers",
+          "Managed ongoing creative testing cycles across paid channels, rotating new ad concepts weekly and scaling spend behind proven performers",
+        ],
+      },
+    ],
+    features: [
+      "Custom Shopify theme build (mobile-first, conversion-optimised)",
+      "Meta Ads and Google Ads full-funnel campaign management",
+      "Klaviyo email and SMS automation (welcome, abandon, post-purchase, winback)",
+      "Recharge subscription commerce configuration",
+      "LoyaltyLion rewards and referral programme",
+      "GA4 and enhanced ecommerce tracking setup",
+    ],
+    results: [
+      "Shopify store launched on schedule with sub-2-second page load performance and mobile conversion rate above industry benchmark",
+      "Paid media achieving positive Return on Ad Spend within the first 30 days of campaign activity",
+      "Klaviyo email flows contributing a significant share of total attributed revenue in the first quarter post-launch",
+      "Subscription programme generating recurring monthly revenue within 60 days of activation",
+      "Customer lifetime value trajectory outperforming initial projections as retention mechanics compounded",
+    ],
+    techStack: [
+      "Shopify",
+      "Klaviyo",
+      "Meta Ads Manager",
+      "Google Ads",
+      "Recharge Subscriptions",
+      "LoyaltyLion",
+      "GA4",
+      "Google Tag Manager",
     ],
   },
 ];
