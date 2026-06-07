@@ -173,7 +173,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
 
           {/* Mobile controls (bottom center) - outside image container */}
           {images.length > 1 && (
-            <div className="sm:hidden fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[60] flex items-center gap-4">
+            <div className="sm:hidden fixed bottom-8 left-1/2 transform -translate-x-1/2 z-60 flex items-center gap-4">
               <button
                 onClick={goToPrevious}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-all hover:scale-110 shadow-lg"
