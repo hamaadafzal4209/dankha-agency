@@ -3,9 +3,9 @@ import { Reveal } from "@/components/Reveal";
 import { ServicesPreview } from "@/components/Home/ServicesPreview";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Digital Engineering & Growth Marketing Services | Dankha",
   description:
-    "Explore our comprehensive services including IT Solutions, Ecommerce, Marketing, and Designing.",
+    "Explore our specialized capabilities: from full-stack web and mobile application development to ROI-focused growth marketing structures. Maximize your digital yield.",
 };
 
 export default function ServicesPage() {

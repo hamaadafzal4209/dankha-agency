@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Our Work: Case Studies & Digital Success Stories | Dankha",
   description:
-    "Browse our portfolio of web, ecommerce, marketing, and brand design projects. See how Dankha Agency has helped ambitious brands grow.",
+    "See how Dankha helps global brands scale. Explore real-world case studies in custom software engineering, UX/UI transformation, and performance optimization.",
   alternates: { canonical: "https://dankha.co/portfolio" },
   openGraph: {
-    title: "Portfolio — Dankha Agency",
+    title: "Our Work: Case Studies & Digital Success Stories | Dankha",
     description:
-      "Browse our portfolio of web, ecommerce, marketing, and brand design projects.",
+      "See how Dankha helps global brands scale. Explore real-world case studies in custom software engineering, UX/UI transformation, and performance optimization.",
     url: "https://dankha.co/portfolio",
   },
 };

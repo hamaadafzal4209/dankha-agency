@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Dankha | Book Your Free Technical Consultation",
   description:
-    "Get in touch with Dankha Agency. Whether you have a project in mind or want to learn more about our services, we'd love to hear from you.",
+    "Ready to scale your next digital product? Contact the engineering and strategy experts at Dankha today for a comprehensive, zero-obligation project evaluation.",
   alternates: { canonical: "https://dankha.co/contact" },
   openGraph: {
-    title: "Contact Dankha Agency",
+    title: "Contact Dankha | Book Your Free Technical Consultation",
     description:
-      "Get in touch with Dankha Agency. Whether you have a project in mind or want to learn more about our services, we'd love to hear from you.",
+      "Ready to scale your next digital product? Contact the engineering and strategy experts at Dankha today for a comprehensive, zero-obligation project evaluation.",
     url: "https://dankha.co/contact",
   },
 };

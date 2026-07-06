@@ -29,11 +29,11 @@ const siteUrl = "https://dankha.co";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dankha Agency — Premium Digital Agency",
-    template: "%s | Dankha Agency",
+    default: "Dankha | Premium Digital Agency & Custom Software Solutions",
+    template: "%s | Dankha",
   },
   description:
-    "Dankha is a premium digital agency specialising in web engineering, ecommerce, digital marketing, and brand design. We build high-performance digital products that scale.",
+    "Scale your enterprise with Dankha. We design intuitive digital products, bespoke software engineering, and data-driven marketing frameworks. Get a free audit.",
   keywords: [
     "digital agency",
     "web development",
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Dankha Agency",
-    title: "Dankha Agency — Premium Digital Agency",
+    siteName: "Dankha",
+    title: "Dankha | Premium Digital Agency & Custom Software Solutions",
     description:
-      "Premium digital agency specialising in web engineering, ecommerce, marketing, and brand design.",
+      "Scale your enterprise with Dankha. We design intuitive digital products, bespoke software engineering, and data-driven marketing frameworks.",
     images: [
       {
         url: "/og-image.png",
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dankha Agency — Premium Digital Agency",
+    title: "Dankha | Premium Digital Agency & Custom Software Solutions",
     description:
-      "Premium digital agency specialising in web engineering, ecommerce, marketing, and brand design.",
+      "Scale your enterprise with Dankha. We design intuitive digital products, bespoke software engineering, and data-driven marketing frameworks.",
     images: ["/og-image.png"],
   },
   alternates: {

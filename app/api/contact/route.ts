@@ -1,9 +1,17 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations/contact";
 import { getIP, ratelimit } from "@/lib/ratelimit";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT || 587),
+  secure: process.env.SMTP_SECURE === "true" || process.env.SMTP_PORT === "465",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 export async function POST(req: Request) {
   try {
@@ -25,9 +33,12 @@ export async function POST(req: Request) {
 
     const { name, email, phone, subject, message } = validation.data;
 
-    await resend.emails.send({
-      from: process.env.CONTACT_FROM!,
-      to: process.env.CONTACT_TO!,
+    // verify connection (will throw if invalid)
+    await transporter.verify();
+
+    const info = await transporter.sendMail({
+      from: process.env.CONTACT_FROM,
+      to: process.env.CONTACT_TO,
       subject: subject || `New contact from ${name}`,
       replyTo: email,
       text: `
@@ -42,7 +53,11 @@ ${message}
       `.trim(),
     });
 
-    return NextResponse.json({ success: true });
+    // Log full info server-side for debugging
+    console.info("Email send info:", { accepted: info.accepted, rejected: info.rejected, messageId: info.messageId });
+
+    // Return minimal send result to client for debugging (no credentials)
+    return NextResponse.json({ success: true, info: { accepted: info.accepted, rejected: info.rejected, messageId: info.messageId } });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ success: false, error: "Something went wrong" }, { status: 500 });
