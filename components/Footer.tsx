@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { MessageCircle, Send, Mail, Globe, MapPin } from "lucide-react";
+import { FaLinkedin, FaSquareInstagram } from "react-icons/fa6";
 import Image from "next/image";
 import { ContactEmail, PhoneNumber } from "@/data/commonConstants";
+import { socialLinks } from "./Home/data";
 
 export function Footer() {
   return (
@@ -22,17 +23,24 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-                <Image src="/assets/logo.svg" alt="DANKHA Logo" width={120} height={36} />
+              <Image
+                src="/assets/logo.svg"
+                alt="DANKHA Logo"
+                width={120}
+                height={36}
+              />
             </Link>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground leading-relaxed">
-              We craft scalable digital experiences across IT, Ecommerce and Marketing —
-              built to perform, designed to delight.
+              We craft scalable digital experiences across IT, Ecommerce and
+              Marketing — built to perform, designed to delight.
             </p>
             <div className="mt-6 flex gap-3">
-              {[MessageCircle, Send, Mail, Globe, MapPin].map((Icon, i) => (
+              {socialLinks.map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group h-10 w-10 inline-flex items-center justify-center rounded-lg glass hover:scale-110 hover:text-secondary transition-all"
                 >
                   <Icon size={16} />
@@ -46,8 +54,22 @@ export function Footer() {
               Company
             </h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-foreground transition">About</Link></li>
-              <li><Link href="/portfolio" className="hover:text-foreground transition">Portfolio</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="hover:text-foreground transition"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/portfolio"
+                  className="hover:text-foreground transition"
+                >
+                  Portfolio
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -56,8 +78,22 @@ export function Footer() {
               Get in touch
             </h4>
             <address className="not-italic space-y-3 text-sm text-muted-foreground">
-              <p><a href={`mailto:${ContactEmail}`} className="hover:text-foreground transition">{ContactEmail}</a></p>
-              <p><a href={`tel:${PhoneNumber.replace(/\s/g, "")}`} className="hover:text-foreground transition">{PhoneNumber}</a></p>
+              <p>
+                <a
+                  href={`mailto:${ContactEmail}`}
+                  className="hover:text-foreground transition"
+                >
+                  {ContactEmail}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`tel:${PhoneNumber.replace(/\s/g, "")}`}
+                  className="hover:text-foreground transition"
+                >
+                  {PhoneNumber}
+                </a>
+              </p>
             </address>
           </div>
         </div>

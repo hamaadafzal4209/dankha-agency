@@ -15,6 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useContactForm } from "@/hooks/useContactForm";
 import { toast } from "sonner";
 import { ContactEmail, PhoneNumber } from "@/data/commonConstants";
+import { socialLinks } from "@/components/Home/data";
 
 function ContactPage() {
   const { register, handleSubmit, onSubmit, errors, isSubmitting } =
@@ -134,19 +135,31 @@ function ContactPage() {
 
         <Reveal delay={0.15} className="lg:col-span-2">
           <div className="space-y-4 h-full">
-            <InfoCard icon={Mail} label="Email" value={ContactEmail} href={`mailto:${ContactEmail}`} />
-            <InfoCard icon={Phone} label="Phone" value={PhoneNumber} href={`tel:${PhoneNumber.replace(/\s/g, "")}`} />
+            <InfoCard
+              icon={Mail}
+              label="Email"
+              value={ContactEmail}
+              href={`mailto:${ContactEmail}`}
+            />
+            <InfoCard
+              icon={Phone}
+              label="Phone"
+              value={PhoneNumber}
+              href={`tel:${PhoneNumber.replace(/\s/g, "")}`}
+            />
 
             <div className="rounded-3xl glass-strong p-6">
               <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4">
                 Follow us
               </div>
-              <div className="flex gap-3">
-                {[MessageCircle, Globe, Sparkles, GitBranch].map((Icon, i) => (
+              <div className="mt-6 flex gap-3">
+                {socialLinks.map(({ icon: Icon, href }, i) => (
                   <a
                     key={i}
-                    href="#"
-                    className="group h-11 w-11 inline-flex items-center justify-center rounded-xl glass hover:scale-110 hover:text-secondary transition-all"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group h-10 w-10 inline-flex items-center justify-center rounded-lg glass hover:scale-110 hover:text-secondary transition-all"
                   >
                     <Icon size={16} />
                   </a>
