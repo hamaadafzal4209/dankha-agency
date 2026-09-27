@@ -4,7 +4,6 @@ import { Background } from "@/components/Background";
 import { BackToTop } from "@/components/BackToTop";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { PageTransition } from "@/components/PageTransition";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -13,9 +12,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <Analytics />
       <Background />
       <Navbar />
-      <PageTransition>
-        <main className="page-shell relative min-h-screen pt-24">{children}</main>
-      </PageTransition>
+      <main className="relative min-h-screen pt-24">{children}</main>
       <Footer />
       <BackToTop />
     </>
