@@ -39,11 +39,11 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.impact,
-    alternates: { canonical: `https://dankha.co/portfolio/${slug}` },
+    alternates: { canonical: `https://www.dankha.co/portfolio/${slug}` },
     openGraph: {
       title: `${project.title} — Dankha Agency`,
       description: project.impact,
-      url: `https://dankha.co/portfolio/${slug}`,
+      url: `https://www.dankha.co/portfolio/${slug}`,
       images: project.heroImage ? [{ url: project.heroImage, width: 1600, alt: project.title }] : [],
     },
   };
@@ -69,19 +69,19 @@ async function PortfolioDetailPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://dankha.co",
+        item: "https://www.dankha.co",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Portfolio",
-        item: "https://dankha.co/portfolio",
+        item: "https://www.dankha.co/portfolio",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: project.title,
-        item: `https://dankha.co/portfolio/${slug}`,
+        item: `https://www.dankha.co/portfolio/${slug}`,
       },
     ],
   };

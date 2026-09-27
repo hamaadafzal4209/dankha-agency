@@ -24,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://dankha.co";
+const siteUrl = "https://www.dankha.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Scale your enterprise with Dankha. We design intuitive digital products, bespoke software engineering, and data-driven marketing frameworks.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${siteUrl}/assets/logo.png`,
         width: 1200,
         height: 630,
         alt: "Dankha Agency",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Dankha | Premium Digital Agency & Custom Software Solutions",
     description:
       "Scale your enterprise with Dankha. We design intuitive digital products, bespoke software engineering, and data-driven marketing frameworks.",
-    images: ["/og-image.png"],
+    images: [`${siteUrl}/assets/logo.png`],
   },
   alternates: {
     canonical: siteUrl,
@@ -95,8 +95,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Dankha Agency",
-    url: "https://dankha.co",
-    logo: "https://dankha.co/og-image.png",
+    url: siteUrl,
+    logo: `${siteUrl}/assets/logo.png`,
     description:
       "Premium digital agency specialising in web engineering, ecommerce, digital marketing, and brand design.",
     contactPoint: {
@@ -105,6 +105,13 @@ export default function RootLayout({
       availableLanguage: "English",
     },
     sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Dankha",
+    url: siteUrl,
   };
 
   return (
@@ -116,6 +123,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--bg-gradient-radial)">

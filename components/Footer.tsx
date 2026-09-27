@@ -70,6 +70,16 @@ export function Footer() {
                   Portfolio
                 </Link>
               </li>
+              <li>
+                <Link href="/services" className="hover:text-foreground transition">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-foreground transition">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </nav>
 

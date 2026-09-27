@@ -26,11 +26,11 @@ export async function generateMetadata({
   return {
     title: service.eyebrow,
     description: service.subtitle,
-    alternates: { canonical: `https://dankha.co/services/${slug}` },
+    alternates: { canonical: `https://www.dankha.co/services/${slug}` },
     openGraph: {
       title: `${service.eyebrow} — Dankha Agency`,
       description: service.subtitle,
-      url: `https://dankha.co/services/${slug}`,
+      url: `https://www.dankha.co/services/${slug}`,
     },
   };
 }
@@ -55,19 +55,19 @@ async function CategoryDetailPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://dankha.co",
+        item: "https://www.dankha.co",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://dankha.co/services",
+        item: "https://www.dankha.co/services",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.eyebrow,
-        item: `https://dankha.co/services/${slug}`,
+        item: `https://www.dankha.co/services/${slug}`,
       },
     ],
   };
@@ -80,9 +80,9 @@ async function CategoryDetailPage({
     provider: {
       "@type": "Organization",
       name: "Dankha Agency",
-      url: "https://dankha.co",
+      url: "https://www.dankha.co",
     },
-    url: `https://dankha.co/services/${slug}`,
+    url: `https://www.dankha.co/services/${slug}`,
   };
 
   return (

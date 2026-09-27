@@ -21,7 +21,7 @@ export async function generateMetadata({
   return {
     title: `${member.name} — Dankha`,
     description: member.tagline,
-    alternates: { canonical: `https://dankha.co/team/${member.slug}` },
+    alternates: { canonical: `https://www.dankha.co/team/${member.slug}` },
   };
 }
 

@@ -34,12 +34,12 @@ export async function generateMetadata({
     title: subcategoryData.title,
     description: subcategoryData.description,
     alternates: {
-      canonical: `https://dankha.co/services/${category}/${subcategory}`,
+      canonical: `https://www.dankha.co/services/${category}/${subcategory}`,
     },
     openGraph: {
       title: `${subcategoryData.title} — Dankha Agency`,
       description: subcategoryData.description,
-      url: `https://dankha.co/services/${category}/${subcategory}`,
+      url: `https://www.dankha.co/services/${category}/${subcategory}`,
     },
   };
 }
@@ -67,25 +67,25 @@ async function SubcategoryDetailPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://dankha.co",
+        item: "https://www.dankha.co",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://dankha.co/services",
+        item: "https://www.dankha.co/services",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: categoryData.eyebrow,
-        item: `https://dankha.co/services/${category}`,
+        item: `https://www.dankha.co/services/${category}`,
       },
       {
         "@type": "ListItem",
         position: 4,
         name: subcategoryData.title,
-        item: `https://dankha.co/services/${category}/${subcategory}`,
+        item: `https://www.dankha.co/services/${category}/${subcategory}`,
       },
     ],
   };
@@ -98,9 +98,9 @@ async function SubcategoryDetailPage({
     provider: {
       "@type": "Organization",
       name: "Dankha Agency",
-      url: "https://dankha.co",
+      url: "https://www.dankha.co",
     },
-    url: `https://dankha.co/services/${category}/${subcategory}`,
+    url: `https://www.dankha.co/services/${category}/${subcategory}`,
   };
 
   return (

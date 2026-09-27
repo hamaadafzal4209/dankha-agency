@@ -9,18 +9,19 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Dankha Agency — our mission, values, team, and the story behind how we help brands grow through premium digital experiences.",
-  alternates: { canonical: "https://dankha.co/about" },
+  alternates: { canonical: "https://www.dankha.co/about" },
   openGraph: {
     title: "About Dankha Agency",
     description:
       "Meet the team behind Dankha — a premium digital agency built to help ambitious brands grow with web, ecommerce, marketing, and design.",
-    url: "https://dankha.co/about",
+    url: "https://www.dankha.co/about",
   },
 };
 
 function AboutPage() {
   return (
     <div className="px-6 pb-32">
+      <h1 className="sr-only">About Dankha</h1>
       <AboutIntro />
       <MissionVisionValues />
       <TeamSection />

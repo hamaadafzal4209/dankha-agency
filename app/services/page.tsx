@@ -3,9 +3,18 @@ import { Reveal } from "@/components/Reveal";
 import { ServicesPreview } from "@/components/Home/ServicesPreview";
 
 export const metadata: Metadata = {
-  title: "Digital Engineering & Growth Marketing Services | Dankha",
+  title: {
+    absolute: "Digital Engineering & Growth Marketing Services | Dankha",
+  },
   description:
     "Explore our specialized capabilities: from full-stack web and mobile application development to ROI-focused growth marketing structures. Maximize your digital yield.",
+  alternates: { canonical: "https://www.dankha.co/services" },
+  openGraph: {
+    title: "Digital Engineering & Growth Marketing Services | Dankha",
+    description:
+      "Explore our specialized capabilities: from full-stack web and mobile application development to ROI-focused growth marketing structures. Maximize your digital yield.",
+    url: "https://www.dankha.co/services",
+  },
 };
 
 export default function ServicesPage() {

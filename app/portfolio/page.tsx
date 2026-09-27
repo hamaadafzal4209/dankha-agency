@@ -18,6 +18,7 @@ function PortfolioPage() {
   return (
     <div className="px-6 pb-32">
       <section className="mx-auto max-w-5xl pt-10 text-center">
+        <h1 className="sr-only">Our Work &amp; Case Studies</h1>
         <SectionHeading
           eyebrow="Portfolio"
           title="Selected work from the studio."

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: [],
     },
-    sitemap: "https://dankha.co/sitemap.xml",
+    sitemap: "https://www.dankha.co/sitemap.xml",
   };
 }

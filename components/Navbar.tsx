@@ -14,6 +14,7 @@ const links = [
 ] as const;
 
 const serviceLinks = [
+  { href: "/services", label: "All Services" },
   { href: "/services/it", label: "IT Solutions" },
   { href: "/services/ecommerce", label: "Ecommerce" },
   { href: "/services/marketing", label: "Marketing" },
@@ -27,6 +28,7 @@ export function Navbar() {
   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const desktopCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+  const currentPathname = pathname ?? "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -36,14 +38,14 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!pathname.startsWith("/services")) {
+    if (!currentPathname.startsWith("/services")) {
       setDesktopServicesOpen(false);
     }
-  }, [pathname]);
+  }, [currentPathname]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [pathname]);
+  }, [currentPathname]);
 
   useEffect(() => {
     return () => {
@@ -115,7 +117,7 @@ export function Navbar() {
                 className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {l.label}
-                {pathname === l.href && (
+                {currentPathname === l.href && (
                   <motion.span
                     layoutId="nav-active"
                     className="absolute inset-x-3 -bottom-0.5 h-0.5 gradient-primary rounded-full"
@@ -136,7 +138,7 @@ export function Navbar() {
                 aria-haspopup="menu"
                 aria-expanded={desktopServicesOpen}
                 className={`relative inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
-                  pathname.startsWith("/services")
+                  currentPathname.startsWith("/services")
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
@@ -147,7 +149,7 @@ export function Navbar() {
                     desktopServicesOpen ? "rotate-180" : ""
                   }`}
                 />
-                {pathname.startsWith("/services") && (
+                {currentPathname.startsWith("/services") && (
                   <motion.span
                     layoutId="nav-active"
                     className="absolute inset-x-3 -bottom-0.5 h-0.5 gradient-primary rounded-full"
@@ -214,7 +216,7 @@ export function Navbar() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   className={`rounded-lg px-4 py-3 text-sm font-medium hover:text-foreground hover:bg-white/5 transition ${
-                    pathname === l.href ? "text-foreground bg-white/5" : "text-muted-foreground"
+                    currentPathname === l.href ? "text-foreground bg-white/5" : "text-muted-foreground"
                   }`}
                 >
                   {l.label}

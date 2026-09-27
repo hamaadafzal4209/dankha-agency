@@ -32,6 +32,7 @@ function ContactPage() {
   return (
     <div className="px-6 pb-32">
       <section className="mx-auto max-w-5xl pt-10 text-center">
+        <h1 className="sr-only">Let&apos;s Build Something Great Together</h1>
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something extraordinary."
