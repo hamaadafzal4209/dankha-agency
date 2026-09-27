@@ -3,6 +3,13 @@ import { Geist, Geist_Mono, Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "@/components/AppShell";
 import { Toaster } from "@/components/ui/sonner";
+import {
+  BusinessAddress,
+  BusinessCountry,
+  BusinessLocation,
+  ContactEmail,
+  PhoneNumber,
+} from "@/data/commonConstants";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -91,6 +98,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const socialUrls = [
+    "https://www.instagram.com/dankha.co/",
+    "https://www.linkedin.com/company/dankha/",
+  ];
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -99,12 +111,43 @@ export default function RootLayout({
     logo: `${siteUrl}/assets/logo.png`,
     description:
       "Premium digital agency specialising in web engineering, ecommerce, digital marketing, and brand design.",
+    address: {
+      "@type": "PostalAddress",
+      ...BusinessAddress,
+      addressCountry: BusinessCountry,
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
+      telephone: PhoneNumber,
+      email: ContactEmail,
+      areaServed: "Worldwide",
       availableLanguage: "English",
     },
-    sameAs: [],
+    sameAs: socialUrls,
+    areaServed: ["Pakistan", "Worldwide"],
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Dankha Agency",
+    image: `${siteUrl}/assets/logo.png`,
+    url: siteUrl,
+    telephone: PhoneNumber,
+    email: ContactEmail,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Lahore",
+      addressRegion: "Punjab",
+      addressCountry: "PK",
+    },
+    areaServed: ["Pakistan", "Worldwide"],
+    priceRange: "$$",
+    description:
+      "Dankha is a digital agency specializing in web engineering, ecommerce growth, paid media, SEO, and brand design.",
+    founder: "Dankha Agency",
+    location: BusinessLocation,
   };
 
   const websiteSchema = {
@@ -123,6 +166,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <script
           type="application/ld+json"

@@ -153,6 +153,67 @@
 }
 
 @layer utilities {
+  @supports (view-transition-name: root) {
+    :root {
+      --page-transition-duration: 300ms;
+      --page-transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    ::view-transition-group(root) {
+      animation-duration: var(--page-transition-duration);
+      animation-timing-function: var(--page-transition-ease);
+    }
+
+    ::view-transition-old(root) {
+      animation-name: page-exit;
+      animation-duration: var(--page-transition-duration);
+      animation-timing-function: var(--page-transition-ease);
+      z-index: 0;
+    }
+
+    ::view-transition-new(root) {
+      animation-name: page-enter;
+      animation-duration: var(--page-transition-duration);
+      animation-timing-function: var(--page-transition-ease);
+      z-index: 1;
+    }
+  }
+
+  @keyframes page-exit {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+    to {
+      opacity: 0.9;
+      transform: translateY(-8px);
+      filter: blur(0.2px);
+    }
+  }
+
+  @keyframes page-enter {
+    from {
+      opacity: 0.9;
+      transform: translateY(10px);
+      filter: blur(0.2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(root),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
   .glass {
     background: var(--glass);
     backdrop-filter: blur(20px) saturate(180%);

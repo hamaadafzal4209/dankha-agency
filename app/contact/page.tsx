@@ -14,7 +14,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useContactForm } from "@/hooks/useContactForm";
 import { toast } from "sonner";
-import { ContactEmail, PhoneNumber } from "@/data/commonConstants";
+import {
+  BusinessLocation,
+  BusinessServiceArea,
+  ContactEmail,
+  PhoneNumber,
+} from "@/data/commonConstants";
 import { socialLinks } from "@/components/Home/data";
 
 function ContactPage() {
@@ -173,10 +178,21 @@ function ContactPage() {
 
       <section className="mx-auto max-w-6xl mt-16">
         <Reveal>
+          <div className="mb-6 rounded-3xl glass-strong p-6">
+            <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
+              Office location
+            </div>
+            <div className="font-display text-2xl font-semibold text-foreground">
+              {BusinessLocation}
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {BusinessServiceArea}. We work with clients remotely across Pakistan and international markets.
+            </p>
+          </div>
           <div className="rounded-3xl glass-strong overflow-hidden h-90 relative">
             <iframe
-              title="DANKHA office location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-122.45%2C37.75%2C-122.39%2C37.79&layer=mapnik"
+              title="DANKHA Lahore office location"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=74.26%2C31.33%2C74.46%2C31.55&layer=mapnik"
               className="w-full h-full grayscale-40 contrast-110"
               loading="lazy"
             />

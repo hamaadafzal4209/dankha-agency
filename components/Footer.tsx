@@ -104,6 +104,8 @@ export function Footer() {
                   {PhoneNumber}
                 </a>
               </p>
+              <p className="text-foreground/80">Lahore, Pakistan</p>
+              <p>Serving clients worldwide</p>
             </address>
           </div>
         </div>

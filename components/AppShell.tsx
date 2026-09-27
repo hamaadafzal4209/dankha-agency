@@ -4,17 +4,18 @@ import { Background } from "@/components/Background";
 import { BackToTop } from "@/components/BackToTop";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Preloader } from "@/components/Preloader";
+import { PageTransition } from "@/components/PageTransition";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Preloader />
       <NextTopLoader color="var(--secondary)" showSpinner={false} />
       <Analytics />
       <Background />
       <Navbar />
-      <main className="relative min-h-screen pt-24">{children}</main>
+      <PageTransition>
+        <main className="page-shell relative min-h-screen pt-24">{children}</main>
+      </PageTransition>
       <Footer />
       <BackToTop />
     </>
