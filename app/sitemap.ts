@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { portfolioProjects } from "@/data/portfolio-projects";
 import { SERVICES } from "@/data/services";
-import { teamMembers } from "@/data/team";
 
 const siteUrl = "https://www.dankha.co";
 
@@ -58,11 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]);
 
-  const teamRoutes: MetadataRoute.Sitemap = teamMembers.map((member) => ({
-    url: `${siteUrl}/team/${member.slug}`,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...portfolioRoutes, ...serviceRoutes, ...teamRoutes];
+  return [...staticRoutes, ...portfolioRoutes, ...serviceRoutes];
 }
