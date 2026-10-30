@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
+import { FilterTabs } from "@/app/_components/FilterTabs";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectCard } from "@/components/ProjectCard";
+import { CTA } from "@/components/Home/CTA";
 import { portfolioCategories, portfolioProjects, type PortfolioCategory } from "@/data/portfolio-projects";
 
 type Cat = "All" | PortfolioCategory;
@@ -14,75 +14,49 @@ function PortfolioPage() {
   const [filter, setFilter] = useState<Cat>("All");
 
   const filtered = portfolioProjects.filter((project) => filter === "All" || project.cat === filter);
+  const countFor = (c: Cat) =>
+    c === "All" ? portfolioProjects.length : portfolioProjects.filter((project) => project.cat === c).length;
 
   return (
-    <div className="px-6 pb-32">
-      <section className="mx-auto max-w-5xl pt-10 text-center">
-        <h1 className="sr-only">Our Work &amp; Case Studies</h1>
+    <>
+      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 md:pt-20 lg:px-8">
         <SectionHeading
+          as="h1"
           eyebrow="Portfolio"
-          title="Selected work from the studio."
-          description="A snapshot of the products, brands and growth engines we've shipped."
+          title="Work we've shipped."
+          description="Stores on six sales channels, plus websites, dashboards and mobile apps for clients in the UAE, Sweden, Saudi Arabia, the US and Pakistan."
+          className="max-w-3xl"
+        />
+
+        <FilterTabs
+          label="Filter projects by category"
+          options={portfolioCategories}
+          value={filter}
+          onChange={setFilter}
+          countFor={countFor}
+          className="mt-12"
         />
       </section>
 
-      <div className="mx-auto max-w-7xl mt-14">
-        <div role="group" aria-label="Filter by category" className="flex flex-wrap items-center justify-center gap-2">
-          {portfolioCategories.map((c) => (
-            <button
-              key={c}
-              onClick={() => setFilter(c)}
-              className={`relative rounded-full px-5 py-2 text-sm font-medium transition ${
-                filter === c ? "text-white" : "text-muted-foreground hover:text-foreground"
-              }`}
+      <section aria-labelledby="projects-heading" className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 lg:px-8 lg:pb-18">
+        <h2 id="projects-heading" className="sr-only">
+          {filter === "All" ? "All projects" : `${filter} projects`}
+        </h2>
+        <div className="grid gap-16 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 lg:gap-y-20">
+          {filtered.map((project, i) => (
+            <Reveal
+              key={`${filter}-${project.slug}`}
+              immediate={i === 0}
+              className={i === 0 ? "md:col-span-2" : undefined}
             >
-              {filter === c && (
-                <motion.span
-                  layoutId="filter-pill"
-                  className="absolute inset-0 rounded-full gradient-primary -z-10"
-                />
-              )}
-              {c}
-            </button>
+              <ProjectCard project={project} featured={i === 0} priority={i === 0} />
+            </Reveal>
           ))}
         </div>
+      </section>
 
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key="project-cards"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {filtered.map((p, i) => (
-              <motion.div
-                key={p.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-              >
-                <Reveal>
-                  <ProjectCard
-                    title={p.title}
-                    description={p.impact}
-                    image={p.heroImage}
-                    techStack={p.techStack}
-                    href={`/portfolio/${p.slug}`}
-                  />
-                </Reveal>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      <Reveal>
-        <div className="h-px" />
-      </Reveal>
-    </div>
+      <CTA title="Want results like these?" />
+    </>
   );
 }
 

@@ -1,34 +1,55 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { ButtonLink } from "@/app/_components/ButtonLink";
+import { ContactEmail, PhoneNumber } from "@/data/commonConstants";
+import { AnimatedHeading } from "@/app/_components/AnimatedHeading";
 
-export function CTA() {
+export function CTA({
+  title = "Have a project in mind?",
+  description = "A website, an app, a store or a campaign. Tell us about it and we'll reply within one business day.",
+}: {
+  title?: string;
+  description?: string;
+}) {
   return (
-    <section className="px-6 py-12 pb-0">
-      <div className="mx-auto max-w-5xl">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-3xl glass-strong p-10 md:p-16 text-center">
-            <div className="absolute inset-0 gradient-primary opacity-20" />
-            <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full gradient-primary blur-3xl opacity-40" />
-            <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-secondary blur-3xl opacity-30" />
-            <div className="relative">
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-balance">
-                Have an ambitious idea? <br />
-                <span className="gradient-text-bright">Let's build it together.</span>
-              </h2>
-              <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-                Tell us about your project. We'll respond within one business day.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white gradient-primary shadow-elegant hover:scale-105 transition"
-              >
-                Start a project <ArrowRight size={16} />
-              </Link>
+    <section aria-label="Contact us" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal>
+        <div className="grid gap-10 pt-14 lg:grid-cols-12 lg:items-end lg:gap-16 lg:pt-18">
+          <div className="lg:col-span-7">
+            <AnimatedHeading text={title} className="font-display text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl" />
+            <p className="mt-4 max-w-xl text-lg text-muted-foreground">{description}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/contact">
+                Book a call <ArrowRight size={16} />
+              </ButtonLink>
+              <ButtonLink href="/portfolio" variant="secondary">
+                See our work
+              </ButtonLink>
             </div>
           </div>
-        </Reveal>
-      </div>
+          <dl className="space-y-4 lg:col-span-5 lg:border-l lg:border-border lg:pl-12">
+            <div>
+              <dt className="text-sm text-muted-foreground">Email</dt>
+              <dd>
+                <a href={`mailto:${ContactEmail}`} className="font-display text-xl font-semibold text-foreground hover:text-link">
+                  {ContactEmail}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm text-muted-foreground">Phone and WhatsApp</dt>
+              <dd>
+                <a
+                  href={`tel:${PhoneNumber.replace(/\s/g, "")}`}
+                  className="font-display text-xl font-semibold text-foreground hover:text-link"
+                >
+                  {PhoneNumber}
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </Reveal>
     </section>
   );
 }

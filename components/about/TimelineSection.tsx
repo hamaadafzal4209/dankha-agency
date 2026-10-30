@@ -1,81 +1,75 @@
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
+import { AnimatedHeading } from "@/app/_components/AnimatedHeading";
 
 const timeline = [
   {
     year: "2020",
-    title: "The beginning of Dankha",
-    desc: "Started as a small freelance collaboration focused on eCommerce setup, website development, and digital marketing for early-stage businesses.",
+    title: "Started as a freelance team",
+    desc: "Set up online stores, websites and ad accounts for early-stage businesses.",
   },
   {
     year: "2021",
-    title: "First structured client systems",
-    desc: "Transitioned from freelance work to structured agency services, building repeatable systems for Amazon, Shopify, and web development projects.",
+    title: "Became an agency",
+    desc: "Moved from one-off freelance work to repeatable processes for Amazon, Shopify and web projects.",
   },
   {
     year: "2022",
-    title: "Expanding service capabilities",
-    desc: "Scaled into full-service digital solutions including performance marketing, automation systems, and brand development for growing businesses.",
+    title: "Added ads and branding",
+    desc: "Took on paid ads, email automation and brand design so clients could hand over the whole funnel.",
   },
   {
     year: "2023",
-    title: "Strategic growth phase",
-    desc: "Partnered with multiple brands across eCommerce and SaaS, focusing on long-term growth strategies and data-driven marketing systems.",
+    title: "First enterprise apps",
+    desc: "Built a partner app for a home-services marketplace and a government services app in the UAE, and Healup Pharma's corporate site.",
   },
   {
     year: "2024",
-    title: "Technology & scaling focus",
-    desc: "Strengthened in-house development capabilities, building scalable web platforms, automation workflows, and performance-focused digital products.",
+    title: "In-house engineering",
+    desc: "Grew the development team and shipped websites for AMF in Saudi Arabia and RISE Premier in Pakistan.",
   },
   {
     year: "2025",
-    title: "Established growth partner",
-    desc: "Evolved into a full-scale digital growth agency helping brands expand globally through technology, eCommerce, and marketing systems.",
+    title: "Six sales channels",
+    desc: "Running stores on Shopify, Amazon, eBay, Walmart, Etsy and TikTok Shop, and a booking platform for a client in Sweden.",
   },
 ];
 
 export function TimelineSection() {
   return (
-    <section className="mx-auto mt-32 max-w-4xl">
-      <SectionHeading eyebrow="Our journey" title="Six years, one obsession." />
-      <div className="relative mt-16">
-        <div className="absolute bottom-0 left-4 top-0 w-px bg-linear-to-b from-transparent via-secondary/40 to-transparent md:left-1/2" />
-        <div className="space-y-12">
-          {timeline.map((item, i) => (
-            <Reveal key={item.year} delay={i * 0.1}>
-              <div
-                className={`relative md:grid md:grid-cols-2 md:gap-12 ${
-                  i % 2 === 0 ? "" : "md:[direction:rtl]"
-                }`}
-              >
-                <div
-                  className={`pl-12 md:pl-0 ${
-                    i % 2 === 0
-                      ? "md:pr-12 md:text-right"
-                      : "md:pl-12 md:text-left [direction:ltr]"
-                  }`}
-                >
-                  <div className="inline-block rounded-2xl glass-strong p-6 text-left">
-                    <time dateTime={item.year} className="font-mono text-xs tracking-wider text-secondary">
-                      {item.year}
-                    </time>
-                    <h3 className="mt-2 font-display text-lg font-semibold">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                </div>
-                <div className="hidden md:block" />
-                <div className="absolute left-4 top-6 -translate-x-1/2 md:left-1/2">
-                  <div className="relative h-4 w-4">
-                    <div className="absolute inset-0 rounded-full gradient-primary blur-md animate-glow-pulse" />
-                    <div className="relative h-4 w-4 rounded-full border-2 border-background gradient-primary" />
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+    <section aria-labelledby="history-heading">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:py-18">
+        <div className="lg:col-span-5">
+          <Reveal className="lg:sticky lg:top-28">
+            <p className="text-sm font-medium text-link">History</p>
+            <AnimatedHeading text="How we got here." id="history-heading" className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl" />
+            <div className="relative mt-10 aspect-4/3 overflow-hidden rounded-lg bg-surface-2">
+              <Image
+                src="/assets/about/whiteboard-review.jpg"
+                alt="A team discussing ideas around a whiteboard"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
+
+        <ol className="lg:col-span-7">
+          {timeline.map((item, i) => (
+            <li key={item.year} className="grid grid-cols-[4.5rem_1fr] gap-4 border-t border-border py-6 sm:grid-cols-[6rem_1fr]">
+              <Reveal delay={i * 0.04}>
+                <time dateTime={item.year} className="font-display text-lg font-semibold text-link">
+                  {item.year}
+                </time>
+              </Reveal>
+              <Reveal delay={i * 0.04 + 0.02}>
+                <h3 className="font-display text-xl font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-1.5 text-muted-foreground">{item.desc}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

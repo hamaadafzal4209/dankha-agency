@@ -14,19 +14,16 @@ export function WhatsAppFloatingButton({ phoneNumber }: WhatsAppFloatingButtonPr
       href={whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      initial={{ opacity: 0, y: 20, scale: 0.85 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 20, scale: 0.85 }}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.22, ease: "easeOut", delay: 0.04 }}
-      className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-elegant"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.22, ease: "easeOut", delay: 0.04 }}
+      className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white"
       aria-label="Chat on WhatsApp"
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] blur-xl opacity-60 animate-glow-pulse" />
       <span className="relative transition-transform duration-200 group-hover:-translate-y-0.5">
         <svg
-          className="h-7 w-7"
+          className="h-6 w-6"
           viewBox="0 0 175.216 175.552"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"

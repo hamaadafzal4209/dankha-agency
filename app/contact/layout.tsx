@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
+import { seoMetadata } from "@/sanity/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Dankha | Book Your Free Technical Consultation",
+const fallbackMetadata: Metadata = {
+  title: "Contact us: book a free project call",
   description:
-    "Ready to scale your next digital product? Contact the engineering and strategy experts at Dankha today for a comprehensive, zero-obligation project evaluation.",
+    "Book a free call with Dankha about your online store, marketplace listings, ads or website. Email info@dankha.co or call +92 336 1409344.",
   alternates: { canonical: "https://www.dankha.co/contact" },
   openGraph: {
-    title: "Contact Dankha | Book Your Free Technical Consultation",
+    title: "Contact Dankha: book a free project call",
     description:
-      "Ready to scale your next digital product? Contact the engineering and strategy experts at Dankha today for a comprehensive, zero-obligation project evaluation.",
+      "Book a free call with Dankha about your online store, marketplace listings, ads or website. Email info@dankha.co or call +92 336 1409344.",
     url: "https://www.dankha.co/contact",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  return seoMetadata("/contact", fallbackMetadata);
+}
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

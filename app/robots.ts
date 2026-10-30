@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [],
+      disallow: ["/studio"],
     },
     sitemap: "https://www.dankha.co/sitemap.xml",
   };

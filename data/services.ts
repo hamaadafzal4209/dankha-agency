@@ -46,26 +46,26 @@ export type ServiceCategory = {
 export const SERVICES: ServiceCategory[] = [
   {
     slug: "it",
-    eyebrow: "IT Solutions",
-    title: "Robust digital infrastructure built to scale.",
+    eyebrow: "Websites and apps",
+    title: "Websites, dashboards and apps your team will actually use.",
     subtitle:
-      "From precision-engineered websites to end-to-end custom software, we design and build systems that are secure, performant, and architected to grow with your business. Every engagement starts with understanding your operations deeply — and ends with a technical foundation your team can rely on for years.",
+      "We design and build business websites, admin dashboards and mobile apps in Next.js, React, React Native and Vue. Recent work includes a booking dashboard for a company in Sweden and a government services app in Dubai.",
     description:
-      "Enterprise-grade infrastructure, scalable web systems, and hands-on technical execution for businesses that demand reliability, performance, and long-term architectural integrity.",
+      "Business websites, dashboards and mobile apps built in Next.js, React Native and Vue.",
     heroPoints: ["Web Development", "Custom Software", "UI/UX Design"],
     approach: [
       {
-        title: "Discovery & Planning",
+        title: "Discovery and planning",
         description:
           "We start with a thorough analysis of your business objectives, technical constraints, and user needs — interviewing stakeholders, auditing existing systems, and mapping out integration requirements. The output is a clear, prioritized technical roadmap with defined milestones, ownership, and success criteria before a single line of code is written.",
       },
       {
-        title: "Design & Development",
+        title: "Design and development",
         description:
           "Our team architects intuitive interfaces and builds production-ready systems using proven modern technologies, with performance and maintainability baked in from day one. We work in structured sprints with defined deliverables, regular demos, and continuous stakeholder alignment — so there are no surprises at launch.",
       },
       {
-        title: "Launch & Optimization",
+        title: "Launch and optimization",
         description:
           "We handle deployment across staging and production environments, monitor real-world performance using observability tooling, and iterate continuously based on usage data and user feedback. Post-launch, we don't disappear — we stay engaged to ensure your system stays fast, stable, and aligned with your evolving business needs.",
       },
@@ -87,13 +87,33 @@ export const SERVICES: ServiceCategory[] = [
         answer:
           "Yes. Custom software is one of our core specialties — from CRM and ERP systems to proprietary internal tools built around your specific workflows. We begin every engagement by mapping your existing processes in detail so the software we build reflects how your team actually works, not how a generic product assumes it does.",
       },
+      {
+        question: "How do you price a website or app project?",
+        answer:
+          "Every project gets a written proposal with line-item scope and fixed pricing after a free discovery call, so the cost is agreed before work starts. Larger products are split into milestones you approve one at a time, and ongoing work after launch moves to a monthly maintenance retainer.",
+      },
+      {
+        question: "How long does a typical project take?",
+        answer:
+          "A focused business website usually takes 4–6 weeks. Dashboards, internal tools and mobile apps typically run 2–4 months, depending on integrations and how many user roles are involved. You get a milestone timeline at kickoff and a working preview to review at every stage, not just at the end.",
+      },
+      {
+        question: "Who owns the code and designs when the project ends?",
+        answer:
+          "You do. Source code, design files, documentation and accounts are handed over in full at completion, set up in your own GitHub, hosting and app store accounts. There are no licence fees and nothing that locks you into working with us.",
+      },
+      {
+        question: "How do you work with teams in other time zones?",
+        answer:
+          "Our team is in Lahore (PKT), which overlaps with working hours in the Gulf, Europe and the morning in the US. Each project has one lead you can message directly, a weekly demo of progress, and a shared board showing what is in progress. We reply within one business day.",
+      },
     ],
     subcategories: [
       {
         slug: "website-development",
-        title: "Website Development",
+        title: "Website development",
         description:
-          "High-performance, conversion-focused websites engineered to your business goals and built to last beyond the launch date.",
+          "Business, corporate and landing-page websites in Next.js, built to load fast and rank.",
         icon: "code2",
         overview:
           "We build fast, responsive, and visually precise websites that do more than look good — they convert. Every project is treated as a business asset with a defined role: designed for your target audience, structured for search engine visibility, and built to perform reliably under real-world traffic conditions. We don't use templates as shortcuts; we architect each site around your goals, your brand, and your users' expectations. The result is a website that earns trust on first load and keeps earning it through every interaction.",
@@ -105,27 +125,27 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Business Websites",
+            title: "Business websites",
             description:
               "Professional websites that credibly represent your brand, clearly communicate your value proposition, and drive measurable business outcomes — whether that's lead generation, phone calls, or direct sales. Includes structured content hierarchy, contact flow optimization, and CMS integration for easy self-management.",
           },
           {
-            title: "Corporate Websites",
+            title: "Corporate websites",
             description:
               "Enterprise-grade web presence with advanced integrations, multi-stakeholder content systems, role-based publishing workflows, and scalable infrastructure designed to support hundreds of pages, multiple teams, and long-term content growth.",
           },
           {
-            title: "Landing Pages",
+            title: "Landing pages",
             description:
               "Focused, high-converting landing pages built around a single business objective — lead capture, product launches, event registrations, or campaign-specific traffic. Designed with A/B testing in mind and optimized for Quality Score on paid channels.",
           },
           {
-            title: "Portfolio Websites",
+            title: "Portfolio websites",
             description:
               "Distinctive portfolio websites that present your work with intent and visual impact — designed to communicate expertise at a glance, establish credibility with prospective clients, and leave a lasting impression that wins business.",
           },
           {
-            title: "Ecommerce Websites",
+            title: "Ecommerce websites",
             description:
               "Fully functional online stores built for a frictionless shopping experience, optimized checkout flow, and high conversion at every stage of the funnel — from category browsing to payment confirmation. Includes inventory management, payment gateway integration, and post-purchase automation.",
           },
@@ -188,9 +208,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "software-solutions",
-        title: "Software Solutions",
+        title: "Software solutions",
         description:
-          "Custom software, CRM, ERP, and workflow automation engineered around your specific operations — not adapted from off-the-shelf tools that almost fit.",
+          "Custom dashboards, CRMs, ERPs and API integrations built around how your team works.",
         icon: "globe",
         overview:
           "Off-the-shelf software rarely fits how your business actually works. The gaps between what a packaged tool does and what your team needs become workarounds, manual effort, and hidden costs. We build custom solutions — from CRM platforms to full ERP systems, internal tools, and automated workflows — that eliminate operational inefficiencies, reduce manual intervention, and give your team software that genuinely reflects how they work. Every engagement starts with process mapping and ends with a system that your team adopts because it's built for them.",
@@ -202,44 +222,44 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Custom Software Development",
+            title: "Custom software development",
             description:
               "Purpose-built software designed around your specific business logic, internal processes, and team requirements. From admin dashboards and internal tools to client-facing portals and complex multi-role platforms — we build software that fits your operations precisely rather than forcing your team to adapt around a generic product.",
           },
           {
-            title: "CRM Systems",
+            title: "CRM systems",
             description:
               "Customer relationship management platforms built around how your sales, account management, and support teams actually operate — not how a vendor assumes they do. Includes pipeline management, activity tracking, contact history, reporting dashboards, and integration with your existing communication and marketing tools.",
           },
           {
-            title: "ERP Solutions",
+            title: "ERP solutions",
             description:
               "Enterprise resource planning systems that unify your business data across departments — finance, inventory, operations, HR — into a single source of truth, reducing data silos and enabling better cross-functional decision-making and reporting.",
           },
           {
-            title: "Business Automation",
+            title: "Business automation",
             description:
               "Automated workflows that eliminate repetitive manual tasks, reduce human error, and free your team for higher-value work. We identify your highest-cost manual processes and build automation around them — whether that's document generation, approval workflows, data syncing, or scheduled reporting.",
           },
           {
-            title: "API Integrations",
+            title: "API integrations",
             description:
               "Seamless connectivity between your internal systems and the third-party platforms your business depends on — whether that's Salesforce, QuickBooks, Stripe, shipping carriers, or custom APIs. We design integrations that are reliable, maintainable, and properly error-handled from day one.",
           },
         ],
         process: [
           {
-            title: "Requirements Gathering",
+            title: "Requirements gathering",
             description:
               "We map your current processes in detail through stakeholder interviews, workflow documentation, and system audits. We identify bottlenecks, manual steps, data gaps, and integration requirements — then define exactly what the solution needs to do in language that bridges business needs and technical specifications.",
           },
           {
-            title: "Architecture Design",
+            title: "Architecture design",
             description:
               "We design a clean, scalable technical architecture that handles today's requirements without boxing you in for tomorrow. This includes data modeling, API design, security architecture, and a documented system design reviewed and signed off before development begins.",
           },
           {
-            title: "Development & Testing",
+            title: "Development and testing",
             description:
               "We build iteratively in structured sprints, with unit and integration testing at each stage, regular demos to stakeholders, and a structured UAT (user acceptance testing) phase before production deployment. We don't consider a feature complete until it's been tested under real-world conditions.",
           },
@@ -285,9 +305,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "ui-ux-design",
-        title: "UI/UX Design",
+        title: "UI/UX design",
         description:
-          "User-centered design for digital products that reduces friction, increases adoption, and reflects the quality of the underlying product.",
+          "Wireframes, user flows and interface design for websites and mobile apps.",
         icon: "penTool",
         overview:
           "Great design isn't decoration — it's the difference between a product users adopt immediately and one they abandon after their first session. We design digital interfaces from the ground up with a focus on clarity, usability, and visual quality that reflects the actual value of your product. Our process is grounded in research, validated with real users, and delivered with the precision that development teams need to build without ambiguity. Whether you're designing a new product from scratch or improving an existing one, we bring both the strategic and craft-level thinking your product needs.",
@@ -304,17 +324,17 @@ export const SERVICES: ServiceCategory[] = [
               "Structural wireframes that establish layout, information hierarchy, navigation patterns, and user flows before visual design begins — keeping the focus on architecture and usability before aesthetics enter the conversation.",
           },
           {
-            title: "User Experience Design",
+            title: "User experience design",
             description:
               "End-to-end UX design focused on minimizing friction and creating purposeful, satisfying user journeys. Includes user persona development, task flow mapping, usability heuristic review, and iterative design refinement based on user testing feedback.",
           },
           {
-            title: "Mobile App Design",
+            title: "Mobile app design",
             description:
               "Polished, platform-native designs for iOS and Android that feel natural and intuitive to use — following Human Interface Guidelines and Material Design principles while maintaining a distinctive visual identity specific to your product.",
           },
           {
-            title: "Website Design",
+            title: "Website design",
             description:
               "Responsive website designs that balance visual impact with usability across all screen sizes. Designed with conversion intent built in — every section, CTA, and visual hierarchy decision is made with your user's next action in mind.",
           },
@@ -331,7 +351,7 @@ export const SERVICES: ServiceCategory[] = [
               "We progress from structured wireframes and information architecture through high-fidelity visual designs and interactive Figma prototypes. Stakeholders review at each stage, with structured feedback rounds to ensure alignment before moving forward.",
           },
           {
-            title: "Testing & Iteration",
+            title: "Testing and iteration",
             description:
               "We validate designs through moderated or unmoderated usability testing with real users, gather structured feedback on task completion and confusion points, and refine until the experience meets our usability bar. We document every decision for development handoff.",
           },
@@ -380,25 +400,25 @@ export const SERVICES: ServiceCategory[] = [
   {
     slug: "ecommerce",
     eyebrow: "Ecommerce",
-    title: "Stores built to convert, systems built to scale.",
+    title: "We set up, list and advertise your products on every major marketplace.",
     subtitle:
-      "From Amazon to Shopify, we engineer high-converting ecommerce experiences across every major platform — with optimized product catalogs, frictionless checkout flows, data-driven advertising, and operational systems designed to compound revenue over time. We treat your store as a business, not a project.",
+      "Shopify builds, plus listings, ads and account management on Amazon, eBay, Walmart, Etsy and TikTok Shop. One Amazon brand reached page one for its target keywords in 90 days; an Etsy shop reached page one in 60.",
     description:
-      "Conversion-focused storefronts, streamlined catalog operations, and platform-specific growth strategies built to drive sustainable ecommerce revenue across Amazon, Shopify, eBay, Walmart, TikTok Shop, and Etsy.",
+      "Listings, ads and account health on Amazon, eBay, Walmart, Etsy and TikTok Shop, plus custom Shopify stores.",
     heroPoints: ["Amazon Services", "Shopify", "Marketplace Expertise"],
     approach: [
       {
-        title: "Store Audit & Strategy",
+        title: "Store audit and strategy",
         description:
           "We analyze your current store performance across all relevant metrics — conversion rate, traffic sources, listing quality, ad efficiency, and competitive positioning. We identify the specific bottlenecks limiting revenue and develop a prioritized roadmap built around what will move the needle fastest.",
       },
       {
-        title: "Implementation & Optimization",
+        title: "Implementation and optimization",
         description:
           "We execute across listings, store design, operational infrastructure, and advertising — with a conversion-first mindset applied at every layer. Every change is documented and tracked against baseline metrics so the impact is measurable, not assumed.",
       },
       {
-        title: "Growth & Scaling",
+        title: "Growth and scaling",
         description:
           "Once a profitable foundation is established, we implement proven growth levers — advertising scale, catalog expansion, platform diversification, automation, and retention strategy — to compound results over time. We scale what's working, not what's comfortable.",
       },
@@ -420,13 +440,33 @@ export const SERVICES: ServiceCategory[] = [
         answer:
           "Both. We frequently audit and optimize existing stores — often identifying significant conversion gains, listing improvements, or ad efficiency opportunities without requiring a full rebuild. We'll tell you honestly which approach your situation calls for.",
       },
+      {
+        question: "Do you work per project or on a monthly retainer?",
+        answer:
+          "Both. Store builds, migrations and account setups are scoped as fixed-price projects. Ongoing marketplace management, advertising and listing optimisation run as monthly retainers, because rankings, ads and account health need weekly attention rather than a one-off fix.",
+      },
+      {
+        question: "What access do you need to our seller accounts?",
+        answer:
+          "We work through user permissions on Seller Central, eBay, Walmart Seller Center, Etsy and Shopify, so we never need your main login or payment details. You stay the account owner and can change or remove our access at any time.",
+      },
+      {
+        question: "How do you report on results?",
+        answer:
+          "You receive a monthly report covering sales, ad spend, ACoS or ROAS, organic ranking for target keywords, and account health, with what we changed that month and what we plan next. For active ad campaigns we also share a short weekly update.",
+      },
+      {
+        question: "Can you manage several marketplaces at the same time?",
+        answer:
+          "Yes. Many clients sell on Shopify plus two or three marketplaces. One team manages the catalogue, pricing and inventory across channels so listings stay consistent and stock does not oversell, and reporting shows each channel side by side.",
+      },
     ],
     subcategories: [
       {
         slug: "amazon-services",
-        title: "Amazon Services",
+        title: "Amazon services",
         description:
-          "End-to-end Amazon seller services — from product research and listing architecture to PPC management, brand protection, and full account operations.",
+          "Product research, listings, A+ Content, PPC and Brand Registry for Amazon sellers.",
         icon: "building2",
         overview:
           "Success on Amazon requires precision at every stage of the funnel — from how your product appears in search results to how your listing converts at the page level, how your ads perform at scale, and how your account health holds up under platform scrutiny. We cover the full spectrum of Amazon operations: product research, listing architecture, sponsored advertising strategy, A+ content, storefront design, brand registry, and account health management. Whether you're launching your first product or managing a catalog of hundreds, we bring the operational depth and platform expertise to grow your Amazon business systematically.",
@@ -438,27 +478,27 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Product Research",
+            title: "Product research",
             description:
               "Data-driven product research using demand signals, search volume analysis, competitive density scoring, and margin modeling to identify viable product opportunities with strong ROI potential. We evaluate category trends, seasonality, and fulfillment costs before making any recommendation.",
           },
           {
-            title: "Product Hunting",
+            title: "Product hunting",
             description:
               "Systematic product hunting across Amazon categories to surface high-potential SKUs before they become overcrowded — using proprietary scoring criteria and category-specific demand analysis to find opportunities with realistic launch paths.",
           },
           {
-            title: "Account Management",
+            title: "Account management",
             description:
               "Hands-on daily account management covering performance monitoring, case management, listing maintenance, stranded inventory resolution, and proactive compliance management to keep your account healthy and growing.",
           },
           {
-            title: "Product Listing",
+            title: "Product listing",
             description:
               "Keyword-rich, algorithm-aligned listings built on thorough keyword research — with compelling titles, structured bullet points, detailed product descriptions, and backend search terms that maximize organic indexing and convert browsers into buyers.",
           },
           {
-            title: "PPC Campaign Management",
+            title: "PPC campaign management",
             description:
               "Sponsored Products, Sponsored Brands, and Sponsored Display campaigns managed with a profitability-first approach — structured campaign architecture, systematic bid optimization, negative keyword hygiene, and scaling investment on proven performers.",
           },
@@ -473,7 +513,7 @@ export const SERVICES: ServiceCategory[] = [
               "Enhanced brand content (A+ and Premium A+) that tells your product story visually through comparison charts, lifestyle imagery, and structured feature modules — delivering measurable improvements in conversion rate and reducing return rates from better-informed buyers.",
           },
           {
-            title: "Storefront Design",
+            title: "Storefront design",
             description:
               "Custom Amazon Brand Storefronts designed to build brand equity, improve cross-sell depth, and create a curated shopping experience that drives higher average order values and repeat brand visits.",
           },
@@ -483,29 +523,29 @@ export const SERVICES: ServiceCategory[] = [
               "Amazon wholesale sourcing strategy, supplier relationship management, and fulfillment planning for sellers looking to move established brand volume with predictable margins and lower product development risk.",
           },
           {
-            title: "Online Arbitrage",
+            title: "Online arbitrage",
             description:
               "Structured online arbitrage systems — including sourcing criteria, supplier lists, profitability calculators, and replenishment workflows — for sellers looking to generate consistent margin from proven retail arbitrage models.",
           },
           {
-            title: "Private Label",
+            title: "Private label",
             description:
               "Full-cycle private label development — from sourcing and supplier qualification to manufacturing oversight, packaging design, compliance documentation, Amazon launch strategy, and brand building for long-term category positioning.",
           },
         ],
         process: [
           {
-            title: "Research & Strategy",
+            title: "Research and strategy",
             description:
               "We conduct category analysis, competitor benchmarking, keyword research, and margin modeling to build your Amazon strategy on real data — not assumptions. This includes a full audit of your existing account if applicable, or a clear launch blueprint for new sellers.",
           },
           {
-            title: "Setup & Optimization",
+            title: "Setup and optimization",
             description:
               "We build out or fully optimize your listings with proper keyword coverage, compelling copy, and A+ content — then configure your advertising campaigns with a structured account architecture designed for efficient performance from day one.",
           },
           {
-            title: "Growth & Management",
+            title: "Growth and management",
             description:
               "We manage account performance daily, iterate on ad campaigns based on performance data, expand catalog strategically, and implement brand-building initiatives — compounding your results over 90-day growth cycles.",
           },
@@ -551,9 +591,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "ebay-services",
-        title: "eBay Services",
+        title: "eBay services",
         description:
-          "eBay dropshipping, private label, and full account management — built for compliant, scalable, and sustainable sales performance.",
+          "Store setup, listing and pricing fixes, Promoted Listings and account management on eBay.",
         icon: "store",
         overview:
           "eBay rewards sellers who understand its platform dynamics — search algorithm signals, competitive pricing behavior, fulfillment speed expectations, and seller performance standards. We help you build a profitable eBay business using the right model for your goals and resources, whether that's dropshipping, 2-step dropshipping, private label, or white label, with the operational discipline and platform knowledge to keep your account in top-rated standing while scaling revenue systematically.",
@@ -570,39 +610,39 @@ export const SERVICES: ServiceCategory[] = [
               "Policy-compliant, automated dropshipping systems built to maximize margin while fully maintaining eBay's seller performance standards — including defect rate management, on-time delivery infrastructure, and supplier reliability protocols.",
           },
           {
-            title: "2-Step Dropshipping",
+            title: "2-step dropshipping",
             description:
               "Advanced 2-step dropshipping methodology that reduces policy exposure, opens access to a significantly broader supplier network, and improves packaging consistency — resulting in better feedback scores and lower account risk.",
           },
           {
-            title: "Private Label",
+            title: "Private label",
             description:
               "Build a distinct, defensible eBay brand with private label products differentiated from generic marketplace competition — including product sourcing, branding, listing strategy, and positioning designed to command a price premium.",
           },
           {
-            title: "White Label",
+            title: "White label",
             description:
               "White label solutions for fast market entry with controlled branding, predictable margins, and a clear path to private label once volume and market positioning are established.",
           },
           {
-            title: "Account Management",
+            title: "Account management",
             description:
               "Comprehensive eBay account management covering listing optimization, competitive repricing, customer message handling, return processing, performance metric monitoring, and proactive policy compliance management.",
           },
         ],
         process: [
           {
-            title: "Model Selection",
+            title: "Model selection",
             description:
               "We evaluate your available capital, risk tolerance, time availability, and growth goals to identify the business model with the strongest fit — and provide a clear rationale for the recommendation before any setup begins.",
           },
           {
-            title: "Store Setup",
+            title: "Store setup",
             description:
               "We configure your eBay store with optimized category structure, build your initial listing catalog with proper SEO-informed titles and item specifics, and establish your supplier infrastructure or inventory system with quality control checkpoints.",
           },
           {
-            title: "Operation & Growth",
+            title: "Operation and growth",
             description:
               "We run day-to-day account operations — managing listings, pricing, orders, and customer interactions — while systematically applying growth levers: catalog expansion, repricing optimization, and feedback acquisition strategy.",
           },
@@ -645,7 +685,7 @@ export const SERVICES: ServiceCategory[] = [
         slug: "walmart-marketplace",
         title: "Walmart Marketplace",
         description:
-          "Walmart Marketplace strategy, WFS management, listing optimization, PPC, and full account operations for one of ecommerce's most underutilized growth channels.",
+          "Catalogue onboarding, WFS, listings and Sponsored Products on Walmart Marketplace.",
         icon: "shoppingBag",
         overview:
           "Walmart Marketplace represents one of the most underleveraged opportunities in ecommerce today — significant high-intent buyer traffic with far less seller competition than Amazon. For sellers who establish a strong presence now, the compounding advantage is substantial. We help you navigate Walmart's selective onboarding process, build a fully optimized product catalog, leverage Walmart Fulfillment Services for shipping speed advantages, and run effective sponsored advertising campaigns that scale with your results.",
@@ -657,7 +697,7 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Walmart Dropshipping",
+            title: "Walmart dropshipping",
             description:
               "Policy-compliant dropshipping operations structured specifically for Walmart Marketplace requirements — including supplier qualification, order routing automation, and fulfillment speed management to meet Walmart's delivery expectations.",
           },
@@ -667,7 +707,7 @@ export const SERVICES: ServiceCategory[] = [
               "Walmart Fulfillment Services onboarding, inbound shipment creation, inventory planning, and ongoing performance management to maintain the delivery speed and reliability that Walmart's algorithm rewards with better listing visibility.",
           },
           {
-            title: "Product Listing Optimization",
+            title: "Product listing optimization",
             description:
               "Listings structured for Walmart's search algorithm with keyword-rich titles, clean attribute data, competitive pricing, and persuasive copy — designed to win the buy box and convert at the category page and product detail page level.",
           },
@@ -677,7 +717,7 @@ export const SERVICES: ServiceCategory[] = [
               "Sponsored Products campaigns managed for profitability and scaled based on search term performance data — with structured campaign architecture, bid optimization, and weekly performance reporting.",
           },
           {
-            title: "Account Management",
+            title: "Account management",
             description:
               "End-to-end Walmart Marketplace account operations — catalog management, order monitoring, return handling, customer metric tracking, and proactive compliance management to maintain Seller Scorecard eligibility.",
           },
@@ -689,12 +729,12 @@ export const SERVICES: ServiceCategory[] = [
               "We manage Walmart's application and approval process, positioning your application to meet their supplier standards. We also handle initial account configuration, tax and payment setup, and category approval requests.",
           },
           {
-            title: "Store Buildout",
+            title: "Store buildout",
             description:
               "We create fully optimized product listings with clean data, proper category attribution, and competitive positioning — then configure WFS shipments or seller-fulfilled fulfillment to meet Walmart's delivery promise requirements.",
           },
           {
-            title: "Growth & Optimization",
+            title: "Growth and optimization",
             description:
               "We expand your catalog systematically, scale advertising investment into proven search terms, and continuously optimize listing content and pricing to improve organic rank, conversion rate, and overall revenue.",
           },
@@ -737,7 +777,7 @@ export const SERVICES: ServiceCategory[] = [
         slug: "tiktok-shop",
         title: "TikTok Shop",
         description:
-          "TikTok Shop setup, catalog optimization, creator affiliate partnerships, and performance advertising for discovery-driven social commerce growth.",
+          "TikTok Shop setup, creator affiliates and Spark Ads.",
         icon: "share2",
         overview:
           "TikTok Shop is fundamentally redefining how products are discovered, evaluated, and purchased — collapsing the gap between content consumption and checkout into a single in-app experience. Products that align authentically with TikTok's content culture can see exponential awareness and sales velocity through organic creator content, affiliate partnerships, and targeted in-feed advertising. We help you build a serious TikTok Shop presence from the ground up — store compliance, catalog optimization, creator outreach infrastructure, and paid campaign management — designed to compound results as your creator network and content library grow.",
@@ -749,17 +789,17 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Store Setup",
+            title: "Store setup",
             description:
               "Full TikTok Shop account configuration — including seller verification, compliance setup, payment integration, shipping configuration, and storefront organization — built for a clean launch that meets TikTok's platform requirements.",
           },
           {
-            title: "Product Listings",
+            title: "Product listings",
             description:
               "Listings optimized for TikTok's discovery algorithm with video-native content integration, short-form benefit-led copy, competitive pricing, and proper category attribution designed to surface your products in relevant TikTok feeds.",
           },
           {
-            title: "Creator Outreach",
+            title: "Creator outreach",
             description:
               "Targeted outreach to relevant TikTok creators for affiliate partnerships — including creator identification, commission structure setup, product seeding coordination, and performance tracking to identify your highest-return creator relationships.",
           },
@@ -769,24 +809,24 @@ export const SERVICES: ServiceCategory[] = [
               "In-feed and Spark Ad campaigns managed for cost-efficient reach, engagement, and direct purchase conversion — with creative testing, audience segmentation, and budget allocation built around your category's content patterns and buyer behavior.",
           },
           {
-            title: "Shop Management",
+            title: "Shop management",
             description:
               "Ongoing TikTok Shop operations including inventory monitoring, order management, customer inquiry handling, return processing, and performance metric tracking to maintain strong seller rating and platform standing.",
           },
         ],
         process: [
           {
-            title: "Store Creation",
+            title: "Store creation",
             description:
               "We establish your TikTok Shop with full compliance setup, proper payment configuration, shipping zone setup, and an initial product catalog — structured for discoverability and aligned with TikTok's content ecosystem.",
           },
           {
-            title: "Content & Listings",
+            title: "Content and listings",
             description:
               "We build listings with strong visual assets and benefit-led copy, then develop and execute a creator outreach strategy — identifying creators by category relevance, audience engagement quality, and conversion track record.",
           },
           {
-            title: "Growth & Promotion",
+            title: "Growth and promotion",
             description:
               "We scale what's working — amplifying high-performing organic creator content with Spark Ads, expanding your creator affiliate roster, and introducing paid campaigns to reach audiences beyond your current creator coverage.",
           },
@@ -827,9 +867,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "etsy-services",
-        title: "Etsy Services",
+        title: "Etsy services",
         description:
-          "Etsy store setup, product research, search optimization, and listing management for consistent, scalable sales in competitive categories.",
+          "Etsy shop setup, listing SEO, thumbnails and Etsy Ads.",
         icon: "paintbrush",
         overview:
           "Etsy rewards sellers who deeply understand its search ecosystem, buyer psychology, and the unwritten rules of category positioning. Whether you sell digital downloads, handmade goods, print-on-demand products, or curated vintage items, we help you build a store that ranks well for high-intent search queries, converts consistently through strong imagery and copy, and grows through compounding SEO equity and strategic catalog expansion. We treat Etsy as a long-term business channel, not a set-and-forget listing platform.",
@@ -841,49 +881,49 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Etsy Store Creation",
+            title: "Etsy store creation",
             description:
               "Professional, fully branded Etsy store setup with complete policy documentation, payment gateway configuration, shipping profile setup, and a store aesthetic that immediately signals quality and earns buyer trust from first visit.",
           },
           {
-            title: "Product Research",
+            title: "Product research",
             description:
               "Demand-based product research using Etsy search data, competitor analysis, and trend identification to find winning niches and product ideas with meaningful buyer intent and realistic competition levels for a new seller to penetrate.",
           },
           {
-            title: "SEO Optimization",
+            title: "SEO optimization",
             description:
               "Title, tag, and attribute optimization built around Etsy's search algorithm — targeting keywords with a balance of search volume and competition level that gives your listings a realistic path to page-one visibility.",
           },
           {
-            title: "Listing Management",
+            title: "Listing management",
             description:
               "Compelling, keyword-optimized listings with strong photography briefs, benefit-led product descriptions, and copy that speaks directly to Etsy's buyer intent — connecting emotionally and converting at a higher rate than generic marketplace listings.",
           },
           {
-            title: "Digital Products",
+            title: "Digital products",
             description:
               "Digital product strategy, creation guidance, file preparation, and listing setup for high-margin, zero-inventory revenue streams — including printables, templates, digital planners, and design assets that generate passive income at scale.",
           },
           {
-            title: "Handmade Products Strategy",
+            title: "Handmade products strategy",
             description:
               "Positioning, pricing, and differentiation strategy for handmade sellers looking to stand out in competitive categories, command a premium over mass-produced alternatives, and build a loyal customer base that returns repeatedly.",
           },
         ],
         process: [
           {
-            title: "Store & Branding",
+            title: "Store and branding",
             description:
               "We build a polished, trust-building Etsy presence — shop banner, logo, bio, store policies, and FAQ — that immediately signals quality and professionalism to buyers who evaluate shops before buying.",
           },
           {
-            title: "Product & Listings",
+            title: "Product and listings",
             description:
               "We research your niche thoroughly, develop your initial catalog strategy, and create fully optimized listings with strong keyword coverage, compelling copy, and photography guidance — ready to rank and convert from day one.",
           },
           {
-            title: "Growth & Optimization",
+            title: "Growth and optimization",
             description:
               "We track listing performance in Etsy stats, expand your catalog into adjacent search terms and product ideas, refresh underperforming listings with new keyword strategies, and build review acquisition habits that improve conversion over time.",
           },
@@ -929,9 +969,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "shopify-services",
-        title: "Shopify Services",
+        title: "Shopify services",
         description:
-          "Custom Shopify store development, brand-matched theme design, and data-driven conversion optimization for direct-to-consumer brands.",
+          "Custom Shopify themes, migrations, subscriptions and checkout fixes for DTC brands.",
         icon: "shoppingBag",
         overview:
           "A well-built Shopify store is more than a digital storefront — it's a conversion engine, a brand experience, and an operational foundation that needs to scale with your business. We design and develop custom Shopify experiences that authentically reflect your brand, guide buyers through the purchase funnel with intention, and are built with the performance, flexibility, and technical hygiene to support long-term growth. From initial store builds to full performance audits and CRO programs, we treat Shopify as a business-critical asset — not a commodity setup.",
@@ -943,49 +983,49 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Shopify Store Development",
+            title: "Shopify store development",
             description:
               "Full Shopify store buildout — from theme selection or custom development and product catalog setup to payment gateway configuration, shipping zone setup, tax configuration, and pre-launch QA — resulting in a production-ready store from day one.",
           },
           {
-            title: "Custom Theme Design",
+            title: "Custom theme design",
             description:
               "Custom Shopify themes designed to your precise brand standards — built for speed, mobile-first, and optimized for conversion at every stage of the funnel. No template compromises. Your brand's visual identity, properly realized in a high-performance storefront.",
           },
           {
-            title: "Product Upload",
+            title: "Product upload",
             description:
               "Structured product catalog setup with SEO-optimized copy, image compression and alt text, collection architecture designed for navigation clarity and search discoverability, and variant configuration that minimizes buyer confusion.",
           },
           {
-            title: "Store Optimization",
+            title: "Store optimization",
             description:
               "Technical performance optimization — Core Web Vitals improvement, image compression, JavaScript load reduction, app audit for performance drag, and Lighthouse score improvement — resulting in measurably faster page loads and better buyer experience.",
           },
           {
-            title: "Conversion Rate Optimization",
+            title: "Conversion rate optimization",
             description:
               "Data-informed CRO covering product page layout, add-to-cart UX, cart drawer optimization, checkout flow simplification, and post-purchase upsell design — with A/B testing to validate changes before full implementation.",
           },
           {
-            title: "Shopify Marketing",
+            title: "Shopify marketing",
             description:
               "Integrated marketing strategy and implementation across email (Klaviyo/Omnisend), paid social, Google Shopping, and SEO — designed to drive qualified traffic to your store and maximize the lifetime value of every customer acquired.",
           },
         ],
         process: [
           {
-            title: "Strategy & Planning",
+            title: "Strategy and planning",
             description:
               "We define your store architecture, feature requirements, app needs, and design direction in a structured planning phase before any development begins — ensuring we build the right thing once, rather than rebuilding later.",
           },
           {
-            title: "Build & Customize",
+            title: "Build and customize",
             description:
               "We develop your theme, configure your product catalog and apps, integrate third-party services, and build the store to specification — with defined quality checkpoints and staging review before anything goes to production.",
           },
           {
-            title: "Launch & Grow",
+            title: "Launch and grow",
             description:
               "We manage your go-live process — including redirect configuration, DNS setup, analytics verification, and checkout testing — and provide a structured post-launch optimization roadmap with prioritized improvements for the first 90 days.",
           },
@@ -1033,26 +1073,26 @@ export const SERVICES: ServiceCategory[] = [
   },
   {
     slug: "marketing",
-    eyebrow: "Marketing",
-    title: "Attract the right customers. Convert them reliably.",
+    eyebrow: "Ads, SEO and email",
+    title: "Ads, search and email that bring buyers back to your store.",
     subtitle:
-      "From organic search to paid acquisition, content strategy to email automation, we build integrated, data-driven marketing programs that generate qualified demand at sustainable cost — and compound in value over time. We don't run campaigns in isolation; we build marketing systems.",
+      "We run Meta, Google and TikTok ads, fix technical SEO, write content and set up Klaviyo email flows. For one Shopify brand, paid ads brought in more sales than they cost within the first 30 days.",
     description:
-      "Integrated marketing strategies built around qualified lead generation, measurable ROI, channel diversification, and long-term growth infrastructure that operates without constant reinvestment.",
+      "Meta, Google and TikTok ads, technical SEO, content and Klaviyo email flows.",
     heroPoints: ["SEO", "Paid Ads", "Content & Email"],
     approach: [
       {
-        title: "Strategy & Research",
+        title: "Strategy and research",
         description:
           "We start with a rigorous analysis of your audience's search behavior, buying triggers, and content consumption patterns — combined with a thorough competitive landscape review and channel opportunity audit. Every strategy we build is evidence-based, not assumption-driven.",
       },
       {
-        title: "Execution & Implementation",
+        title: "Execution and implementation",
         description:
           "We launch campaigns, produce content, and activate channels with precision — each execution tied to a defined objective, KPI, and baseline metric so performance can be measured from day one. We don't set and forget; we monitor, adjust, and optimize continuously.",
       },
       {
-        title: "Measurement & Optimization",
+        title: "Measurement and optimization",
         description:
           "We track performance at every level — from keyword rankings to revenue per email send — identify what's working, cut what isn't, and reallocate investment toward the highest-ROI activities. Reporting is transparent, plain-English, and actionable.",
       },
@@ -1074,13 +1114,33 @@ export const SERVICES: ServiceCategory[] = [
         answer:
           "Paid channels can drive qualified traffic and leads within 48–72 hours of launch. Content and SEO compound over 3–6 months, building durable traffic that doesn't require continuous spend. We structure engagements to deliver near-term wins while building long-term channel equity.",
       },
+      {
+        question: "What do you need from us to get started?",
+        answer:
+          "Access to your ad accounts, Google Analytics or GA4, Search Console and email platform, plus your brand assets and a clear picture of your targets, such as cost per lead or return on ad spend. If tracking is missing or broken, fixing it is the first thing we do.",
+      },
+      {
+        question: "Do we keep ownership of our ad accounts and data?",
+        answer:
+          "Yes. Ad accounts, analytics properties and email lists stay in your name, and we are added as a partner or user. If we ever stop working together, every campaign, audience and report stays with you.",
+      },
+      {
+        question: "How do you report on marketing performance?",
+        answer:
+          "You get a shared dashboard that updates daily and a monthly report that explains results in plain language: what we spent, what it returned, what we tested and what we are changing next. Reporting is tied to leads and revenue, not just clicks.",
+      },
+      {
+        question: "Can you work alongside our in-house marketing team?",
+        answer:
+          "Yes. Some clients hand us everything; others keep strategy or content in-house and use us for paid media, technical SEO or email automation. We agree who owns what at the start so nothing is duplicated or missed.",
+      },
     ],
     subcategories: [
       {
         slug: "search-engine-optimization",
-        title: "Search Engine Optimization (SEO)",
+        title: "Search engine optimization (SEO)",
         description:
-          "Technical, on-page, off-page, and local SEO executed with the depth and consistency that durable first-page rankings require.",
+          "Technical, on-page and local SEO, from site structure to indexing fixes.",
         icon: "search",
         overview:
           "SEO done with genuine depth and patience is one of the highest-ROI marketing investments a business can make — but it requires technical rigor, strategic content, authority building, and continuous optimization working in concert. We take a comprehensive, integrated approach: starting with a thorough technical audit, building a content strategy around high-value search intent, and earning authoritative backlinks that compound over time. We don't chase algorithm shortcuts; we build the kind of sustainable organic presence that withstands platform changes and outperforms competitors consistently.",
@@ -1092,12 +1152,12 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "On-Page SEO",
+            title: "On-page SEO",
             description:
               "Systematic optimization of content, metadata, internal linking architecture, heading structure, and semantic relevance signals — ensuring every page on your site is optimized to rank for its target intent and properly supports the broader site authority structure.",
           },
           {
-            title: "Off-Page SEO",
+            title: "Off-page SEO",
             description:
               "Authority-building through quality link acquisition, digital PR, content-driven link earning, and brand mention strategies — increasing your domain's topical authority and trust signals in ways that improve rankings across your entire content portfolio.",
           },
@@ -1112,24 +1172,24 @@ export const SERVICES: ServiceCategory[] = [
               "Local search optimization for businesses targeting geographic markets — Google Business Profile management, local citation building and cleanup, review generation strategy, and local content development to dominate map pack and near-me search results in your service area.",
           },
           {
-            title: "SEO Audits",
+            title: "SEO audits",
             description:
               "Comprehensive site audits that surface the highest-impact technical, content, and authority opportunities — delivered with a clear prioritized action plan that maps issues to expected impact so your team knows exactly what to address first.",
           },
         ],
         process: [
           {
-            title: "Audit & Analysis",
+            title: "Audit and analysis",
             description:
               "We audit your site's technical health, content gaps, keyword coverage, and backlink profile — then benchmark your rankings and domain authority against your top-ranking competitors to identify precisely where the gap is and what it will take to close it.",
           },
           {
-            title: "Strategy & Implementation",
+            title: "Strategy and implementation",
             description:
               "We prioritize work by expected impact and execute across technical, content, and off-page workstreams simultaneously — with monthly deliverable plans, clear ownership, and progress reporting tied to ranking and traffic data.",
           },
           {
-            title: "Monitoring & Optimization",
+            title: "Monitoring and optimization",
             description:
               "We track keyword position movements, organic traffic, click-through rates, and conversion data — adjusting strategy as search landscape shifts, new competitor content enters the market, or algorithm updates require tactical changes.",
           },
@@ -1175,9 +1235,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "pay-per-click-advertising",
-        title: "Pay-Per-Click Advertising",
+        title: "Pay-per-click advertising",
         description:
-          "Google, Meta, and TikTok ad campaigns engineered for cost efficiency, conversion quality, and sustainable ROI — not just traffic volume.",
+          "Google, Meta and TikTok ad campaigns, set up and managed against your target cost per sale.",
         icon: "barChart3",
         overview:
           "Paid advertising delivers real business results when campaigns are structured around business outcomes — not impressions, reach, or clicks in isolation. We manage PPC campaigns across Google Search, Google Shopping, Facebook, Instagram, and TikTok with a relentless focus on cost efficiency per qualified conversion, audience quality, and profitable scaling. Every campaign we run is built with a clear hypothesis, tracked with proper attribution, and optimized against the metrics that actually determine whether advertising is working for your business.",
@@ -1209,24 +1269,24 @@ export const SERVICES: ServiceCategory[] = [
               "In-feed and Spark Ad campaigns that meet TikTok's native content expectations while driving measurable purchase intent — with hook testing, creative rotation, and audience segmentation designed for TikTok's unique discovery-first algorithm.",
           },
           {
-            title: "Retargeting Campaigns",
+            title: "Retargeting campaigns",
             description:
               "Precision retargeting to re-engage site visitors, product viewers, add-to-cart abandoners, and past buyers who didn't convert on first contact — with sequenced creative and offers designed to move each audience segment to the next stage.",
           },
         ],
         process: [
           {
-            title: "Strategy & Setup",
+            title: "Strategy and setup",
             description:
               "We define campaign objectives, audience strategy, account structure, conversion tracking configuration, and creative briefs before launch — building the foundation that makes optimization possible from day one.",
           },
           {
-            title: "Launch & Optimize",
+            title: "Launch and optimize",
             description:
               "We launch with structured A/B testing at the audience, creative, and landing page level — monitoring performance daily and making data-driven optimizations to bids, budgets, audiences, and creative to improve efficiency continuously.",
           },
           {
-            title: "Report & Scale",
+            title: "Report and scale",
             description:
               "We provide weekly and monthly performance reports with plain-English analysis — and scale advertising investment systematically into the campaigns, audiences, and creative angles delivering the strongest cost-per-acquisition.",
           },
@@ -1272,9 +1332,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "content-marketing",
-        title: "Content Marketing",
+        title: "Content marketing",
         description:
-          "Strategic content that builds category authority, earns durable organic traffic, and generates qualified inbound leads over time.",
+          "Blog posts, guides and landing pages written to rank and bring in enquiries.",
         icon: "penTool",
         overview:
           "Content marketing compounds. A well-executed content strategy builds domain authority, earns consistent organic search traffic, attracts high-quality inbound links, and positions your brand as the credible voice in your category — without requiring ongoing paid spend to maintain. We create content that serves both search engines and real readers: thoroughly researched, properly optimized, and aligned with the specific stage of your buyer's journey. We don't produce content for volume; we produce content that ranks, converts, and earns trust.",
@@ -1286,34 +1346,34 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Blog Writing",
+            title: "Blog writing",
             description:
               "In-depth, thoroughly researched blog content built around high-value keywords — structured to satisfy search intent, earn featured snippet placement, and genuinely answer the questions your buyers are asking at each stage of the funnel.",
           },
           {
-            title: "Content Strategy",
+            title: "Content strategy",
             description:
               "A structured content roadmap tied directly to your SEO targets, funnel stages, and business objectives — including topic cluster architecture, keyword prioritization, content type mix, and a production schedule built around your team's publishing capacity.",
           },
           {
-            title: "Brand Storytelling",
+            title: "Brand storytelling",
             description:
               "Narrative-driven content that communicates your brand's perspective, expertise, and values in a way that builds lasting trust with your audience — differentiated from commodity content that says what every competitor already says.",
           },
         ],
         process: [
           {
-            title: "Strategy & Planning",
+            title: "Strategy and planning",
             description:
               "We audit your existing content library for gaps and opportunities, map keyword and topic clusters aligned to your buyer's journey and SEO priorities, and build a prioritized content plan with clear production workflows and quality standards.",
           },
           {
-            title: "Creation & Publishing",
+            title: "Creation and publishing",
             description:
               "We produce well-researched, authoritative content on a defined production schedule — optimized for both search performance and genuine reader engagement, with on-page SEO applied at every level from title tag to internal linking.",
           },
           {
-            title: "Promotion & Optimization",
+            title: "Promotion and optimization",
             description:
               "We distribute new content through relevant channels — email, social amplification, and outreach — and systematically update underperforming older pieces to protect and recover their rankings as search intent and algorithm signals evolve.",
           },
@@ -1354,9 +1414,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "email-marketing",
-        title: "Email Marketing",
+        title: "Email marketing",
         description:
-          "Email automation, lifecycle campaign strategy, and list growth programs that generate predictable revenue and improve customer retention.",
+          "Klaviyo welcome, abandoned-cart, post-purchase and win-back flows, plus campaigns.",
         icon: "mail",
         overview:
           "Email consistently delivers the highest ROI of any digital marketing channel — when it's built with strategy, proper segmentation, and a genuine understanding of your customer's lifecycle. We design and build automation sequences that nurture new leads, recover abandoned carts, re-engage lapsed customers, and drive repeat purchase behavior at scale — all operating without requiring ongoing manual effort. We also manage campaign calendars, build list growth infrastructure, and optimize deliverability so your emails actually reach the inbox.",
@@ -1373,29 +1433,29 @@ export const SERVICES: ServiceCategory[] = [
               "Behavior-triggered email sequences designed around your customer lifecycle — welcome and onboarding flows, post-purchase follow-up, abandoned cart and browse abandonment recovery, win-back campaigns, and VIP nurture series — built to generate revenue continuously without manual execution.",
           },
           {
-            title: "Lead Nurturing",
+            title: "Lead nurturing",
             description:
               "Systematic multi-stage nurture programs that move leads through the funnel with the right message at each buying stage — from initial awareness through consideration, objection handling, and conversion trigger — timed to behavioral signals rather than arbitrary send schedules.",
           },
           {
-            title: "Campaign Management",
+            title: "Campaign management",
             description:
               "Strategically planned email campaigns for promotions, product launches, seasonal events, and announcements — written with the subject lines, preview text, and body copy that actually get opened, read, and clicked. Segmented by purchase history, engagement level, and lifecycle stage.",
           },
         ],
         process: [
           {
-            title: "Strategy & Setup",
+            title: "Strategy and setup",
             description:
               "We audit your current email setup — deliverability health, automation gaps, list segmentation quality, and platform configuration — then map your full customer lifecycle and design the automation architecture that addresses every stage.",
           },
           {
-            title: "Automation & Campaigns",
+            title: "Automation and campaigns",
             description:
               "We build and launch your core automation flows with proper triggers, delays, and branching logic — then develop a campaign calendar aligned to your business objectives, promotional schedule, and audience segments.",
           },
           {
-            title: "Optimize & Grow",
+            title: "Optimize and grow",
             description:
               "We A/B test subject lines, send times, content structure, and CTAs — using results to improve open rates, click-through rates, and revenue per email. We also implement ongoing list growth tactics across your site and checkout to expand your audience base.",
           },
@@ -1443,26 +1503,26 @@ export const SERVICES: ServiceCategory[] = [
   },
   {
     slug: "designing",
-    eyebrow: "Designing",
-    title: "Visual identity that builds trust and recognition.",
+    eyebrow: "Brand and design",
+    title: "Logos, brand systems and interfaces that look like you.",
     subtitle:
-      "From complete brand systems to product interfaces and performance-driven campaign creatives, we craft cohesive, intentional design that makes every customer touchpoint feel polished, purposeful, and unmistakably yours. Great design isn't about style — it's about communicating value instantly and consistently.",
+      "We design logos and brand guidelines, app and website interfaces, and the ad creatives and social graphics you run every week.",
     description:
-      "Brand identity, product design, and creative execution that elevates how your business is perceived, builds recognition over time, and reflects the quality of what you actually offer at every customer interaction.",
+      "Logos, brand guidelines, app and website interfaces, and ad creatives.",
     heroPoints: ["Brand Identity", "UI/UX Design", "Creative"],
     approach: [
       {
-        title: "Discovery & Strategy",
+        title: "Discovery and strategy",
         description:
           "We study your brand positioning, competitive landscape, and target audience's perceptual expectations before any design work begins — producing a clear creative direction and design rationale that grounds every visual decision in strategy rather than personal preference.",
       },
       {
-        title: "Design & Creation",
+        title: "Design and creation",
         description:
           "We produce design work that is intentional at every level — from typography and color system to spatial composition, interaction detail, and how elements behave across different contexts and formats. Every decision can be explained and defended.",
       },
       {
-        title: "Refinement & Delivery",
+        title: "Refinement and delivery",
         description:
           "We incorporate structured feedback, refine to a genuinely high standard, and deliver production-ready assets with complete documentation — organized, named, and formatted so your team can use them immediately and confidently across every channel.",
       },
@@ -1484,13 +1544,33 @@ export const SERVICES: ServiceCategory[] = [
         answer:
           "Brand identity projects typically run 4–8 weeks depending on scope — the number of concepts presented, revision depth, and the breadth of brand assets required beyond the core logo and guidelines.",
       },
+      {
+        question: "What do you need from us to start a design project?",
+        answer:
+          "A short brief covering your audience, competitors you admire or want to avoid, and any existing brand assets. For product design we also ask for access to the current product or prototype and, where possible, a few conversations with real users.",
+      },
+      {
+        question: "Who owns the final designs?",
+        answer:
+          "You do. All final artwork and source files in Figma or Adobe formats are handed over at the end of the project, with full rights to use, change and extend them. There are no usage restrictions or ongoing licence fees.",
+      },
+      {
+        question: "Can you also build what you design?",
+        answer:
+          "Yes. Our development team builds websites, Shopify stores and apps from the same designs, which removes the usual gap between design and build. If you have your own developers, we hand over a documented design system and annotated screens instead.",
+      },
+      {
+        question: "How do feedback and revisions work?",
+        answer:
+          "Each stage ends with a review call and comments directly in Figma. The number of revision rounds is set in the proposal, and we present the reasoning behind each design decision so feedback can focus on goals rather than personal taste.",
+      },
     ],
     subcategories: [
       {
         slug: "brand-identity",
-        title: "Brand Identity",
+        title: "Brand identity",
         description:
-          "Logo design, complete brand systems, and visual guidelines built for consistency, longevity, and professional market positioning.",
+          "Logos, colour and type systems, and brand guidelines.",
         icon: "swatchBook",
         overview:
           "Your brand identity is the first thing people judge you by and the framework through which every subsequent interaction is interpreted. We build complete brand systems grounded in your business strategy and market positioning: a distinctive logo designed to work at every scale and context, a cohesive visual language applied consistently across all touchpoints, and clear documentation that keeps every future execution — from a business card to a billboard — recognizably yours. We don't design logos in isolation; we build brands.",
@@ -1502,22 +1582,22 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Logo Design",
+            title: "Logo design",
             description:
               "Distinctive logos built to work across every context — app icons, business cards, large-format print, embroidery, and one-color applications. Delivered in all required formats with clear usage rules for light, dark, and color-restricted environments.",
           },
           {
-            title: "Brand Guidelines",
+            title: "Brand guidelines",
             description:
               "Comprehensive brand guidelines documenting your complete visual system: logo usage rules and exclusion zones, primary and secondary color palettes with accessibility contrast ratios, typography system with usage hierarchy, imagery style direction, iconography approach, and tone-of-voice principles.",
           },
           {
-            title: "Visual Identity",
+            title: "Visual identity",
             description:
               "A cohesive visual language applied consistently across all customer-facing touchpoints — ensuring that whether someone encounters your brand on social media, in a pitch deck, on your website, or in a physical space, the experience feels unified and intentional.",
           },
           {
-            title: "Brand Assets",
+            title: "Brand assets",
             description:
               "The complete set of brand assets your team needs to operate consistently — business cards, email signatures, social media profile and cover images, letterhead, document templates, presentation master, and any additional format-specific assets your business requires.",
           },
@@ -1529,12 +1609,12 @@ export const SERVICES: ServiceCategory[] = [
               "We conduct a structured brand discovery session covering your core values, competitive positioning, target audience perceptions, and long-term brand aspirations — producing a creative brief that aligns stakeholders on direction before design exploration begins.",
           },
           {
-            title: "Design & Concepts",
+            title: "Design and concepts",
             description:
               "We develop multiple distinct creative directions — each with a clear strategic rationale — presented with context on how each direction positions you relative to competitors and communicates your brand's specific personality and values.",
           },
           {
-            title: "Refinement & Delivery",
+            title: "Refinement and delivery",
             description:
               "We refine the chosen direction through a structured revision process, extending it across all required brand touchpoints and delivering a complete, organized asset package with full documentation — ready to use from day one.",
           },
@@ -1582,7 +1662,7 @@ export const SERVICES: ServiceCategory[] = [
         slug: "product-ui-ux",
         title: "Product UI/UX",
         description:
-          "Wireframes, user flows, high-fidelity interface design, and design systems for digital products built around how users actually think and behave.",
+          "Wireframes, interface design and design systems for apps and dashboards.",
         icon: "penTool",
         overview:
           "Product design determines whether users succeed or struggle — and the gap between a product people love and one they tolerate is almost always a design gap. We design digital product interfaces that are architecturally clear, visually refined, and grounded in genuine user research and behavioral understanding. From the first wireframe through a complete developer-ready design system, we bring rigorous process and strong craft to every screen, flow, and interaction state — including the edge cases most design teams skip.",
@@ -1599,34 +1679,34 @@ export const SERVICES: ServiceCategory[] = [
               "Structural wireframes that establish layout hierarchy, navigation patterns, screen flows, and information architecture before visual design begins — keeping stakeholder feedback focused on structure and logic rather than aesthetics.",
           },
           {
-            title: "User Flows",
+            title: "User flows",
             description:
               "Mapped user journey diagrams that document every path from entry to completion for key product tasks — identifying friction points, unnecessary steps, and decision-making bottlenecks that impact task completion rates.",
           },
           {
-            title: "Interface Design",
+            title: "Interface design",
             description:
               "High-fidelity interface designs that are visually refined, accessible (WCAG 2.1 AA compliant), and aligned with platform conventions — designed with component reusability in mind so your design system scales as new features are added.",
           },
           {
-            title: "Design Systems",
+            title: "Design systems",
             description:
               "Reusable component libraries built in Figma with design tokens (color, spacing, typography, elevation) that ensure visual consistency across every screen, accelerate new feature design, and give engineers a single source of truth for implementation.",
           },
         ],
         process: [
           {
-            title: "Research & Discovery",
+            title: "Research and discovery",
             description:
               "We define user personas based on research, map user goals and mental models, analyze comparable products for UX patterns and anti-patterns, and align on product requirements — ensuring design decisions are grounded in user reality before any screen design begins.",
           },
           {
-            title: "Design & Prototyping",
+            title: "Design and prototyping",
             description:
               "We progress from low-fidelity wireframes through high-fidelity screen designs and interactive Figma prototypes — with structured stakeholder reviews at each stage and design rationale documented for every significant decision.",
           },
           {
-            title: "Testing & Handoff",
+            title: "Testing and handoff",
             description:
               "We validate key user flows through moderated or unmoderated usability testing, incorporate findings into the final design, and deliver a complete, annotated Figma file with organized components, documented design tokens, and a written handoff guide for engineering.",
           },
@@ -1672,9 +1752,9 @@ export const SERVICES: ServiceCategory[] = [
       },
       {
         slug: "creative-design",
-        title: "Creative Design",
+        title: "Creative design",
         description:
-          "Marketing creatives, social media graphics, presentation design, and advertising assets that perform in competitive visual environments.",
+          "Ad creatives, social graphics and presentation decks.",
         icon: "paintbrush",
         overview:
           "Creative assets are where brand identity meets marketing performance — and the quality of your creative directly impacts whether your advertising gets noticed, whether your social content gets engaged with, and whether your sales presentations close deals. We produce campaign creatives, social media visuals, presentation decks, and advertising assets that are visually strong, on-brand, and built with the specific platform, format, and audience context in mind. Not one-size-fits-all assets — purpose-built creative that does the job it's designed for.",
@@ -1686,34 +1766,34 @@ export const SERVICES: ServiceCategory[] = [
         ],
         services: [
           {
-            title: "Marketing Creatives",
+            title: "Marketing creatives",
             description:
               "Campaign-ready visual assets built to perform across digital and print marketing contexts — including key visuals, promotional graphics, product photography creative direction, and campaign asset suites developed from a unified creative concept.",
           },
           {
-            title: "Social Media Design",
+            title: "Social media design",
             description:
               "Platform-optimized graphics and content templates built to maintain brand consistency across Instagram, LinkedIn, Facebook, TikTok, and X — designed with the native format expectations and algorithmic context of each platform in mind.",
           },
           {
-            title: "Presentation Design",
+            title: "Presentation design",
             description:
               "Polished presentation decks for investor pitches, client proposals, boardroom reviews, and sales enablement — designed to communicate clearly, guide the audience through your narrative, and reflect the quality of the brand and product behind the slide.",
           },
           {
-            title: "Advertising Assets",
+            title: "Advertising assets",
             description:
               "Scroll-stopping ad creatives built to platform spec requirements and tested creative best practices — covering static display ads, responsive display assets, paid social creatives, and out-of-home materials across Google, Meta, programmatic, and print channels.",
           },
         ],
         process: [
           {
-            title: "Brief & Concept",
+            title: "Brief and concept",
             description:
               "We take a structured brief covering objectives, audience, channel context, brand constraints, and performance goals — and develop initial creative concepts with a clear rationale before moving into full production.",
           },
           {
-            title: "Design & Refine",
+            title: "Design and refine",
             description:
               "We produce designs at full quality and in all required sizes or variants, incorporate structured feedback through a defined revision process, and iterate until the output meets the creative standard and functional requirements.",
           },

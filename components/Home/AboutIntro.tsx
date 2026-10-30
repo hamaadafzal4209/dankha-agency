@@ -1,36 +1,42 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
-import Image from "next/image";
+import { AnimatedHeading } from "@/app/_components/AnimatedHeading";
+import { ScrollText } from "@/app/_components/ScrollText";
 
 export function AboutIntro() {
   return (
-    <section className="px-6 py-20 pt-8">
-      <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-        <Reveal>
-          <div className="relative aspect-5/4 md:aspect-6/4 w-full overflow-hidden rounded-3xl">
+    <section aria-labelledby="about-heading" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+      <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <Reveal className="lg:col-span-5 lg:col-start-1">
+          <div className="relative aspect-4/3 overflow-hidden rounded-lg">
             <Image
-              src="/assets/about.jpg"
-              alt="About us"
+              src="/assets/about/team-meeting.jpg"
+              alt="A team meeting around a table with laptops"
               fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
             />
           </div>
         </Reveal>
-        <div>
-          <SectionHeading
-            eyebrow="About DANKHA"
-            title="Your Partner for Digital Growth."
-            description="Dankha is a growth-focused agency helping businesses establish, scale, and optimize their digital presence. Through eCommerce solutions, technology services, digital marketing, and social media management, we empower brands to increase visibility, drive revenue, and achieve sustainable growth."
-            align="left"
-          />
-          <Reveal delay={0.3}>
+
+        <div className="lg:col-span-6 lg:col-start-7">
+          <Reveal>
+            <p className="text-sm font-medium text-link">Who we are</p>
+            <AnimatedHeading text="One team for your website, app, store and ads." id="about-heading" className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl" />
+            <ScrollText
+              text="Dankha started in 2020 building websites and online stores for early-stage businesses. Today we design and build web platforms and mobile apps, run marketplace stores and manage the ads, so you don't have to coordinate four different vendors."
+              className="mt-6 text-lg leading-relaxed text-foreground sm:text-xl"
+            />
+          </Reveal>
+
+          <Reveal delay={0.08}>
             <Link
               href="/about"
-              className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold gradient-primary transition"
+              className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-link hover:underline"
             >
-              Our Story <ArrowRight size={14} />
+              More about us <ArrowRight size={14} />
             </Link>
           </Reveal>
         </div>

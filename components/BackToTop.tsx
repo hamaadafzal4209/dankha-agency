@@ -27,7 +27,7 @@ export function BackToTop() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6 flex flex-col items-end gap-3">
       <AnimatePresence>
         {isVisible && (
           <>
@@ -35,44 +35,41 @@ export function BackToTop() {
 
             <motion.button
               type="button"
-              initial={{ opacity: 0, y: 20, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.85 }}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               onClick={scrollToTop}
-              className="group relative flex h-14 w-14 items-center justify-center rounded-full gradient-primary text-white shadow-elegant"
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:text-link"
               aria-label="Back to top"
             >
-              <span className="absolute inset-0 rounded-full gradient-primary blur-xl opacity-60 animate-glow-pulse" />
 
               <svg
                 className="absolute inset-0"
-                viewBox="0 0 56 56"
+                viewBox="0 0 48 48"
                 aria-hidden="true"
               >
                 <circle
-                  cx="28"
-                  cy="28"
-                  r="24"
-                  className="fill-none stroke-white/20"
-                  strokeWidth="3"
+                  cx="24"
+                  cy="24"
+                  r="22"
+                  className="fill-none stroke-transparent"
+                  strokeWidth="2"
                 />
                 <motion.circle
-                  cx="28"
-                  cy="28"
-                  r="24"
-                  className="fill-none stroke-white"
-                  strokeWidth="3"
+                  cx="24"
+                  cy="24"
+                  r="22"
+                  className="fill-none stroke-primary"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   pathLength={ringProgress}
-                  transform="rotate(-90 28 28)"
+                  transform="rotate(-90 24 24)"
                 />
               </svg>
 
               <span className="relative transition-transform duration-200 group-hover:-translate-y-0.5">
-                <ArrowUp size={22} />
+                <ArrowUp size={18} />
               </span>
             </motion.button>
           </>

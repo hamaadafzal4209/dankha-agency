@@ -28,7 +28,7 @@ const brands = [
     ),
   },
   {
-    name: "Ebay",
+    name: "eBay",
     logo: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const brands = [
     ),
   },
   {
-    name: "React JS",
+    name: "React",
     logo: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ const brands = [
     ),
   },
   {
-    name: "Node JS",
+    name: "Node.js",
     logo: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -421,31 +421,22 @@ const brands = [
 
 export function TrustedPartners() {
   return (
-    <section
-      className="px-6 py-12"
-      aria-label="Trusted partners and technologies"
-    >
-      <div className="mx-auto max-w-7xl">
-        <p className="mb-0 text-center px-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">
-          Powered by Industry-Leading Platforms & Technologies
-        </p>
-        <div className="relative overflow-hidden [mask:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-          <Marquee
-            pauseOnHover
-            repeat={3}
-            className="[--duration:35s] [--gap:3rem]"
-          >
-            {brands.map((brand) => (
-              <div
-                key={brand.name}
-                className="flex items-center w-12 gap-2 opacity-40 grayscale transition-all duration-300 hover:opacity-80 hover:grayscale-0"
-                title={brand.name}
-              >
-                {brand.logo}
-              </div>
-            ))}
-          </Marquee>
-        </div>
+    <section aria-labelledby="partners-heading" className="pb-4 pt-10 lg:pt-12">
+      <p id="partners-heading" className="px-4 text-center text-sm text-muted-foreground">
+        Platforms and tools we work in every day
+      </p>
+      <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <Marquee pauseOnHover repeat={3} className="p-0 [--duration:45s] [--gap:3.5rem]">
+          {brands.map((brand) => (
+            <div
+              key={brand.name}
+              className="flex shrink-0 items-center gap-3 opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 [&_svg]:h-8 [&_svg]:w-8 [&_svg]:fill-current text-foreground"
+            >
+              {brand.logo}
+              <span className="font-display text-lg font-semibold whitespace-nowrap text-foreground">{brand.name}</span>
+            </div>
+          ))}
+        </Marquee>
       </div>
     </section>
   );

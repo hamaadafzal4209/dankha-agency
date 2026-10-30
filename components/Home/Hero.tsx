@@ -1,213 +1,133 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Sparkles } from "./data";
-import { OrbitingCircles } from "../ui/orbiting-circles";
-import {
-  ComputerDesktopIcon,
-  ShoppingBagIcon,
-  MegaphoneIcon,
-  PaintBrushIcon,
-  CodeBracketIcon,
-  ChartBarIcon,
-  GlobeAltIcon,
-  DevicePhoneMobileIcon,
-  CameraIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowRight, Check, Star } from "lucide-react";
+import { Reveal } from "@/components/Reveal";
+import { ButtonLink } from "@/app/_components/ButtonLink";
+import { AnimatedWords } from "@/app/_components/AnimatedHeading";
+import { LahoreTime, RotatingWord } from "./HeroDetails";
+import { getReviews } from "@/sanity/reviews";
+import { clientNames } from "./data";
+import { ReviewAvatar } from "./ReviewAvatar";
 
-export function Hero() {
+const offerings = ["websites", "mobile apps", "online stores", "Amazon brands", "ad campaigns"] as const;
+
+const facts = [
+  { value: "2020", label: "Founded in Lahore" },
+  { value: "14", label: "Published case studies" },
+  { value: "5", label: "Client countries" },
+  { value: "4", label: "Services under one roof" },
+];
+
+export async function Hero() {
+  const { reviews, summary } = await getReviews();
+  const highlighted = reviews.find((review) => review.highlight) ?? reviews[0];
+  const featuredQuote = highlighted && { quote: highlighted.highlight ?? highlighted.body, person: highlighted };
+
   return (
-    <section className="relative pt-8 md:pt-0 pb-20 px-6">
-      <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12 items-center">
-        <div className="text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-secondary"
-          >
-            <Sparkles size={12} />
-            Digital Growth Agency
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
-          >
-            Scale Your Business With{" "}
-            <span className="gradient-text-bright">Industry Experts</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="mt-6 max-w-xl text-lg text-muted-foreground"
-          >
-          We help brands establish, scale, and optimize their digital presence through eCommerce expertise, innovative technology solutions, and data-driven marketing strategies designed to deliver measurable business growth.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 flex flex-wrap gap-4"
-          >
-            <Link
-              href="/contact"
-              className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white gradient-primary overflow-hidden shadow-elegant"
-            >
-              <span className="relative z-10">Book a Consultation</span>
-              <ArrowRight
-                size={16}
-                className="relative z-10 transition-transform group-hover:translate-x-1"
-              />
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition gradient-glow blur-xl" />
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold glass hover:bg-white/10 transition"
-            >
-              View Our Services
-            </Link>
-          </motion.div>
+    <section className="mx-auto max-w-7xl px-4 pb-6 pt-10 sm:px-6 md:pt-16 lg:px-8 lg:pt-20">
+      <Reveal immediate>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          {reviews.length > 0 && (
+            <div className="flex items-center gap-4">
+              <div className="flex -space-x-2">
+                {reviews.slice(0, 4).map((person, index) => (
+                  <ReviewAvatar
+                    key={`${person.name}-${index}`}
+                    name={person.name}
+                    img={person.img}
+                    size={32}
+                    className="border-2 border-background"
+                  />
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center gap-x-2 text-sm">
+                <span className="flex items-center gap-0.5" aria-hidden>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
+                  ))}
+                </span>
+                <span className="font-semibold text-foreground">{summary.rating}</span>
+                <span className="text-muted-foreground">
+                  <span className="sr-only">out of 5, </span>from {summary.count} client {summary.count === 1 ? "review" : "reviews"}
+                </span>
+              </div>
+            </div>
+          )}
+          <LahoreTime />
         </div>
+      </Reveal>
 
-        <div className="relative flex md:hidden -mx-6 w-[calc(100%+3rem)] aspect-square flex-col items-center justify-center">
-          <OrbitCenterLogo />
-          <OrbitingCircles iconSize={42} radius={128} speed={0.8}>
-            <OrbitIcon Icon={ComputerDesktopIcon} color="cyan" />
-            <OrbitIcon Icon={ShoppingBagIcon} color="sky" />
-            <OrbitIcon Icon={MegaphoneIcon} color="violet" />
-            <OrbitIcon Icon={PaintBrushIcon} color="teal" />
-            <OrbitIcon Icon={GlobeAltIcon} color="blue" />
-          </OrbitingCircles>
-          <OrbitingCircles iconSize={34} radius={72} reverse speed={1.2}>
-            <OrbitIcon Icon={CodeBracketIcon} color="emerald" />
-            <OrbitIcon Icon={ChartBarIcon} color="orange" />
-            <OrbitIcon Icon={DevicePhoneMobileIcon} color="indigo" />
-            <OrbitIcon Icon={CameraIcon} color="pink" />
-          </OrbitingCircles>
-        </div>
+      <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <Reveal immediate delay={0.05} className="lg:col-span-8">
+          <h1 className="font-display text-[2.6rem] font-semibold leading-[1.04] text-foreground sm:text-6xl xl:text-[5.25rem]">
+            <span className="sr-only">
+              We design, build and grow websites, mobile apps, online stores, Amazon brands and ad campaigns.
+            </span>
+            <span aria-hidden>
+              <AnimatedWords text="We design, build" immediate delay={0.05} />
+              <br />
+              <AnimatedWords text="and grow your" immediate delay={0.2} />
+              <br />
+              <RotatingWord words={offerings} />
+            </span>
+          </h1>
+        </Reveal>
 
-        <div className="relative hidden md:flex w-full aspect-square flex-col items-center justify-center">
-          <OrbitCenterLogo />
-          <OrbitingCircles iconSize={54} radius={190} speed={0.8}>
-            <OrbitIcon Icon={ComputerDesktopIcon} color="cyan" />
-            <OrbitIcon Icon={ShoppingBagIcon} color="sky" />
-            <OrbitIcon Icon={MegaphoneIcon} color="violet" />
-            <OrbitIcon Icon={PaintBrushIcon} color="teal" />
-            <OrbitIcon Icon={GlobeAltIcon} color="blue" />
-          </OrbitingCircles>
-          <OrbitingCircles iconSize={44} radius={106} reverse speed={1.2}>
-            <OrbitIcon Icon={CodeBracketIcon} color="emerald" />
-            <OrbitIcon Icon={ChartBarIcon} color="orange" />
-            <OrbitIcon Icon={DevicePhoneMobileIcon} color="indigo" />
-            <OrbitIcon Icon={CameraIcon} color="pink" />
-          </OrbitingCircles>
-        </div>
+        <Reveal immediate delay={0.1} className="lg:col-span-4 lg:pb-3">
+          <p className="text-lg text-muted-foreground">
+            Websites and apps for teams in Sweden, the UAE and Saudi Arabia, plus stores, listings and ads on Shopify,
+            Amazon and four more marketplaces. One team, from design to growth.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            <ButtonLink href="/contact">
+              Book a call <ArrowRight size={16} />
+            </ButtonLink>
+            <ButtonLink href="/portfolio" variant="secondary">
+              See our work
+            </ButtonLink>
+          </div>
+          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+            {["Free first call", "Reply within one business day"].map((item) => (
+              <li key={item} className="flex items-center gap-1.5">
+                <Check size={14} className="text-link" aria-hidden />
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          {featuredQuote && (
+            <figure className="mt-10 border-l-2 border-primary pl-4">
+              <blockquote className="text-foreground">&ldquo;{featuredQuote.quote}&rdquo;</blockquote>
+              <figcaption className="mt-3 flex items-center gap-3">
+                <ReviewAvatar name={featuredQuote.person.name} img={featuredQuote.person.img} size={32} />
+                <span className="text-sm">
+                  <span className="font-semibold text-foreground">{featuredQuote.person.name}</span>
+                  <span className="text-muted-foreground"> · {featuredQuote.person.role}</span>
+                </span>
+              </figcaption>
+            </figure>
+          )}
+        </Reveal>
       </div>
+
+      <Reveal delay={0.12} className="mt-16 lg:mt-20">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-border py-8 md:grid-cols-4">
+          {facts.map((fact) => (
+            <div key={fact.label} className="flex flex-col-reverse">
+              <dt className="mt-1 text-sm text-muted-foreground">{fact.label}</dt>
+              <dd className="font-display text-3xl font-semibold text-foreground sm:text-4xl">{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <div className="flex flex-col gap-4 py-8 md:flex-row md:items-center md:gap-10">
+          <p className="shrink-0 text-sm text-muted-foreground">Trusted by teams at</p>
+          <ul className="flex flex-wrap gap-x-8 gap-y-3">
+            {clientNames.map((name) => (
+              <li key={name} className="font-display text-lg font-semibold text-foreground/70 sm:text-xl">
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
     </section>
-  );
-}
-
-function OrbitCenterLogo() {
-  return (
-    <div className="relative z-10">
-      <div className="absolute inset-0 rounded-2xl blur-md gradient-primary opacity-60" />
-      <div className="relative h-16 w-16 rounded-2xl gradient-primary flex items-center justify-center">
-        <Sparkles className="text-white" size={26} />
-      </div>
-    </div>
-  );
-}
-
-type ColorKey =
-  | "cyan"
-  | "sky"
-  | "violet"
-  | "teal"
-  | "blue"
-  | "emerald"
-  | "orange"
-  | "indigo"
-  | "pink";
-
-const colorMap: Record<
-  ColorKey,
-  { border: string; tint: string; text: string }
-> = {
-  cyan: {
-    border: "border-cyan-400/40",
-    tint: "bg-cyan-400/15",
-    text: "text-cyan-300",
-  },
-  sky: {
-    border: "border-sky-400/40",
-    tint: "bg-sky-400/15",
-    text: "text-sky-300",
-  },
-  violet: {
-    border: "border-violet-400/40",
-    tint: "bg-violet-400/15",
-    text: "text-violet-300",
-  },
-  teal: {
-    border: "border-teal-400/40",
-    tint: "bg-teal-400/15",
-    text: "text-teal-300",
-  },
-  blue: {
-    border: "border-blue-400/40",
-    tint: "bg-blue-400/15",
-    text: "text-blue-300",
-  },
-  emerald: {
-    border: "border-emerald-400/40",
-    tint: "bg-emerald-400/15",
-    text: "text-emerald-300",
-  },
-  orange: {
-    border: "border-orange-400/40",
-    tint: "bg-orange-400/15",
-    text: "text-orange-300",
-  },
-  indigo: {
-    border: "border-indigo-400/40",
-    tint: "bg-indigo-400/15",
-    text: "text-indigo-300",
-  },
-  pink: {
-    border: "border-pink-400/40",
-    tint: "bg-pink-400/15",
-    text: "text-pink-300",
-  },
-};
-
-function OrbitIcon({
-  Icon,
-  color,
-}: {
-  Icon: React.ElementType;
-  color: ColorKey;
-}) {
-  const c = colorMap[color];
-  return (
-    // bg-card is the solid dark-navy card token — fully opaque so the orbit
-    // ring SVG never bleeds through. The tint div adds the accent colour on top.
-    <div
-      className={`relative flex h-full w-full items-center justify-center rounded-full border-2 bg-card shadow-lg ${c.border}`}
-    >
-      <div
-        className={`pointer-events-none absolute inset-0 rounded-full ${c.tint}`}
-      />
-      <Icon
-        className={`relative h-[46%] w-[46%] ${c.text}`}
-        strokeWidth={1.5}
-      />
-    </div>
   );
 }

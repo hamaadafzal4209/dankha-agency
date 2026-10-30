@@ -59,7 +59,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
               delay={index * 0.04}
             >
               <div 
-                className="relative aspect-4/3 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-card cursor-pointer"
+                className="relative aspect-4/3 overflow-hidden rounded-lg border border-border bg-white cursor-pointer"
                 onClick={() => setSelectedImageIndex(index)}
               >
                 <Image
@@ -67,7 +67,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
                   alt={`${projectTitle} showcase ${index + 1}`}
                   width={600}
                   height={800}
-                  className="h-full w-full object-contain transition duration-500 hover:scale-105 drop-shadow-lg"
+                  className="h-full w-full object-contain transition duration-500 hover:scale-[1.02]"
                 />
               </div>
             </Reveal>
@@ -77,7 +77,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
           <>
             <Reveal className="h-full lg:row-span-2">
               <div 
-                className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white shadow-card cursor-pointer"
+                className="h-full overflow-hidden rounded-lg border border-border bg-white cursor-pointer"
                 onClick={() => setSelectedImageIndex(0)}
               >
                 <Image
@@ -85,7 +85,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
                   alt={`${projectTitle} showcase 1`}
                   width={1600}
                   height={1200}
-                  className="aspect-16/11 h-full min-h-96 w-full object-contain transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0 drop-shadow-lg"
+                  className="aspect-16/11 h-full min-h-96 w-full object-contain transition duration-500 hover:scale-[1.02] lg:aspect-auto lg:min-h-0"
                 />
               </div>
             </Reveal>
@@ -97,7 +97,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
                 className="h-full"
               >
                 <div 
-                  className="h-full overflow-hidden rounded-3xl border border-white/10 bg-white shadow-card cursor-pointer"
+                  className="h-full overflow-hidden rounded-lg border border-border bg-white cursor-pointer"
                   onClick={() => setSelectedImageIndex(index + 1)}
                 >
                   <Image
@@ -105,7 +105,7 @@ export function ImageGallery({ images, projectTitle }: ImageGalleryProps) {
                     alt={`${projectTitle} showcase ${index + 2}`}
                     width={1200}
                     height={900}
-                    className="aspect-16/10 h-full min-h-72 w-full object-contain transition duration-500 hover:scale-105 lg:aspect-auto lg:min-h-0 drop-shadow-lg"
+                    className="aspect-16/10 h-full min-h-72 w-full object-contain transition duration-500 hover:scale-[1.02] lg:aspect-auto lg:min-h-0"
                   />
                 </div>
               </Reveal>

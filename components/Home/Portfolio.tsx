@@ -1,44 +1,42 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ButtonLink } from "@/app/_components/ButtonLink";
 import { portfolioProjects } from "@/data/portfolio-projects";
+import { featuredProjectSlugs } from "./data";
 
-const featuredProjects = [...portfolioProjects]
-  .sort(() => Math.random() - 0.5)
-  .slice(0, 3);
+const [featured, ...others] = featuredProjectSlugs
+  .map((slug) => portfolioProjects.find((project) => project.slug === slug))
+  .filter((project) => project !== undefined);
 
 export function Portfolio() {
   return (
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Selected work" title="A few projects we're proud of." />
-        <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.1}>
-              <ProjectCard
-                title={project.title}
-                description={project.impact}
-                image={project.heroImage}
-                techStack={project.techStack}
-                href={`/portfolio/${project.slug}`}
-              />
+    <section aria-labelledby="work-heading">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeading
+            id="work-heading"
+            eyebrow="Selected work"
+            title="Websites, apps and stores we've shipped."
+          />
+          <ButtonLink href="/portfolio" variant="secondary" className="shrink-0 self-start sm:self-auto">
+            See our work
+          </ButtonLink>
+        </div>
+
+        {featured && (
+          <Reveal className="mt-16">
+            <ProjectCard project={featured} featured />
+          </Reveal>
+        )}
+
+        <div className="mt-16 grid gap-16 md:grid-cols-2 md:gap-8 lg:gap-12">
+          {others.map((project, i) => (
+            <Reveal key={project.slug} delay={i * 0.08}>
+              <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.2}>
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white/10"
-            >
-              View all projects
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

@@ -1,27 +1,30 @@
-"use client";
-
 import { Hero } from "@/components/Home/Hero";
-import { StatsBar } from "@/components/Home/StatsBar";
 import { TrustedPartners } from "@/components/Home/TrustedPartners";
-import { ServicesPreview } from "@/components/Home/ServicesPreview";
-import { AboutIntro } from "@/components/Home/AboutIntro";
+import { ServicesList } from "@/components/services/ServicesList";
 import { Portfolio } from "@/components/Home/Portfolio";
+import { Process } from "@/components/Home/Process";
+import { AboutIntro } from "@/components/Home/AboutIntro";
 import { Testimonials } from "@/components/Home/Testimonials";
 import { CTA } from "@/components/Home/CTA";
+import type { Metadata } from "next";
+import { seoMetadata } from "@/sanity/seo";
 
-const page = () => {
+/** The home page uses the site-wide title and description unless its own SEO entry fills them in */
+export async function generateMetadata(): Promise<Metadata> {
+  return seoMetadata("/", { alternates: { canonical: "https://www.dankha.co" } });
+}
+
+export default function HomePage() {
   return (
     <>
       <Hero />
-      <StatsBar />
       <TrustedPartners />
-      <AboutIntro />
-      <ServicesPreview />
+      <ServicesList />
       <Portfolio />
+      <Process />
+      <AboutIntro />
       <Testimonials />
       <CTA />
     </>
   );
-};
-
-export default page;
+}

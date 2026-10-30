@@ -1,9 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Dark is the default theme; `dark:` utilities apply unless light mode is chosen. */
+@custom-variant dark (&:where(:root:not([data-theme="light"]) *));
+
 @theme inline {
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), "Inter", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -14,94 +17,107 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--foreground);
   --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-popover-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary-glow: var(--primary-glow);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary-glow: var(--secondary-glow);
-  --color-muted: var(--muted);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--surface-2);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--foreground);
+  --color-link: var(--link);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-foreground: var(--brand-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-glass: var(--glass);
-  --color-glass-border: var(--glass-border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+
+  /* A real spring (stiffness 120, damping ratio 0.72) sampled into CSS, for motion that has to run before JavaScript */
+  --ease-spring: linear(0, 0.0269, 0.0954, 0.1893, 0.2965, 0.4074, 0.5154, 0.6157, 0.7057, 0.7837, 0.8494, 0.9032, 0.9458, 0.9784, 1.0024, 1.0191, 1.0298, 1.0359, 1.0382, 1.038, 1.0359, 1.0325, 1.0286, 1.0243, 1.0201, 1.0161, 1.0125, 1.0094, 1.0067, 1.0044, 1.0026, 1.0012, 1.0002, 0.9995, 0.999, 0.9987, 0.9986, 0.9985, 0.9986, 0.9987, 1);
+  --animate-word-rise: word-rise 0.9s var(--ease-spring) both;
+  --animate-spring-up: spring-up 0.9s var(--ease-spring) both;
+  --animate-rule-draw: rule-draw 1.1s var(--ease-spring) both;
+
+  @keyframes word-rise {
+    from {
+      transform: translateY(110%);
+    }
+  }
+
+  @keyframes spring-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+
+  @keyframes rule-draw {
+    from {
+      transform: scaleX(0);
+    }
+  }
 }
 
+/* Brand tokens — dark (default) */
 :root {
-  --radius: 1rem;
+  color-scheme: dark;
+  --radius: 0.5rem;
 
-  /* Deep navy base with glowing teal accents */
+  /* Original dankha.co navy, with its soft blue and teal glow */
   --background: oklch(0.18 0.04 250);
-  --foreground: oklch(0.97 0.01 220);
-
-  --card: oklch(0.22 0.04 250);
-  --card-foreground: oklch(0.97 0.01 220);
-
-  --popover: oklch(0.2 0.04 250);
-  --popover-foreground: oklch(0.97 0.01 220);
-
-  /* #39587b -> primary */
-  --primary: oklch(0.45 0.07 248);
-  --primary-foreground: oklch(0.99 0 0);
-  --primary-glow: oklch(0.62 0.1 245);
-
-  /* #3fa1ad -> secondary */
-  --secondary: oklch(0.68 0.1 200);
-  --secondary-foreground: oklch(0.15 0.04 250);
-  --secondary-glow: oklch(0.78 0.13 195);
-
-  --muted: oklch(0.27 0.03 250);
-  --muted-foreground: oklch(0.72 0.02 230);
-
-  --accent: oklch(0.68 0.1 200);
-  --accent-foreground: oklch(0.15 0.04 250);
-
-  --destructive: oklch(0.62 0.22 25);
-  --destructive-foreground: oklch(0.99 0 0);
-
+  --surface: oklch(0.22 0.04 250 / 0.7);
+  --popover: oklch(0.22 0.04 250);
+  --surface-2: oklch(0.27 0.03 250);
+  --foreground: #eef2f6;
+  --muted-foreground: #9aa8b8;
   --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.68 0.1 200);
-
-  --glass: oklch(1 0 0 / 6%);
-  --glass-border: oklch(1 0 0 / 14%);
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(
-    135deg,
-    oklch(0.45 0.07 248),
-    oklch(0.68 0.1 200)
-  );
-  --gradient-glow: linear-gradient(
-    135deg,
-    oklch(0.62 0.1 245),
-    oklch(0.78 0.13 195)
-  );
-  --bg-gradient-radial:
+  --page-glow:
     radial-gradient(circle at 30% 20%, rgba(57, 88, 123, 0.4), transparent 60%),
     radial-gradient(circle at 80% 80%, rgba(63, 161, 173, 0.3), transparent 60%);
-  --gradient-text: linear-gradient(
-    135deg,
-    oklch(0.92 0.04 220),
-    oklch(0.78 0.13 195)
-  );
 
-  /* Shadows */
-  --shadow-glow: 0 0 60px -10px oklch(0.68 0.1 200 / 0.5);
-  --shadow-glow-primary: 0 0 80px -10px oklch(0.62 0.1 245 / 0.6);
-  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.5);
-  --shadow-card:
-    0 8px 32px -8px oklch(0 0 0 / 0.4), inset 0 1px 0 0 oklch(1 0 0 / 0.06);
+  /* Buttons, accent fills, links and active text all share one teal. Navy text keeps buttons readable on bright teal. */
+  --primary: #4fc3c7;
+  --primary-hover: #3aaeb2;
+  --primary-foreground: #0b1626;
+  --link: #4fc3c7;
+
+  --brand: #4fc3c7;
+  --brand-foreground: #0b1626;
+
+  --destructive: #f87171;
+}
+
+/* Brand tokens — light. Teal text uses a deeper shade so it passes WCAG AA on white. */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --background: #f6f8fb;
+  --surface: #ffffff;
+  --popover: #ffffff;
+  --surface-2: #edf1f6;
+  --foreground: #0b1626;
+  --muted-foreground: #4a5a6e;
+  --border: #dce3ec;
+
+  --primary: #0a7378;
+  --primary-hover: #075a5e;
+  --primary-foreground: #ffffff;
+  --link: #0a7378;
+
+  --brand: #0a7378;
+  --brand-foreground: #ffffff;
+
+  --destructive: #b91c1c;
+  --page-glow: none;
 }
 
 @layer base {
@@ -110,19 +126,21 @@
   }
 
   html {
+    /* Scroll-linked animations measure element offsets from here, which needs a positioned root */
+    position: relative;
     scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-background);
+    background-image: var(--page-glow);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    background-image: var(--bg-gradient-radial);
-    background-attachment: fixed;
+    line-height: 1.6;
     overflow-x: hidden;
-    font-feature-settings: "ss01", "ss02"
   }
-  
+
   h1,
   h2,
   h3,
@@ -130,190 +148,94 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: var(--secondary);
-    color: var(--secondary-foreground);
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
-  ::-webkit-scrollbar-track {
-    background: oklch(0.15 0.04 250);
+}
+
+/* Magic UI AnimatedThemeToggler: circular reveal via the View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-magicui-theme-vt="active"]::view-transition-group(root) {
+  animation-duration: var(--magicui-theme-toggle-vt-duration);
+}
+
+html[data-magicui-theme-vt="active"]::view-transition-new(root) {
+  clip-path: var(--magicui-theme-vt-clip-from);
+}
+
+/* Logo strip marquee (used by components/ui/marquee.tsx) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  ::-webkit-scrollbar-thumb {
-    background: var(--gradient-primary);
-    border-radius: 10px;
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation: none;
   }
 }
 
 @layer utilities {
-  .glass {
-    background: var(--glass);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid var(--glass-border);
-  }
-
-  .glass-strong {
-    background: oklch(1 0 0 / 0.08);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid oklch(1 0 0 / 0.16);
-  }
-
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .gradient-text {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .gradient-text-bright {
-    background: linear-gradient(
-      135deg,
-      oklch(0.85 0.1 220),
-      oklch(0.85 0.15 195)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  .glow-primary {
-    box-shadow: var(--shadow-glow-primary);
-  }
-
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
   .font-display {
     font-family: var(--font-display);
-  }
-
-  .grid-bg {
-    background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
   }
 
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
+  /* Logo swaps between the white and navy wordmark with the theme */
+  .logo-on-light {
+    display: none;
   }
-  50% {
-    transform: translateY(-20px) rotate(3deg);
+  :root[data-theme="light"] .logo-on-dark {
+    display: none;
   }
-}
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.05);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
-@keyframes glow-pulse {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-@keyframes spin-slow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-.animate-float-slow {
-  animation: float-slow 14s ease-in-out infinite;
-}
-.animate-glow-pulse {
-  animation: glow-pulse 4s ease-in-out infinite;
-}
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-
-@theme inline {
-  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
-
-  @keyframes orbit {
-    0% {
-      transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
-    }
-    100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc((var(--angle) * -1deg) - 360deg));
-    }
-  }
-}
-
-@theme inline {
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
+  :root[data-theme="light"] .logo-on-light {
+    display: block;
   }
 }

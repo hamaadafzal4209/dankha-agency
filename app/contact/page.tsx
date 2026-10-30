@@ -1,278 +1,219 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
-import {
-  Mail,
-  Phone,
-  Send,
-  MessageCircle,
-  Globe,
-  Sparkles,
-  GitBranch,
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useContactForm } from "@/hooks/useContactForm";
 import { toast } from "sonner";
-import {
-  BusinessLocation,
-  BusinessServiceArea,
-  ContactEmail,
-  PhoneNumber,
-} from "@/data/commonConstants";
+import { BusinessLocation, BusinessServiceArea, ContactEmail, PhoneNumber } from "@/data/commonConstants";
 import { socialLinks } from "@/components/Home/data";
+import type { ContactFormData } from "@/lib/validations/contact";
+import { AnimatedHeading } from "@/app/_components/AnimatedHeading";
+
+const whatsappUrl = `https://wa.me/${PhoneNumber.replace(/[^\d]/g, "")}`;
 
 function ContactPage() {
-  const { register, handleSubmit, onSubmit, errors, isSubmitting } =
-    useContactForm();
+  const { register, handleSubmit, onSubmit, errors, isSubmitting } = useContactForm();
 
-  const handleFormSubmit = async (data: any) => {
+  const handleFormSubmit = async (data: ContactFormData) => {
     try {
       await onSubmit(data);
-    } catch (error) {
+    } catch {
       toast.error("Failed to send message. Please try again.");
     }
   };
 
   return (
-    <div className="px-6 pb-32">
-      <section className="mx-auto max-w-5xl pt-10 text-center">
-        <h1 className="sr-only">Let&apos;s Build Something Great Together</h1>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let's build something extraordinary."
-          description="Tell us about your project — we'll reply within one business day."
-        />
-      </section>
+    <>
+      <section className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 md:pt-20 lg:px-8 lg:pb-18">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-16">
+          <Reveal immediate className="lg:col-span-5">
+            <p className="text-sm font-medium text-link">Contact</p>
+            <AnimatedHeading as="h1" immediate text="Book a call." className="mt-3 font-display text-4xl font-semibold text-foreground sm:text-5xl lg:text-6xl" />
+            <p className="mt-6 max-w-md text-lg text-muted-foreground">
+              Tell us what you&apos;re building or selling and what you need. We reply within one business day.
+            </p>
 
-      <section className="mx-auto max-w-6xl mt-16 grid gap-8 lg:grid-cols-5">
-        <Reveal className="lg:col-span-3">
-          <motion.form
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            onSubmit={handleSubmit(handleFormSubmit)}
-            className="rounded-3xl glass-strong p-8 md:p-10 space-y-6"
-          >
-            <div className="grid gap-6 md:grid-cols-2">
-              <Field
-                label="Name"
-                id="name"
-                placeholder="Your full name"
-                register={register}
-                error={errors.name?.message}
-              />
-              <Field
-                label="Email"
-                id="email"
-                type="email"
-                placeholder="you@company.com"
-                register={register}
-                error={errors.email?.message}
-              />
-              <Field
-                label="Phone"
-                id="phone"
-                type="tel"
-                placeholder="+1 (555) 000-0000"
-                register={register}
-                error={errors.phone?.message}
-              />
-              <Field
-                label="Subject"
-                id="subject"
-                placeholder="Project inquiry"
-                register={register}
-                error={errors.subject?.message}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                placeholder="Tell us about your project, timeline and goals..."
-                className="w-full rounded-xl bg-white/5 border border-glass-border px-4 py-3 text-sm outline-none transition focus:border-secondary focus:bg-white/[0.07] resize-none"
-                {...register("message")}
-              />
-              {errors.message && (
-                <p className="mt-2 text-xs text-red-400">
-                  {errors.message.message}
-                </p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="group relative inline-flex items-center justify-center gap-2 w-full md:w-auto rounded-full px-7 py-3.5 text-sm font-semibold text-white gradient-primary overflow-hidden shadow-elegant disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-              <AnimatePresence mode="wait">
-                {isSubmitting ? (
-                  <motion.span
-                    key="sending"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    className="inline-flex items-center gap-2"
-                  >
-                    Sending…
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="send"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    className="inline-flex items-center gap-2"
-                  >
-                    Send message <Send size={14} />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition gradient-glow blur-xl group-disabled:opacity-0" />
-            </button>
-          </motion.form>
-        </Reveal>
-
-        <Reveal delay={0.15} className="lg:col-span-2">
-          <div className="space-y-4 h-full">
-            <InfoCard
-              icon={Mail}
-              label="Email"
-              value={ContactEmail}
-              href={`mailto:${ContactEmail}`}
-            />
-            <InfoCard
-              icon={Phone}
-              label="Phone"
-              value={PhoneNumber}
-              href={`tel:${PhoneNumber.replace(/\s/g, "")}`}
-            />
-
-            <div className="rounded-3xl glass-strong p-6">
-              <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4">
-                Follow us
+            <dl className="mt-12 space-y-6">
+              <div>
+                <dt className="text-sm text-muted-foreground">Email</dt>
+                <dd className="mt-1">
+                  <a href={`mailto:${ContactEmail}`} className="font-display text-xl font-semibold text-foreground hover:text-link">
+                    {ContactEmail}
+                  </a>
+                </dd>
               </div>
-              <div className="mt-6 flex gap-3">
-                {socialLinks.map(({ icon: Icon, href }, i) => (
+              <div>
+                <dt className="text-sm text-muted-foreground">Phone</dt>
+                <dd className="mt-1">
                   <a
-                    key={i}
-                    href={href}
+                    href={`tel:${PhoneNumber.replace(/\s/g, "")}`}
+                    className="font-display text-xl font-semibold text-foreground hover:text-link"
+                  >
+                    {PhoneNumber}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm text-muted-foreground">WhatsApp</dt>
+                <dd className="mt-1">
+                  <a
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group h-10 w-10 inline-flex items-center justify-center rounded-lg glass hover:scale-110 hover:text-secondary transition-all"
+                    className="inline-flex items-center gap-2 font-display text-xl font-semibold text-foreground hover:text-link"
                   >
-                    <Icon size={16} />
+                    Message us <ArrowRight size={16} />
                   </a>
-                ))}
+                </dd>
               </div>
+              <div>
+                <dt className="text-sm text-muted-foreground">Office</dt>
+                <dd className="mt-1 text-foreground">
+                  {BusinessLocation}. {BusinessServiceArea}.
+                </dd>
+              </div>
+            </dl>
+
+            <div className="mt-8 flex gap-4 text-muted-foreground">
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="transition-colors hover:text-foreground"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+
+          <Reveal immediate delay={0.08} className="lg:col-span-7">
+            <form
+              onSubmit={handleSubmit(handleFormSubmit)}
+              noValidate
+              className="space-y-6"
+            >
+              <div className="grid gap-6 md:grid-cols-2">
+                <Field label="Name" id="name" autoComplete="name" register={register} error={errors.name?.message} />
+                <Field
+                  label="Email"
+                  id="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@company.com"
+                  register={register}
+                  error={errors.email?.message}
+                />
+                <Field
+                  label="Phone (optional)"
+                  id="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  register={register}
+                  error={errors.phone?.message}
+                />
+                <Field
+                  label="Subject (optional)"
+                  id="subject"
+                  placeholder="e.g. New website, Amazon listings audit"
+                  register={register}
+                  error={errors.subject?.message}
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground">
+                  What do you need?
+                </label>
+                <textarea
+                  id="message"
+                  rows={6}
+                  placeholder="Your website, app or store, and what you need help with."
+                  aria-invalid={errors.message ? true : undefined}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={inputClass}
+                  {...register("message")}
+                />
+                {errors.message && (
+                  <p id="message-error" className="mt-2 text-sm text-destructive">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+              >
+                {isSubmitting ? "Sending…" : "Send message"}
+                {!isSubmitting && <ArrowRight size={16} />}
+              </button>
+            </form>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-6xl mt-16">
+      <section aria-label="Office location" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="mb-6 rounded-3xl glass-strong p-6">
-            <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
-              Office location
-            </div>
-            <div className="font-display text-2xl font-semibold text-foreground">
-              {BusinessLocation}
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {BusinessServiceArea}. We work with clients remotely across Pakistan and international markets.
-            </p>
-          </div>
-          <div className="rounded-3xl glass-strong overflow-hidden h-90 relative">
+          <div className="relative h-80 overflow-hidden rounded-lg border border-border">
             <iframe
-              title="DANKHA Lahore office location"
+              title="Dankha office location in Lahore"
               src="https://www.openstreetmap.org/export/embed.html?bbox=74.26%2C31.33%2C74.46%2C31.55&layer=mapnik"
-              className="w-full h-full grayscale-40 contrast-110"
+              className="h-full w-full grayscale-40"
               loading="lazy"
             />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-transparent" />
           </div>
         </Reveal>
       </section>
-    </div>
+    </>
   );
 }
 
 export default ContactPage;
+
+const inputClass =
+  "w-full rounded-md border border-border bg-transparent px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary aria-invalid:border-destructive";
 
 function Field({
   label,
   id,
   type = "text",
   placeholder,
+  autoComplete,
   register,
   error,
 }: {
   label: string;
-  id: string;
+  id: keyof ContactFormData;
   type?: string;
   placeholder?: string;
-  register: any;
+  autoComplete?: string;
+  register: ReturnType<typeof useContactForm>["register"];
   error?: string;
 }) {
   return (
     <div>
-      <label
-        htmlFor={id}
-        className="block text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2"
-      >
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-foreground">
         {label}
       </label>
       <input
         id={id}
         type={type}
         placeholder={placeholder}
-        className="w-full rounded-xl bg-white/5 border border-glass-border px-4 py-3 text-sm outline-none transition focus:border-secondary focus:bg-white/[0.07]"
+        autoComplete={autoComplete}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${id}-error` : undefined}
+        className={inputClass}
         {...register(id)}
       />
-      {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
+      {error && (
+        <p id={`${id}-error`} className="mt-2 text-sm text-destructive">
+          {error}
+        </p>
+      )}
     </div>
   );
-}
-
-function InfoCard({
-  icon: Icon,
-  label,
-  value,
-  href,
-}: {
-  icon: React.ComponentType<{ size?: number }>;
-  label: string;
-  value: string;
-  href?: string;
-}) {
-  const CardContent = () => (
-    <div className="group rounded-3xl glass-strong p-6 flex items-center gap-4 transition hover:-translate-y-0.5 hover:border-secondary/40">
-      <div className="h-12 w-12 rounded-xl gradient-primary flex items-center justify-center text-white shadow-elegant">
-        <Icon size={18} />
-      </div>
-      <div>
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">
-          {label}
-        </div>
-        <div className="font-display font-semibold mt-0.5">{value}</div>
-      </div>
-    </div>
-  );
-
-  if (href) {
-    return (
-      <a href={href} className="block">
-        <CardContent />
-      </a>
-    );
-  }
-
-  return <CardContent />;
 }

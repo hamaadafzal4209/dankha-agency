@@ -16,6 +16,10 @@ export type PortfolioProject = {
   client: string;
   industry: string;
   heroImage: string;
+  /** One line on what we did, shown on cards */
+  scope: string;
+  /** The single strongest result, shown on cards */
+  keyResult: string;
   overview: {
     what: string;
     who: string;
@@ -53,6 +57,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "ServiceMarket",
     industry: "B2B Marketplace / Home Services",
     heroImage: "/projects/thumbnail/partner-app.jpeg",
+    scope: "React Native partner app for iOS and Android",
+    keyResult: "Live on Google Play, replacing phone-based lead handling",
     overview: {
       what: "A cross-platform mobile application that allows service providers on ServiceMarket — the UAE's largest home-services and moving marketplace — to receive, manage, and convert high-quality leads without relying on traditional advertising.",
       who: "Independent contractors, SME service businesses, and operations managers across moving, cleaning, and home-maintenance verticals in the Middle East.",
@@ -126,6 +132,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "DigitalTolk",
     industry: "Language Services / Interpretation",
     heroImage: "/projects/thumbnail/dt-web.jpeg",
+    scope: "Admin dashboard for bookings and interpreter assignments",
+    keyResult: "Live and in active use at app.digitaltolk.se",
     overview: {
       what: "An administrative web platform for managing the full lifecycle of interpretation service bookings — from scheduling and interpreter assignment to real-time monitoring and operational analytics.",
       who: "Operations managers, booking coordinators, and leadership teams at DigitalTolk and its enterprise clients across Sweden and Europe.",
@@ -199,6 +207,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Ports, Customs and Free Zone Corporation (PCFC)",
     industry: "Government / Smart City",
     heroImage: "/projects/thumbnail/pcfc.jpeg",
+    scope: "Mobile app bringing PCFC's government services into one place",
+    keyResult: "Published on Google Play under the Dubai Government entity",
     overview: {
       what: "The official mobile application for PCFC — a Dubai Government entity established in 2001 — consolidating digital access to licensing, inspection, approval, and investment services across ports, maritime, and customs departments.",
       who: "Businesses, investors, and residents interacting with Dubai's port and customs ecosystem, along with internal government service teams.",
@@ -272,6 +282,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Almaram Alfaneyah Manufacturing Co.",
     industry: "Industrial Manufacturing / Electrical Engineering",
     heroImage: "/projects/thumbnail/amf.jpeg",
+    scope: "Corporate website for an LV switchgear manufacturer",
+    keyResult: "Better-qualified enquiries from engineering and procurement teams",
     overview: {
       what: "A corporate web presence for a Saudi Arabian manufacturer of low-voltage switchgear panels, certified by Schneider Electric and operating under IEC and ISO 9001 standards.",
       who: "Industrial clients, procurement teams, and engineering consultants across the GCC evaluating qualified LV switchgear manufacturers.",
@@ -345,6 +357,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "DigitalTolk",
     industry: "Language Services / Interpretation",
     heroImage: "/projects/thumbnail/dt.jpeg",
+    scope: "Vue and Capacitor app with live WebRTC interpretation",
+    keyResult: "One codebase for Android and iOS, live on Google Play",
     overview: {
       what: "A cross-platform mobile application for DigitalTolk's language interpretation platform, allowing clients to create and manage bookings while enabling interpreters to accept assignments and conduct live sessions.",
       who: "Clients requiring interpretation services and professional translators/interpreters operating across European markets.",
@@ -418,6 +432,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "WebCraft",
     industry: "Digital Agency",
     heroImage: "/projects/thumbnail/webcraft.jpeg",
+    scope: "Agency website, design and build",
+    keyResult: "SEO-ready structure, live at webcraft.pk",
     overview: {
       what: "A full marketing website for WebCraft, a Pakistan-based digital agency offering branding, web development, and UI/UX design services — built to communicate creativity and convert visiting prospects into enquiries.",
       who: "Business owners, startup founders, and marketing managers across Pakistan and international markets evaluating digital service partners.",
@@ -491,6 +507,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Healup Pharma",
     industry: "Pharmaceutical / Healthcare",
     heroImage: "/projects/thumbnail/healupPharma.jpeg",
+    scope: "Corporate website for a pharma company active in 50+ countries",
+    keyResult: "Live at healuppharma.com",
     overview: {
       what: "A corporate marketing website for Healup Pharma, a global pharmaceutical company, communicating its product range, international presence, and healthcare mission to medical partners and institutional clients worldwide.",
       who: "Healthcare professionals, pharmaceutical distributors, institutional buyers, and regulatory stakeholders across international markets.",
@@ -564,6 +582,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "RISE Premier School of Accountancy",
     industry: "Education / Professional Qualifications",
     heroImage: "/projects/thumbnail/rise.jpeg",
+    scope: "Mobile-first website for an accountancy school",
+    keyResult: "Live at risepremier.edu.pk",
     overview: {
       what: "A full institutional website for RISE Premier School of Accountancy — a leading professional education provider in Pakistan offering ACCA, CA, and business qualifications — designed to serve both prospective and enrolled students.",
       who: "Students at O/A-level and beyond exploring professional accountancy qualifications, as well as parents and academic advisors researching education providers.",
@@ -636,6 +656,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (Retail SME)",
     industry: "Ecommerce / Retail",
     heroImage: "/projects/thumbnail/ebay.jpeg",
+    scope: "Listing, pricing and Promoted Listings overhaul",
+    keyResult: "Promoted Listings ROAS above category benchmark in the first cycle",
     overview: {
       what: "A comprehensive eBay store audit and optimisation engagement covering listing quality, catalogue architecture, pricing strategy, and seller performance metrics — executed to maximise visibility within eBay's Cassini search algorithm.",
       who: "A multi-category retail SME selling across electronics, home goods, and lifestyle verticals on eBay UK and eBay US, with an established inventory but stagnating organic reach.",
@@ -728,6 +750,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (Consumer Goods Brand)",
     industry: "Ecommerce / Consumer Goods",
     heroImage: "/projects/thumbnail/amazon-thumbnail.jpeg",
+    scope: "Listings, A+ Content, Brand Store and Sponsored Ads",
+    keyResult: "Page-one organic ranking for target keywords within 90 days",
     overview: {
       what: "An end-to-end Amazon marketplace growth engagement covering catalogue optimisation, A+ Content and Brand Store development, and a full Sponsored Products, Sponsored Brands, and Sponsored Display advertising strategy across Amazon UK and Amazon UAE.",
       who: "A branded consumer goods seller with an established product range but limited Amazon expertise, seeking to build sustainable organic ranking and reduce dependence on paid traffic for revenue.",
@@ -817,6 +841,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (US Consumer Brand)",
     industry: "Ecommerce / Consumer Goods",
     heroImage: "/projects/thumbnail/walmart-thumbnail.jpeg",
+    scope: "Walmart Marketplace launch with WFS and Sponsored Products",
+    keyResult: "Two-day delivery badge unlocked on eligible SKUs",
     overview: {
       what: "A Walmart Marketplace launch and growth engagement covering seller account setup, catalogue onboarding, listing quality optimisation, and Walmart Connect advertising — executed to build organic ranking and profitable paid performance on one of the US's largest and fastest-growing ecommerce platforms.",
       who: "An established Amazon seller seeking to diversify revenue across additional US marketplace channels, reduce Amazon dependency, and access Walmart's expanding online customer base with lower advertising cost-per-click benchmarks.",
@@ -905,6 +931,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (DTC Consumer Brand)",
     industry: "Ecommerce / Direct-to-Consumer",
     heroImage: "/projects/thumbnail/tiktok.jpeg",
+    scope: "TikTok Shop setup, creator affiliates and Spark Ads",
+    keyResult: "Attributed revenue within the first campaign month",
     overview: {
       what: "An end-to-end TikTok commerce engagement covering TikTok Shop setup and product catalogue onboarding, organic content strategy, creator affiliate programme activation, and a full-funnel TikTok Ads campaign strategy spanning TopView, In-Feed, and Spark Ads formats.",
       who: "A direct-to-consumer brand with strong product-market fit but limited social commerce presence — seeking to reach younger, discovery-driven audiences and convert TikTok's uniquely high engagement rates into a scalable sales channel.",
@@ -994,6 +1022,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (Independent Creative Brand)",
     industry: "Ecommerce / Handmade & Creative Goods",
     heroImage: "/projects/thumbnail/etsy.jpeg",
+    scope: "Etsy SEO, listing refresh and Etsy Ads",
+    keyResult: "First-page ranking in 60 days and Star Seller status",
     overview: {
       what: "A full Etsy shop growth engagement covering shop audit and restructure, listing SEO optimisation across the full catalogue, photography and thumbnail strategy, Etsy Ads management, and Star Seller programme alignment — executed to build organic search visibility and improve shop-wide conversion performance.",
       who: "An independent creative seller with a distinctive product range and loyal repeat customer base, but limited visibility in Etsy's competitive search environment — seeking to grow beyond word-of-mouth and unlock the platform's organic discovery potential.",
@@ -1078,6 +1108,8 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Confidential (DTC Consumer Brand)",
     industry: "Ecommerce / Direct-to-Consumer",
     heroImage: "/projects/thumbnail/shopify.jpeg",
+    scope: "Custom Shopify build, paid media and Klaviyo flows",
+    keyResult: "Positive ROAS within 30 days, sub-2-second page loads",
     overview: {
       what: "An end-to-end Shopify store build and growth engagement covering custom theme development, conversion rate optimisation, Meta and Google Ads full-funnel management, Klaviyo email and SMS automation, and subscription and loyalty programme configuration — designed to build a sustainable, owned-channel DTC business.",
       who: "A consumer brand with a validated product and existing wholesale distribution, seeking to establish a direct-to-consumer channel that would increase margin, build first-party customer data, and reduce dependency on third-party marketplace platforms.",
@@ -1164,4 +1196,37 @@ export const portfolioCategories: Array<"All" | PortfolioCategory> = [
 
 export function getPortfolioProject(slug: string) {
   return portfolioProjects.find((project) => project.slug === slug);
+}
+
+type ServiceLink = { href: string; label: string };
+
+/** The service each case study is an example of, so case studies and service pages can link to each other */
+const serviceBySlug: Record<string, ServiceLink> = {
+  "digitaltolk-web": { href: "/services/it/software-solutions", label: "Software solutions" },
+  "ebay-store-optimisation": { href: "/services/ecommerce/ebay-services", label: "eBay services" },
+  "amazon-marketplace-growth": { href: "/services/ecommerce/amazon-services", label: "Amazon services" },
+  "walmart-seller-growth": { href: "/services/ecommerce/walmart-marketplace", label: "Walmart Marketplace" },
+  "tiktok-shop-ads": { href: "/services/ecommerce/tiktok-shop", label: "TikTok Shop" },
+  "etsy-shop-growth": { href: "/services/ecommerce/etsy-services", label: "Etsy services" },
+  "shopify-store-growth": { href: "/services/ecommerce/shopify-services", label: "Shopify services" },
+};
+
+const serviceByCategory: Record<PortfolioCategory, ServiceLink> = {
+  Web: { href: "/services/it/website-development", label: "Website development" },
+  Mobile: { href: "/services/it", label: "Websites and apps" },
+  Ecommerce: { href: "/services/ecommerce", label: "Ecommerce" },
+  Marketing: { href: "/services/marketing", label: "Ads, SEO and email" },
+  Designing: { href: "/services/designing", label: "Brand and design" },
+};
+
+export function serviceForProject(project: PortfolioProject): ServiceLink {
+  return serviceBySlug[project.slug] ?? serviceByCategory[project.cat];
+}
+
+/** Case studies for a service page, including those filed under its sub-services when it is a category page */
+export function projectsForService(path: string): PortfolioProject[] {
+  return portfolioProjects.filter((project) => {
+    const { href } = serviceForProject(project);
+    return href === path || href.startsWith(`${path}/`);
+  });
 }

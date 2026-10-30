@@ -1,6 +1,6 @@
 try {
   require('dotenv').config({ path: '.env.local' });
-} catch (err) {
+} catch {
   // dotenv not installed — OK if env vars are already provided in the environment
 }
 

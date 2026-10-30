@@ -9,3 +9,6 @@ export const BusinessAddress = {
   addressRegion: 'Punjab',
   addressCountry: 'PK',
 };
+
+/** Identifies the business in structured data, so other pages can refer to it instead of repeating it */
+export const OrganizationId = 'https://www.dankha.co/#organization';
